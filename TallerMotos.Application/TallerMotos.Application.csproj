@@ -14,4 +14,9 @@
     <ProjectReference Include="..\TallerMotos.Infraestructure\TallerMotos.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Perfiles\" />
+    <Folder Include="DTO\" />
+  </ItemGroup>
+
 </Project>
