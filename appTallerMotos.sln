@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerMotos.Web", "TallerMotos\TallerMotos.Web.csproj", "{23478752-619A-43BB-B049-AAC07DB904C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TallerMotos.Web", "TallerMotos\TallerMotos.Web.csproj", "{23478752-619A-43BB-B049-AAC07DB904C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerMotos.Application", "TallerMotos.Application\TallerMotos.Application.csproj", "{292A8ADB-6594-44A1-9B80-8BB02005A24E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TallerMotos.Application", "TallerMotos.Application\TallerMotos.Application.csproj", "{292A8ADB-6594-44A1-9B80-8BB02005A24E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerMotos.Infraestructure", "TallerMotos.Infraestructure\TallerMotos.Infraestructure.csproj", "{E8596FEC-03D8-488E-8104-74B4ECB84AE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TallerMotos.Infraestructure", "TallerMotos.Infraestructure\TallerMotos.Infraestructure.csproj", "{E8596FEC-03D8-488E-8104-74B4ECB84AE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{994E4A83-401E-4A5B-85FB-95629F046357}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
