@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TallerMotos.Infraestructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c32fefea227fecf6c9aebf5cfe9658201290f40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ec2e4e7d6d03577e747ac5e8b896fd0b755482d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TallerMotos.Infraestructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TallerMotos.Infraestructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

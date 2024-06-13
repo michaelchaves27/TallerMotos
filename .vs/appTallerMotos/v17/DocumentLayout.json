@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\TallerMotos\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Program.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Program.cs",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Program.cs*",
+              "RelativeToolTip": "TallerMotos\\Program.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T02:34:21.273Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
