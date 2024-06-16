@@ -5,9 +5,9 @@ namespace TallerMotos.Infraestructure.Models;
 
 public partial class Productos
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
-    public int Idcategoria { get; set; }
+    public int IDCategoria { get; set; }
 
     public string? Nombre { get; set; }
 
