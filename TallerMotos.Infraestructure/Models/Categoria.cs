@@ -5,7 +5,7 @@ namespace TallerMotos.Infraestructure.Models;
 
 public partial class Categoria
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
     public string? Nombre { get; set; }
 

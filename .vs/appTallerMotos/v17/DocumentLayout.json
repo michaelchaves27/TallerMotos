@@ -1,62 +1,496 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\TallerMotos\\",
-<<<<<<< HEAD
-  "Documents": [],
-=======
+  "WorkspaceRootPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\productos\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\data\\tallermotoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\data\\tallermotoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\dto\\productosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\dto\\productosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\perfiles\\productosprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\perfiles\\productosprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\perfiles\\facturaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\perfiles\\facturaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\dto\\facturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\dto\\facturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\implementations\\serviceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\serviceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\interfaces\\iserviceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\interfaces\\iserviceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\models\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\repository\\implementations\\repositoryproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\implementations\\repositoryproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\repository\\interfaces\\irepositoryproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\interfaces\\irepositoryproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\implementations\\servicefacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\servicefacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\repository\\implementations\\repositoryfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\implementations\\repositoryfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\repository\\implementations\\repositoryreservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\implementations\\repositoryreservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\interfaces\\iservicecategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\interfaces\\iservicecategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\implementations\\servicecategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\servicecategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\perfiles\\categoriaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\perfiles\\categoriaprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\dto\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\dto\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\repository\\interfaces\\irepositoryfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\interfaces\\irepositoryfacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.infraestructure\\models\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos.application\\services\\interfaces\\iservicefacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\interfaces\\iservicefacturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
->>>>>>> main
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-<<<<<<< HEAD
-      "DocumentGroups": []
-=======
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TallerMotosContext.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAJ0AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:38:15.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RepositoryProductos.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryProductos.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryProductos.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryProductos.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryProductos.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:56:10.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IServiceProductos.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceProductos.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Interfaces\\IServiceProductos.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceProductos.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Interfaces\\IServiceProductos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:55:27.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceProductos.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceProductos.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceProductos.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceProductos.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceProductos.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwEYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:54:11.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductosProfile.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\ProductosProfile.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Perfiles\\ProductosProfile.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\ProductosProfile.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Perfiles\\ProductosProfile.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:48:53.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FacturaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\FacturaDTO.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\DTO\\FacturaDTO.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\FacturaDTO.cs",
+              "RelativeToolTip": "TallerMotos.Application\\DTO\\FacturaDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:24:01.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FacturaProfile.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\FacturaProfile.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Perfiles\\FacturaProfile.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\FacturaProfile.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Perfiles\\FacturaProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:25:29.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductosDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\ProductosDTO.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\DTO\\ProductosDTO.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\ProductosDTO.cs",
+              "RelativeToolTip": "TallerMotos.Application\\DTO\\ProductosDTO.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBAAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:24:29.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Productos.cshtml",
-              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Productos\\Productos.cshtml",
-              "RelativeDocumentMoniker": "TallerMotos\\Views\\Productos\\Productos.cshtml",
-              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Productos\\Productos.cshtml",
-              "RelativeToolTip": "TallerMotos\\Views\\Productos\\Productos.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-16T20:08:29.368Z",
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "TallerMotos\\Controllers\\ProductoController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:31:36.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "TallerMotos\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "TallerMotos\\Controllers\\ProductoController.cs",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Program.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Program.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Program.cs",
+              "RelativeToolTip": "TallerMotos\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:35:12.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IRepositoryProductos.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryProductos.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryProductos.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryProductos.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryProductos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:58:08.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Productos.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Productos.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\Productos.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Productos.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\Productos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T04:18:51.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Productos\\Index.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Productos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Productos\\Index.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Productos\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T04:33:10.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T03:21:36.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACEAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T03:19:33.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FacturaController.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\FacturaController.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Controllers\\FacturaController.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\FacturaController.cs",
+              "RelativeToolTip": "TallerMotos\\Controllers\\FacturaController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:31:58.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ServiceFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceFacturas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceFacturas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceFacturas.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceFacturas.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:25:54.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RepositoryFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryFacturas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryFacturas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryFacturas.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryFacturas.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:28:17.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Categoria.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\Categoria.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Categoria.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\Categoria.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T04:46:45.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RepositoryReservas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryReservas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryReservas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryReservas.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryReservas.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T19:45:18.001Z",
+              "WhenOpened": "2024-06-17T04:17:33.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CategoriaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\CategoriaDTO.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\DTO\\CategoriaDTO.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\CategoriaDTO.cs",
+              "RelativeToolTip": "TallerMotos.Application\\DTO\\CategoriaDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:24:19.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServiceCategoria.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceCategoria.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceCategoria.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceCategoria.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceCategoria.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T04:08:31.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IServiceCategoria.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceCategoria.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Interfaces\\IServiceCategoria.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceCategoria.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Interfaces\\IServiceCategoria.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T04:08:53.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Factura\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Factura\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T03:33:41.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CategoriaProfile.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\CategoriaProfile.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Perfiles\\CategoriaProfile.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\CategoriaProfile.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Perfiles\\CategoriaProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T04:03:42.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IRepositoryFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryFacturas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryFacturas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryFacturas.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Interfaces\\IRepositoryFacturas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:30:33.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Facturas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Facturas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\Facturas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Facturas.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\Facturas.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA5wBsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:28:58.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IServiceFacturas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceFacturas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Interfaces\\IServiceFacturas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Interfaces\\IServiceFacturas.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Interfaces\\IServiceFacturas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T03:27:03.72Z",
               "EditorCaption": ""
             }
           ]
         }
       ]
->>>>>>> main
     }
   ]
 }

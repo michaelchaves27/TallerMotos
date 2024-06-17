@@ -16,7 +16,7 @@ namespace TallerMotos.Application.Services.Interfaces
 
 		Task UpdateAsync(int id, ProductosDTO dto, string[] selectedCategorias);
 
-		Task<ICollection<ProductosDTO>> GetProductosByCategoria(int IdCategoria);
+		//Task<ICollection<ProductosDTO>> GetProductosByCategoria(int IdCategoria);
 		Task<ICollection<ProductosDTO>> FindByNameAsync(string nombre);
 
 		Task DeleteAsync(int id);

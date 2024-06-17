@@ -1,7 +1,54 @@
+using Microsoft.EntityFrameworkCore;
+using TallerMotos.Application.Perfiles;
+using TallerMotos.Application.Services.Implementations;
+using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Infraestructure.Data;
+using TallerMotos.Infraestructure.Repository.Implementations;
+using TallerMotos.Infraestructure.Repository.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+//********************************
+//Configurar D.I.
+//***Repository
+builder.Services.AddTransient<IRepositoryFacturas, RepositoryFacturas>();
+//**Services
+builder.Services.AddTransient<IServiceFacturas, ServiceFacturas>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<FacturaProfile>();
+});
+
+//************************ Productos
+//***Repository
+builder.Services.AddTransient<IRepositoryProductos, RepositoryProductos>();
+//**Services
+builder.Services.AddTransient<IServiceProductos, ServiceProductos>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<ProductosProfile>();
+});
+
+//***********************
+
+// Configuar Conexión a la Base de Datos SQL
+builder.Services.AddDbContext<TallerMotosContext>(options =>
+{
+    // it read appsettings.json file
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerDataBase"));
+    if (builder.Environment.IsDevelopment())
+        options.EnableSensitiveDataLogging();
+});
 
 var app = builder.Build();
 

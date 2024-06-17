@@ -5,11 +5,11 @@ namespace TallerMotos.Infraestructure.Models;
 
 public partial class Facturas
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
-    public int Idusuario { get; set; }
+    public int IDUsuario { get; set; }
 
-    public int Idsucursal { get; set; }
+    public int IDSucursal { get; set; }
 
     public DateOnly? Fecha { get; set; }
 
@@ -23,7 +23,7 @@ public partial class Facturas
 
     public virtual ICollection<DetalleFactura> DetalleFactura { get; set; } = new List<DetalleFactura>();
 
-    public virtual Sucursales IdsucursalNavigation { get; set; } = null!;
+    public virtual Sucursales IDSucursalNavigation { get; set; } = null!;
 
-    public virtual Usuarios IdusuarioNavigation { get; set; } = null!;
+    public virtual Usuarios IDUsuarioNavigation { get; set; } = null!;
 }

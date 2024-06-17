@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JFWVPUJUBEs/yHYIkGY1I8xzc8hOg1ST8ptcAcdNotY=",
+  "Hash": "fDE8kiTI5OlftOnCMPfjEZUdgltkEPh1GVyQrrZgGXM=",
   "Source": "TallerMotos.Web",
   "BasePath": "_content/TallerMotos.Web",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TallerMotos.Web.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\css\\bootstrap-superhero.css",
+      "SourceId": "TallerMotos.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\",
+      "BasePath": "_content/TallerMotos.Web",
+      "RelativePath": "css/bootstrap-superhero.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap-superhero.css"
     },
     {
       "Identity": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\css\\site.css",

@@ -19,6 +19,6 @@ public partial class Productos
 
     public string? Calificacion { get; set; }
 
-    public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
-	public virtual ICollection<Categoria> IDCategoria { get; set; } = new List<Categoria>();
+   // public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
+	//public virtual ICollection<Categoria> IDCategoria { get; set; } = new List<Categoria>();
 }

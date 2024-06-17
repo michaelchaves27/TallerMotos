@@ -38,7 +38,7 @@ public partial class TallerMotosContext : DbContext
     {
         modelBuilder.Entity<Categoria>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -99,12 +99,12 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Facturas>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Estado)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Idsucursal).HasColumnName("IDSucursal");
-            entity.Property(e => e.Idusuario).HasColumnName("IDUsuario");
+            entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
+            entity.Property(e => e.IDUsuario).HasColumnName("IDUsuario");
             entity.Property(e => e.Impuesto)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -115,13 +115,13 @@ public partial class TallerMotosContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.IdsucursalNavigation).WithMany(p => p.Facturas)
-                .HasForeignKey(d => d.Idsucursal)
+            entity.HasOne(d => d.IDSucursalNavigation).WithMany(p => p.Facturas)
+                .HasForeignKey(d => d.IDSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Facturas_Sucursales");
 
-            entity.HasOne(d => d.IdusuarioNavigation).WithMany(p => p.Facturas)
-                .HasForeignKey(d => d.Idusuario)
+            entity.HasOne(d => d.IDUsuarioNavigation).WithMany(p => p.Facturas)
+                .HasForeignKey(d => d.IDUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Facturas_Usuarios");
         });
@@ -155,7 +155,7 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.IDCategoria).HasColumnName("IDCategoria");
+           // entity.Property(e => e.ID).HasColumnName("IDCategoria");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -166,10 +166,10 @@ public partial class TallerMotosContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
-                .HasForeignKey(d => d.IDCategoria)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Productos_Categoria");
+           // entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
+                //.HasForeignKey(d => d.IDCategoria)
+               // .OnDelete(DeleteBehavior.ClientSetNull)
+              //  .HasConstraintName("FK_Productos_Categoria");
         });
 
         modelBuilder.Entity<Reservas>(entity =>

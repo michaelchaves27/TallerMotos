@@ -21,7 +21,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 		{
 			var collection = await _context.Set<Productos>()
 			//.Include(x => x.IdcategoriaNavigation)
-		    .OrderBy(x => x.IDCategoria)
+		    //.OrderBy(x => x.IDCategoria)
 			.AsNoTracking()
 			.ToListAsync();
 			return collection;
@@ -31,14 +31,14 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 			//var @object=await _context.Set<Productos>().FindAsync(id);
 			var @object = await _context.Set<Productos>()
 			//.Include(x => x.IdAutorNavigation)
-		   .Include(x => x.IDCategoria)
+		  // .Include(x => x.IDCategoria)
 		   .Where(x => x.ID == id)
 		   .FirstOrDefaultAsync();
 			return @object!;
 		}
 		public async Task<int> AddAsync(Productos entity, string[] selectedCategorias)
 		{
-			ActualizarCategorias(selectedCategorias, entity);
+			//ActualizarCategorias(selectedCategorias, entity);
 			await _context.Set<Productos>().AddAsync(entity);
 			await _context.SaveChangesAsync();
 			return entity.ID;
@@ -47,10 +47,10 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 		{
 			//entity.IdAutorNavigation = _context.Autor.Find(entity.IdAutor);
 			//_context.Attach(entity.IdAutorNavigation);
-			ActualizarCategorias(selectedCategorias, entity);
+			//ActualizarCategorias(selectedCategorias, entity);
 			await _context.SaveChangesAsync();
 		}
-		private void ActualizarCategorias(string[] selectedCategorias, Productos ProductosToUpdate)
+		/*private void ActualizarCategorias(string[] selectedCategorias, Productos ProductosToUpdate)
 		{
 			var listaCategorias = _context.Categoria.ToList();
 			var categoriasObject = new List<Categoria>();
@@ -62,7 +62,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 				);
 			}
 			ProductosToUpdate.IDCategoria = categoriasObject;
-		}
+		}*/
 		public async Task<ICollection<Productos>> FindByNameAsync(string nombre)
 		{
 			var collection = await _context
@@ -71,7 +71,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 		   .ToListAsync();
 			return collection;
 		}
-		public async Task<ICollection<Productos>> GetProductosByCategoria(int idCategoria)
+		/*public async Task<ICollection<Productos>> GetProductosByCategoria(int idCategoria)
 		{
 			var collection = await _context.Set<Productos>()
 			.Include(c => c.IDCategoria)
@@ -79,7 +79,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 			.AsNoTracking()
 		   .ToListAsync();
 			return collection;
-		}
+		}*/
 		public Task DeleteAsync(int id)
 		{
 			throw new NotImplementedException();

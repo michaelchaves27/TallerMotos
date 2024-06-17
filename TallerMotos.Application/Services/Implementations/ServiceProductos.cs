@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Infraestructure.Models;
 using TallerMotos.Infraestructure.Repository.Interfaces;
 
 namespace TallerMotos.Application.Services.Implementations
 {
-	public class ServiceProductos
+	public class ServiceProductos : IServiceProductos
 	{
 		private readonly IRepositoryProductos _repository;
 		private readonly IMapper _mapper;
@@ -33,11 +34,11 @@ namespace TallerMotos.Application.Services.Implementations
 			var objectMapped = _mapper.Map<ProductosDTO>(@object);
 			return objectMapped;
 		}
-		public async Task<int> AddAsync(ProductosDTO dto, string[] selectedCategorias)
+		/*public async Task<int> AddAsync(ProductosDTO dto, string[] selectedCategorias)
 		{
 			var objectMapped = _mapper.Map<Productos>(dto);
 			return await _repository.AddAsync(objectMapped, selectedCategorias);
-		}
+		}*/
 
 		public async Task UpdateAsync(int id, ProductosDTO dto, string[] selectedCategorias)
 		{
@@ -55,15 +56,20 @@ namespace TallerMotos.Application.Services.Implementations
 			return collection;
 		}
 
-		public async Task<ICollection<ProductosDTO>> GetProductosByCategoria(int IdCategoria)
+		/*public async Task<ICollection<ProductosDTO>> GetProductosByCategoria(int IdCategoria)
 		{
 			var list = await _repository.GetProductosByCategoria(IdCategoria);
 			var collection = _mapper.Map<ICollection<ProductosDTO>>(list);
 			return collection;
-		}
+		}*/
 		public async Task DeleteAsync(int id)
 		{
 			await _repository.DeleteAsync(id);
 		}
-	}
+
+        public Task<int> AddAsync(ProductosDTO dto, string[] selectedCategorias)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
