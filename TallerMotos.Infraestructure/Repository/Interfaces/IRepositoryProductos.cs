@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Infraestructure.Repository.Interfaces
 {
-	internal interface IRepositoryProductos
+	public interface IRepositoryProductos
 	{
+		Task<ICollection<Productos>> ListAsync();
+		Task<Productos> FindByIdAsync(int id);
+		Task<int> AddAsync(Productos entity, string[] selectedCategorias);
+		Task UpdateAsync(Productos entity, string[] selectedCategorias);
+		Task<ICollection<Productos>> GetProductosByCategoria(int IdCategoria);
+		Task<ICollection<Productos>> FindByNameAsync(string nombre);
+		Task DeleteAsync(int id);
 	}
 }

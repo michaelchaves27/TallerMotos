@@ -148,14 +148,14 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Productos>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Calificacion)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Idcategoria).HasColumnName("IDCategoria");
+            entity.Property(e => e.IDCategoria).HasColumnName("IDCategoria");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -167,7 +167,7 @@ public partial class TallerMotosContext : DbContext
                 .IsUnicode(false);
 
             entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
-                .HasForeignKey(d => d.Idcategoria)
+                .HasForeignKey(d => d.IDCategoria)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Productos_Categoria");
         });

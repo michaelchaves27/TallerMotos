@@ -7,7 +7,7 @@ public partial class Productos
 {
     public int ID { get; set; }
 
-    public int IDCategoria { get; set; }
+    //public int IDCategoria { get; set; }
 
     public string? Nombre { get; set; }
 
@@ -20,4 +20,5 @@ public partial class Productos
     public string? Calificacion { get; set; }
 
     public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
+	public virtual ICollection<Categoria> IDCategoria { get; set; } = new List<Categoria>();
 }
