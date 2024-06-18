@@ -27,6 +27,18 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile<FacturaProfile>();
 });
 
+//***********************reservas
+//***Repository
+builder.Services.AddTransient<IRepositoryReservas, RepositoryReservas>();
+//**Services
+builder.Services.AddTransient<IServiceReservas, ServiceReservas>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<ReservasProfile>();
+});
+//****************************************************************
+
 //************************ Productos
 //***Repository
 builder.Services.AddTransient<IRepositoryProductos, RepositoryProductos>();
