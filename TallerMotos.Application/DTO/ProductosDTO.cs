@@ -14,11 +14,14 @@ namespace TallerMotos.Application.DTO
 		[Display(Name = "ID")]
 		public int ID { get; set; }
 
-		//[Display(Name = "Categorías")]
-		//[ValidateNever]
-		//public virtual List<CategoriaDTO> IDCategoria { get; set; } = null!;
+        [Display(Name = "Categoria")]
+        public int IDCategoria { get; set; }
 
-		[Display(Name = "Nombre Producto")]
+        //[Display(Name = "Categorías")]
+        //[ValidateNever]
+        //public virtual List<CategoriaDTO> IDCategoria { get; set; } = null!;
+
+        [Display(Name = "Nombre Producto")]
 		public string Nombre { get; set; } = null!;
 
 		[Display(Name = "Descripción")]

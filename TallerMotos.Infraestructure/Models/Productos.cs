@@ -7,7 +7,7 @@ public partial class Productos
 {
     public int ID { get; set; }
 
-    //public int IDCategoria { get; set; }
+    public int IDCategoria { get; set; }
 
     public string? Nombre { get; set; }
 

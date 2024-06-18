@@ -29,3 +29,19 @@ C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos.Applicat
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\refint\TallerMotos.Application.dll
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.pdb
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\ref\TallerMotos.Application.dll
+C:\TallerMotos\TallerMotos.Application\bin\Debug\net8.0\TallerMotos.Application.deps.json
+C:\TallerMotos\TallerMotos.Application\bin\Debug\net8.0\TallerMotos.Application.dll
+C:\TallerMotos\TallerMotos.Application\bin\Debug\net8.0\TallerMotos.Application.pdb
+C:\TallerMotos\TallerMotos.Application\bin\Debug\net8.0\TallerMotos.Infraestructure.dll
+C:\TallerMotos\TallerMotos.Application\bin\Debug\net8.0\TallerMotos.Infraestructure.pdb
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.csproj.AssemblyReference.cache
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.AssemblyInfoInputs.cache
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.AssemblyInfo.cs
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.csproj.CoreCompileInputs.cache
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.sourcelink.json
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMo.B84CD101.Up2Date
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.dll
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\refint\TallerMotos.Application.dll
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\TallerMotos.Application.pdb
+C:\TallerMotos\TallerMotos.Application\obj\Debug\net8.0\ref\TallerMotos.Application.dll
