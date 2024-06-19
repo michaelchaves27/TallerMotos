@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TallerMotos.Infraestructure.Models;
+﻿namespace TallerMotos.Infraestructure.Models;
 
 public partial class EncargadoSucursal
 {

@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TallerMotos.Infraestructure.Data;
 using TallerMotos.Infraestructure.Models;
 using TallerMotos.Infraestructure.Repository.Interfaces;
@@ -17,14 +12,25 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         {
             _context = context;
         }
-        public Task<Reservas> FindByIdAsync(int id)
+        public async Task<Reservas> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            //var @object=await _context.Set<Reservas>().FindAsync(id);
+            var @object = await _context.Set<Reservas>()
+           .Include(x => x.IdservicioNavigation)
+           .Include(x => x.IdsucursalNavigation)
+           .Include(x => x.IdusuarioNavigation)
+           .Where(x => x.ID == id)
+           .FirstOrDefaultAsync();
+            return @object!;
         }
 
         public async Task<ICollection<Reservas>> ListAsync()
         {
-            var collection = await _context.Set<Reservas>().ToListAsync();
+            var collection = await _context.Set<Reservas>()
+           .Include(x => x.IdservicioNavigation)
+           .Include(x => x.IdsucursalNavigation)
+           .Include(x => x.IdusuarioNavigation)
+           .ToListAsync();
             return collection;
         }
     }

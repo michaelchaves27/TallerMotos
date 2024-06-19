@@ -1,9 +1,6 @@
-﻿using Humanizer;
+﻿using Microsoft.AspNetCore.Mvc;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 //using X.PagedList;
 namespace TallerMotos.Web.Controllers
@@ -11,14 +8,14 @@ namespace TallerMotos.Web.Controllers
     public class ProductosController : Controller
     {
         private readonly IServiceProductos _serviceProductos;
-       // private readonly IServiceAutor _serviceAutor;
+        // private readonly IServiceAutor _serviceAutor;
         //private readonly IServiceCategoria _serviceCategoria;
         public ProductosController(IServiceProductos serviceProductos)//, 
-       //IServiceCategoria serviceCategoria)
+                                                                      //IServiceCategoria serviceCategoria)
         {
             _serviceProductos = serviceProductos;
-          //  _serviceAutor = serviceAutor;
-          //  _serviceCategoria = serviceCategoria;
+            //  _serviceAutor = serviceAutor;
+            //  _serviceCategoria = serviceCategoria;
         }
         // GET: ProductosController
         [HttpGet]
@@ -56,24 +53,24 @@ namespace TallerMotos.Web.Controllers
             }
         }
         // GET: ProductosController/Create
-       /* public async Task<ActionResult> Create()
-        {
-            //Lista de Autores
-           // ViewBag.ListAutor = await _serviceAutor.ListAsync();
-            //Lista de Categorias- relacion muchos a muchos
-            var categorias = await _serviceCategoria.ListAsync();
-         //   ViewBag.ListCategorias = new MultiSelectList(
-          //  items: categorias,
-          // dataValueField: nameof(CategoriaDTO.IdCategoria),
-           dataTextField: nameof(CategoriaDTO.Nombre)
-            );
-            //ViewBag.ListCategorias = new MultiSelectList(
-            // categorias,
-            // "IdCategoria",
-            // "Nombre"
-            // );
-            return View();
-        }*/
+        /* public async Task<ActionResult> Create()
+         {
+             //Lista de Autores
+            // ViewBag.ListAutor = await _serviceAutor.ListAsync();
+             //Lista de Categorias- relacion muchos a muchos
+             var categorias = await _serviceCategoria.ListAsync();
+          //   ViewBag.ListCategorias = new MultiSelectList(
+           //  items: categorias,
+           // dataValueField: nameof(CategoriaDTO.IdCategoria),
+            dataTextField: nameof(CategoriaDTO.Nombre)
+             );
+             //ViewBag.ListCategorias = new MultiSelectList(
+             // categorias,
+             // "IdCategoria",
+             // "Nombre"
+             // );
+             return View();
+         }*/
         // POST: ProductosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -84,16 +81,16 @@ namespace TallerMotos.Web.Controllers
             MemoryStream target = new MemoryStream();
 
             // Cuando es Insert Image viene en null porque se pasa diferente
-           /* if (dto.Imagen == null)
-            {
-                if (imageFile != null)
-                {
-                    imageFile.OpenReadStream().CopyTo(target);
-                    dto.Imagen = target.ToArray();
-                    //Quitar la validación de la imagen
-                    ModelState.Remove("Imagen");
-                }
-            }*/
+            /* if (dto.Imagen == null)
+             {
+                 if (imageFile != null)
+                 {
+                     imageFile.OpenReadStream().CopyTo(target);
+                     dto.Imagen = target.ToArray();
+                     //Quitar la validación de la imagen
+                     ModelState.Remove("Imagen");
+                 }
+             }*/
             //Validación del formulario
             if (!ModelState.IsValid)
             {
@@ -110,24 +107,24 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("IndexAdmin");
         }
         // GET: ProductosController/Edit/5
-      /*  public async Task<ActionResult> Edit(int id)
-        {
-          //  var @object = await _serviceProductos.FindByIdAsync(id);
-            //Lista de Autores
-         //   ViewBag.ListAutor = await _serviceAutor.ListAsync();
-            //Lista de Categorias- relacion muchos a muchos
-           // var categorias = await _serviceCategoria.ListAsync();
-            //Valores a seleccionar de las categorias
-           // var catSelected = @object.IdCategoria.Select(x => x.IdCategoria.ToString()).ToList();
-            //DropdownList
-          //  ViewBag.ListCategorias = new MultiSelectList(
-          //  items: categorias,
-         //  dataValueField: nameof(CategoriaDTO.IdCategoria),
-         //  dataTextField: nameof(CategoriaDTO.Nombre),
-        //   selectedValues: catSelected
-            );
-            return View(@object);
-        }*/
+        /*  public async Task<ActionResult> Edit(int id)
+          {
+            //  var @object = await _serviceProductos.FindByIdAsync(id);
+              //Lista de Autores
+           //   ViewBag.ListAutor = await _serviceAutor.ListAsync();
+              //Lista de Categorias- relacion muchos a muchos
+             // var categorias = await _serviceCategoria.ListAsync();
+              //Valores a seleccionar de las categorias
+             // var catSelected = @object.IdCategoria.Select(x => x.IdCategoria.ToString()).ToList();
+              //DropdownList
+            //  ViewBag.ListCategorias = new MultiSelectList(
+            //  items: categorias,
+           //  dataValueField: nameof(CategoriaDTO.IdCategoria),
+           //  dataTextField: nameof(CategoriaDTO.Nombre),
+          //   selectedValues: catSelected
+              );
+              return View(@object);
+          }*/
         // POST: ProductosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]

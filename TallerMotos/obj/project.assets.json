@@ -8490,19 +8490,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mchaves\\.nuget\\packages\\": {}
+    "C:\\Users\\jbfon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
+      "projectUniqueName": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
       "projectName": "TallerMotos.Web",
-      "projectPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
-      "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\obj\\",
+      "projectPath": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
+      "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+      "outputPath": "C:\\TallerMotos\\TallerMotos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8516,11 +8516,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {
-              "projectPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj"
+            "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {
+              "projectPath": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj"
             },
-            "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
-              "projectPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj"
+            "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
+              "projectPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj"
             }
           }
         }

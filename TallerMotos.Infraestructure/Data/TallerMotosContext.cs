@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Infraestructure.Data;
@@ -155,7 +153,7 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-           // entity.Property(e => e.ID).HasColumnName("IDCategoria");
+            // entity.Property(e => e.ID).HasColumnName("IDCategoria");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -166,10 +164,10 @@ public partial class TallerMotosContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-           // entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
-                //.HasForeignKey(d => d.IDCategoria)
-               // .OnDelete(DeleteBehavior.ClientSetNull)
-              //  .HasConstraintName("FK_Productos_Categoria");
+            // entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
+            //.HasForeignKey(d => d.IDCategoria)
+            // .OnDelete(DeleteBehavior.ClientSetNull)
+            //  .HasConstraintName("FK_Productos_Categoria");
         });
 
         modelBuilder.Entity<Reservas>(entity =>

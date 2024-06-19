@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<TallerMotos.Application.DTO.ReservasDTO>
 
 @{
-
     Layout = "_Layout";
 }
 
@@ -10,47 +9,76 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear</a>
 </p>
+<head>
+    <style>
+        .estado-pendiente {
+            color: orange !important;
+        }
+
+        .estado-confirmada {
+            color: dodgerblue !important;
+        }
+
+        .estado-completada {
+            color: green !important;
+        }
+
+        .estado-cancelada {
+            color: red !important;
+        }
+
+        .estado-reprogramada {
+            color: purple !important;
+        }
+    </style>
+
+</head>
+
 <table class="table">
     <thead>
         <tr>
-            
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IDServicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IDUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-           
+            <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+            <th>@Html.DisplayNameFor(model => model.IDServicio)</th>
+            <th>@Html.DisplayNameFor(model => model.IDUsuario)</th>
+            <th>@Html.DisplayNameFor(model => model.Estado)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
+            string estadoClase = "";
+
+            if (item.Estado == "Pendiente")
+            {
+                estadoClase = "estado-pendiente";
+            }
+            else if (item.Estado == "Confirmada")
+            {
+                estadoClase = "estado-confirmada";
+            }
+            else if (item.Estado == "Completada")
+            {
+                estadoClase = "estado-completada";
+            }
+            else if (item.Estado == "Cancelada")
+            {
+                estadoClase = "estado-cancelada";
+            }
+            else if (item.Estado == "Reprogramada")
+            {
+                estadoClase = "estado-reprogramada";
+            }
+
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdservicioNavigation.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdusuarioNavigation.Nombre)</td>
+                <td class="@estadoClase">@Html.DisplayFor(modelItem => item.Estado)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fecha)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IDServicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IDUsuario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-success" }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

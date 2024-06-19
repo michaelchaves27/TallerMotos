@@ -1,0 +1,35 @@
+﻿@model TallerMotos.Application.DTO.ReservasDTO
+
+@{
+    ViewData["Title"] = "Detalle";
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <h4>Reservas</h4>
+    <hr />
+    <div class="card flex-row text-right" style="width:60%; margin:0 auto;">
+        <img style="max-height:460px;"
+             role="img"
+             @* src="Imagenes/reservaIcon.png" *@
+             alt="Proximamente" />
+
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(model => model.ID)</h5>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdservicioNavigation):</b>  @Html.DisplayFor(model => model.IdservicioNavigation.Nombre)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdsucursalNavigation):</b>  @Html.DisplayFor(model => model.IdsucursalNavigation.Nombre)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdusuarioNavigation):</b>   @Html.DisplayFor(model => model.IdusuarioNavigation.Nombre)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Fecha):</b>  @Html.DisplayFor(model => model.Fecha)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Estado):</b>  @Html.DisplayFor(model => model.Estado)</p>
+            
+
+        </div>
+        <div class="d-flex align-items-end">
+            <a class="btn btn-primary" asp-action="Index">Regresar al listado</a>
+        </div>
+    </div>
+
+</div>
+<div>
+</div>

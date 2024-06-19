@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TallerMotos.Infraestructure.Models;
+﻿namespace TallerMotos.Infraestructure.Models;
 
 public partial class Productos
 {
@@ -19,6 +16,6 @@ public partial class Productos
 
     public string? Calificacion { get; set; }
 
-   // public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
-	//public virtual ICollection<Categoria> IDCategoria { get; set; } = new List<Categoria>();
+    // public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
+    //public virtual ICollection<Categoria> IDCategoria { get; set; } = new List<Categoria>();
 }
