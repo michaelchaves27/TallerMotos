@@ -19,6 +19,9 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var @object = await _context.Set<DetalleFactura>()
            //.Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdfacturaNavigation)
+           .ThenInclude(f => f.IdsucursalNavigation)
+           .Include(x => x.IdfacturaNavigation)
+           .ThenInclude(d => d.IdusuarioNavigation)
            .Where(x => x.ID == id)
            .FirstOrDefaultAsync();
             return @object!;
@@ -29,6 +32,9 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var collection = await _context.Set<DetalleFactura>().Where(x => x.IDFactura == id)
            //.Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdfacturaNavigation)
+           .ThenInclude(f => f.IdsucursalNavigation)
+           .Include(x => x.IdfacturaNavigation)
+           .ThenInclude(d => d.IdusuarioNavigation)
            .ToListAsync();
             return collection;
         }

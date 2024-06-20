@@ -11,6 +11,8 @@ namespace TallerMotos.Application.DTO
         public DateOnly Fecha { get; set; }
         [Display(Name = "IDUsuario")]
         public int IDUsuario { get; set; }
+        [Display(Name = "IDSucursal")]
+        public int IDSucursal { get; set; }
         [Display(Name = "Estado")]
         public string Estado { get; set; } = null!;
         [Display(Name = "Total")]
@@ -18,5 +20,7 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Usuario")]
         public virtual Usuarios IdusuarioNavigation { get; set; } = null!;
+        [Display(Name = "Sucursal")]
+        public virtual Sucursales IdsucursalNavigation { get; set; } = null!;
     }
 }

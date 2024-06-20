@@ -1,13 +1,14 @@
-﻿@model IEnumerable<TallerMotos.Application.DTO.DetalleFacturaDTO>
+﻿@using System.Linq;
+
+@model IEnumerable<TallerMotos.Application.DTO.DetalleFacturaDTO>
 
 @{
     ViewData["Title"] = "Detalle";
+    var ultDetalle = Model.LastOrDefault();
 }
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factura</title>
-</head>
+
+<title>Factura</title>
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -28,30 +29,39 @@
     }
 
     .header {
-        display: flex margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom 20px;
     }
 
-        .header h1 {
-            text-align: center;
-            display: flex
+        .header h2 {
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            width: 60%;
         }
 
         .header img {
-            text-align: left;
+            text-align: center;
             max-width: 250px;
-            display: flex
+            display: flex;
+            width: 48%;
         }
 
     .Enc {
-        display: flex
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
     .company-details, .customer-details {
         margin-bottom: 20px;
+        width: 48%;
     }
 
         .company-details h2, .customer-details h2 {
             margin: 0 0 10px;
+            width: 48%;
         }
 
     .details {
@@ -68,6 +78,7 @@
 
         .details th {
             background-color: black;
+            color: white;
         }
 
     .total {
@@ -81,24 +92,22 @@
 </style>
 
 
-
 <div class="header">
-    <img src="imagenes/logo2SF.png" alt="Logo de la empresa" col=3>
-    <h1 class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">Factura</h1>
+    <img src="~/imagenes/logo2SF.png" alt="Logo de la empresa">
+    <h3 class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">Moto Servicio BEICHA <br />N° Factura: @ultDetalle?.IdfacturaNavigation.ID <br />Fecha: @ultDetalle?.IdfacturaNavigation.Fecha </h3>
 </div>
 <div class="Enc">
     @* factura encabezado *@
     <div class="company-details">
-        <h2>Detalles de la Empresa</h2>
-        <h4>Moto Servicio BEICHA</h4>
-        <p>Sucursal:</p>
-        <p>Teléfono: (506) 8859-9090</p>
-        <p>Email: mtbeicha@gmail.com</p>
+        <h4>Detalles de la Sucursal</h4>
+        <p>Sucursal:@ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Nombre</p>
+        <p>Teléfono: @ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Telefono </p>
+        <p>Email: @ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Correo </p>
     </div>
     <div class="customer-details">
-        <h2>Detalles del Cliente</h2>
-        <p>Nombre del Cliente: </p>
-        <p>Identificación:</p>
+        <h4>Detalles del Cliente</h4>
+        <p>Nombre del Cliente: @ultDetalle?.IdfacturaNavigation.IdusuarioNavigation.Nombre </p>
+        <p>Identificación:  @ultDetalle?.IdfacturaNavigation.IdusuarioNavigation.Id </p>
     </div>
 </div>
 
@@ -123,9 +132,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Impuesto)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Total)
-            </th>
+            </th> *@
         </tr>
     </thead>
     <tbody>
@@ -150,17 +159,18 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Impuesto)
                 </td>
-                <td>
+               @*  <td>
                     @Html.DisplayFor(modelItem => item.Total)
-                </td>
+                </td> *@
             </tr>
         }
     </tbody>
 </table>
 <div class="total">
-    @Html.DisplayNameFor(model => model.IdfacturaNavigation.Total)
+    <h4>SubTotal: @ultDetalle?.IdfacturaNavigation.SubTotal</h4>
+    <h4>Impuesto: @ultDetalle?.IdfacturaNavigation.Impuesto</h4>
+    <h3>Total: @ultDetalle?.IdfacturaNavigation.Total</h3>
 </div>
 <div class="footer">
     <p>Gracias por su compra</p>
 </div>
-
