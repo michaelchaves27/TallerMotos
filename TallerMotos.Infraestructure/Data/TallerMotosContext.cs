@@ -14,7 +14,7 @@ public partial class TallerMotosContext : DbContext
 
     public virtual DbSet<Categoria> Categoria { get; set; }
 
-    public virtual DbSet<DetalleFactura> DetalleFactura { get; set; }
+    public virtual DbSet<DetalleFacturas> DetalleFacturas { get; set; }
 
     public virtual DbSet<EncargadoSucursal> EncargadoSucursal { get; set; }
 
@@ -44,7 +44,7 @@ public partial class TallerMotosContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<DetalleFactura>(entity =>
+        modelBuilder.Entity<DetalleFacturas>(entity =>
         {
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Cantidad)
@@ -56,7 +56,7 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Estado)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Idfactura).HasColumnName("IDFactura");
+            entity.Property(e => e.IDFactura).HasColumnName("IDFactura");
             entity.Property(e => e.Impuesto)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -73,8 +73,8 @@ public partial class TallerMotosContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.IdfacturaNavigation).WithMany(p => p.DetalleFactura)
-                .HasForeignKey(d => d.Idfactura)
+            entity.HasOne(d => d.IDFacturaNavigation).WithMany(p => p.DetalleFactura)
+                .HasForeignKey(d => d.IDFactura)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_DetalleFactura_Facturas");
         });

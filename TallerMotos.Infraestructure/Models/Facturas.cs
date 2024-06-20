@@ -21,7 +21,7 @@ public partial class Facturas
 
     public string? Total { get; set; }
 
-    public virtual ICollection<DetalleFactura> DetalleFactura { get; set; } = new List<DetalleFactura>();
+    public virtual ICollection<DetalleFacturas> DetalleFactura { get; set; } = new List<DetalleFacturas>();
 
     public virtual Sucursales IDSucursalNavigation { get; set; } = null!;
 

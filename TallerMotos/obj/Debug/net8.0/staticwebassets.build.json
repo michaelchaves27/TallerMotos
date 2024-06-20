@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fDE8kiTI5OlftOnCMPfjEZUdgltkEPh1GVyQrrZgGXM=",
+  "Hash": "+SjyPFwnuN4giH/DIOQGqQnCdCU93wBxbjqXewjvhos=",
   "Source": "TallerMotos.Web",
   "BasePath": "_content/TallerMotos.Web",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\Imagenes\\logo2SF.png",
+      "SourceId": "TallerMotos.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\",
+      "BasePath": "_content/TallerMotos.Web",
+      "RelativePath": "Imagenes/logo2SF.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\logo2SF.png"
     },
     {
       "Identity": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\js\\site.js",
