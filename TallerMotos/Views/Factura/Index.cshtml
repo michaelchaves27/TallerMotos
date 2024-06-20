@@ -52,8 +52,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
-                    <a asp-controller="DetalleFactura" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detail</a>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    <a asp-controller="DetalleFactura" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
 
                 </td>
             </tr>

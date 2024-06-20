@@ -17,6 +17,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var collection = await _context.Set<Productos>()
             //.Include(x => x.IdcategoriaNavigation)
             //.OrderBy(x => x.IDCategoria)
+            .Include(x => x.IdcategoriaNavigation)
             .AsNoTracking()
             .ToListAsync();
             return collection;
@@ -27,6 +28,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var @object = await _context.Set<Productos>()
            //.Include(x => x.IdAutorNavigation)
            // .Include(x => x.IDCategoria)
+           .Include(x => x.IdcategoriaNavigation)
            .Where(x => x.ID == id)
            .FirstOrDefaultAsync();
             return @object!;

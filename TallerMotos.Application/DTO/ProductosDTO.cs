@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Application.DTO
 {
@@ -28,5 +29,8 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Calificación")]
         public string Calificacion { get; set; } = null!;
+
+        [Display(Name = "CategoriaD")]
+        public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
     }
 }

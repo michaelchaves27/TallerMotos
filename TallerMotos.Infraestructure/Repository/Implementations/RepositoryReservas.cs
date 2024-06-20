@@ -19,6 +19,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .Include(x => x.IdservicioNavigation)
            .Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
+           .OrderByDescending(x => x.Fecha)
            .Where(x => x.ID == id)
            .FirstOrDefaultAsync();
             return @object!;
@@ -30,6 +31,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .Include(x => x.IdservicioNavigation)
            .Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
+           .OrderByDescending(x => x.Fecha)
            .ToListAsync();
             return collection;
         }
