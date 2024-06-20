@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CLnvRBDV3jkXfOiOOhJMOgYocCeElEYnLnB7FzFPhdbn3KQ6QqZZCRRo9FRPf3Wi3MUCDRkRennDTNLJwD/2Bw==",
+  "dgSpecHash": "idg4bOtAC/t4rMjlMqW6zEpIs3R1KzmQa6MOoS+Sv0en1ugyOB24TRAAI80gCgfVtMPhxBiVJ8KdwyQGko7VZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
+  "projectFilePath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mchaves\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\mchaves\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

@@ -4104,11 +4104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
+      "projectUniqueName": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
       "projectName": "TallerMotos.Infraestructure",
-      "projectPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
+      "projectPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
       "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
+      "outputPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
