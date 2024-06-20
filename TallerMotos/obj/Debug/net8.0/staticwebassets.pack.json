@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -25,8 +29,20 @@
       "PackagePath": "staticwebassets\\imagenes\\logoMoto.jpeg"
     },
     {
+      "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservaIcon.png",
+      "PackagePath": "staticwebassets\\imagenes\\reservaIcon.png"
+    },
+    {
       "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservalogo.png",
       "PackagePath": "staticwebassets\\imagenes\\reservalogo.png"
+    },
+    {
+      "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\js\\datatables-simple-demo.js",
+      "PackagePath": "staticwebassets\\js\\datatables-simple-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
     },
     {
       "Id": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\wwwroot\\js\\site.js",
