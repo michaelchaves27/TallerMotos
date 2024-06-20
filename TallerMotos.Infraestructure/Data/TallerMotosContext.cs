@@ -164,10 +164,10 @@ public partial class TallerMotosContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            // entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
-            //.HasForeignKey(d => d.IDCategoria)
-            // .OnDelete(DeleteBehavior.ClientSetNull)
-            //  .HasConstraintName("FK_Productos_Categoria");
+            entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.Productos)
+           .HasForeignKey(d => d.IDCategoria)
+            .OnDelete(DeleteBehavior.ClientSetNull)
+             .HasConstraintName("FK_Productos_Categoria");
         });
 
         modelBuilder.Entity<Reservas>(entity =>

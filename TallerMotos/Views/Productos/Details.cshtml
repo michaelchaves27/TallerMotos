@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Detalle";
+
 }
 
 <h1>Detalle</h1>
@@ -10,25 +11,25 @@
     <h4>Producto</h4>
     <hr />
     <div class="card flex-row text-right" style="width:60%; margin:0 auto;">
-        <img style="max-height:460px;"
+        <img style="max-height:273px;"
              role="img"
-             @* src="data:image/jpeg;charset=utf-8;base64,@Convert.ToBase64String(Model.Imagen)" *@
-             alt="Proximamente" />
+        <img src="~/imagenes/logoMoto.jpeg" alt="Logo de la empresa">
+
         <div class="card-body">
             <h5 class="card-title">@Html.DisplayFor(model => model.Nombre)</h5>
-            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IDCategoria):</b>  @Html.DisplayFor(model => model.IDCategoria)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IDCategoria):</b>  @Html.DisplayFor(model => model.IdcategoriaNavigation.Nombre)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.Descripcion):</b>  @Html.DisplayFor(model => model.Descripcion)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.Precio):</b>  ₡ @Html.DisplayFor(model => model.Precio)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.Marca):</b>  @Html.DisplayFor(model => model.Marca)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.Calificacion):</b>  @Html.DisplayFor(model => model.Calificacion)</p>
             @* <div class="mb-1 text-muted">
-                <b>@Html.DisplayNameFor(model => model.IdCategoria):</b>
-                <ul>
-                    @foreach (var c in Model.IdCategoria)
-                    {
-                        <li>@c.Nombre</li>
-                    }
-                </ul>
+            <b>@Html.DisplayNameFor(model => model.IdCategoria):</b>
+            <ul>
+            @foreach (var c in Model.IdCategoria)
+            {
+            <li>@c.Nombre</li>
+            }
+            </ul>
             </div> *@
 
         </div>
