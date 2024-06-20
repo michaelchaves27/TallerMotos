@@ -20,11 +20,11 @@
                 @Html.DisplayNameFor(model => model.Fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IDUsuario)
+                @Html.DisplayNameFor(model => model.IdusuarioNavigation)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Estado)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Total)
             </th>
@@ -42,18 +42,19 @@
                     @Html.DisplayFor(modelItem => item.Fecha)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IDUsuario)
+                    @Html.DisplayFor(modelItem => item.IdusuarioNavigation.Nombre)
                 </td>
-                <td>
+                @* <td>
                     @Html.DisplayFor(modelItem => item.Estado)
-                </td>
+                </td> *@
                 <td>
                     @Html.DisplayFor(modelItem => item.Total)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-success" }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                    <a asp-controller="DetalleFactura" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detail</a>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+
                 </td>
             </tr>
         }

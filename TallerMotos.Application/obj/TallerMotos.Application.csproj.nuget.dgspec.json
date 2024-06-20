@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {}
+    "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {}
   },
   "projects": {
-    "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {
+    "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
+        "projectUniqueName": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
         "projectName": "TallerMotos.Application",
-        "projectPath": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
-        "outputPath": "C:\\TallerMotos\\TallerMotos.Application\\obj\\",
+        "projectPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
-                "projectPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj"
+              "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj"
               }
             }
           }
@@ -78,17 +78,17 @@
         }
       }
     },
-    "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
+    "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
         "projectName": "TallerMotos.Infraestructure",
-        "projectPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
-        "outputPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
+        "projectPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mchaves\\Downloads\\TallerMotos\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,6 +1,10 @@
-﻿namespace TallerMotos.Infraestructure.Repository.Interfaces
+﻿using TallerMotos.Infraestructure.Models;
+
+namespace TallerMotos.Infraestructure.Repository.Interfaces
 {
-    internal interface IRepositoryDetalleFactura
+    public interface IRepositoryDetalleFactura
     {
+        Task<DetalleFactura> FindByIdAsync(int id);
+        Task<ICollection<DetalleFactura>> ListAsync(int id);
     }
 }

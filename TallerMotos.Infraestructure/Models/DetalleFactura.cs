@@ -2,9 +2,9 @@
 
 public partial class DetalleFactura
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
-    public int Idfactura { get; set; }
+    public int IDFactura { get; set; }
 
     public string? Codigo { get; set; }
 
