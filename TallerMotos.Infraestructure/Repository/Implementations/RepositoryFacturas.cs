@@ -15,12 +15,21 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
 
         public async Task<Facturas> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            //var @object=await _context.Set<Facturas>().FindAsync(id);
+            var @object = await _context.Set<Facturas>()
+           //.Include(x => x.IdsucursalNavigation)
+           .Include(x => x.IdusuarioNavigation)
+           .Where(x => x.ID == id)
+           .FirstOrDefaultAsync();
+            return @object!;
         }
 
         public async Task<ICollection<Facturas>> ListAsync()
         {
-            var collection = await _context.Set<Facturas>().ToListAsync();
+            var collection = await _context.Set<Facturas>()
+           //.Include(x => x.IdsucursalNavigation)
+           .Include(x => x.IdusuarioNavigation)
+           .ToListAsync();
             return collection;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Application.DTO
 {
@@ -15,7 +16,7 @@ namespace TallerMotos.Application.DTO
         [Display(Name = "Total")]
         public string Total { get; set; } = null!;
 
-
-        //public virtual List<Libro> Libro { get; set; } = new List<Libro>();
+        [Display(Name = "Usuario")]
+        public virtual Usuarios IdusuarioNavigation { get; set; } = null!;
     }
 }

@@ -1,0 +1,117 @@
+﻿@model TallerMotos.Application.DTO.DetalleFacturaDTO
+@{
+    Layout = "_layoutlogin";
+}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factura</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .header, .footer {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .header img {
+            max-width: 150px;
+        }
+
+    .company-details, .customer-details {
+        margin-bottom: 20px;
+    }
+
+        .company-details h2, .customer-details h2 {
+            margin: 0 0 10px;
+        }
+
+    .details {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+        .details th, .details td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .details th {
+            background-color: #f2f2f2;
+        }
+
+    .total {
+        text-align: right;
+        margin-top: 20px;
+    }
+
+        .total h3 {
+            margin: 0;
+        }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="Logo de la empresa">
+            <h1>Factura</h1>
+        </div>
+        <div class="company-details">
+            <h2>Detalles de la Empresa</h2>
+            <p>Nombre de la Empresa</p>
+            <p>Dirección de la Empresa</p>
+            <p>Teléfono: (123) 456-7890</p>
+            <p>Email: empresa@example.com</p>
+        </div>
+        <div class="customer-details">
+            <h2>Detalles del Cliente</h2>
+            <p>Nombre del Cliente</p>
+            <p>Dirección del Cliente</p>
+            <p>Teléfono: (098) 765-4321</p>
+            <p>Email: cliente@example.com</p>
+        </div>
+        <table class="details">
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Producto o Servicio 1</td>
+                    <td>2</td>
+                    <td>$50.00</td>
+                    <td>$100.00</td>
+                </tr>
+                <tr>
+                    <td>Producto o Servicio 2</td>
+                    <td>1</td>
+                    <td>$75.00</td>
+                    <td>$75.00</td>
+                </tr>
+                <!-- Más filas según sea necesario -->
+            </tbody>
+        </table>
+        <div class="total">
+            <h3>Total a Pagar: $175.00</h3>
+        </div>
+        <div class="footer">
+            <p>Gracias por su compra</p>
+        </div>
+    </div>
+</body>
