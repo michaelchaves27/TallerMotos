@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 ﻿using System.ComponentModel.DataAnnotations;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TallerMotos.Infraestructure.Models;
+>>>>>>> Michael
 
 namespace TallerMotos.Application.DTO
 {
@@ -16,6 +26,6 @@ namespace TallerMotos.Application.DTO
         public string Total { get; set; } = null!;
 
 
-        //public virtual List<Libro> Libro { get; set; } = new List<Libro>();
+       // public virtual List<DetalleFacturas> Detalle { get; set; } = new List<DetalleFacturas>();
     }
 }

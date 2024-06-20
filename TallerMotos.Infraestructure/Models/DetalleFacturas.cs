@@ -1,10 +1,10 @@
 ﻿namespace TallerMotos.Infraestructure.Models;
 
-public partial class DetalleFactura
+public partial class DetalleFacturas
 {
     public int Id { get; set; }
 
-    public int Idfactura { get; set; }
+    public int IDFactura { get; set; }
 
     public string? Codigo { get; set; }
 
@@ -22,5 +22,5 @@ public partial class DetalleFactura
 
     public string? Estado { get; set; }
 
-    public virtual Facturas IdfacturaNavigation { get; set; } = null!;
+    public virtual Facturas IDFacturaNavigation { get; set; } = null!;
 }
