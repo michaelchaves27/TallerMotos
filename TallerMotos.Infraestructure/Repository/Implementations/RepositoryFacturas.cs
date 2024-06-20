@@ -19,6 +19,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var @object = await _context.Set<Facturas>()
            //.Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
+           .OrderByDescending(x => x.Fecha)
            .Where(x => x.ID == id)
            .FirstOrDefaultAsync();
             return @object!;
@@ -29,6 +30,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             var collection = await _context.Set<Facturas>()
            //.Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
+           .OrderByDescending(x => x.Fecha)
            .ToListAsync();
             return collection;
         }
