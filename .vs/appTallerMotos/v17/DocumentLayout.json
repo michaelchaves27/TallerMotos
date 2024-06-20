@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\",
+  "WorkspaceRootPath": "C:\\TallerMotos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\detallefactura\\indexdetalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\detallefactura\\indexdetalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\detallefactura\\indexdetalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "IndexDetalle.cshtml",
-              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
               "RelativeDocumentMoniker": "TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
-              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
               "RelativeToolTip": "TallerMotos\\Views\\DetalleFactura\\IndexDetalle.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAFUAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
               "RelativeDocumentMoniker": "TallerMotos\\Views\\Reservas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
               "RelativeToolTip": "TallerMotos\\Views\\Reservas\\Index.cshtml",
               "ViewState": "AQIAADkAAAAAAAAAAAAAAFAAAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -53,9 +53,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
               "RelativeDocumentMoniker": "TallerMotos\\Views\\Factura\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Factura\\Index.cshtml",
               "RelativeToolTip": "TallerMotos\\Views\\Factura\\Index.cshtml",
               "ViewState": "AQIAABsAAAAAAAAAAAAAADYAAACEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
