@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bqsF0e5xPYkp9gbAC3RFLqsQhrvdSKftAtpSKxPJmMM=",
+  "Hash": "4rOc7WhkzN61yBc8lAsIAjrRk15BwUGi3ag73twY0Rw=",
   "Source": "TallerMotos.Web",
   "BasePath": "_content/TallerMotos.Web",
   "Mode": "Default",
@@ -150,25 +150,6 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\logoMoto.jpeg"
     },
     {
-      "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservaIcon.png",
-      "SourceId": "TallerMotos.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\TallerMotos\\TallerMotos\\wwwroot\\",
-      "BasePath": "_content/TallerMotos.Web",
-      "RelativePath": "imagenes/reservaIcon.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imagenes\\reservaIcon.png"
-    },
-    {
       "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservalogo.png",
       "SourceId": "TallerMotos.Web",
       "SourceType": "Discovered",
@@ -186,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagenes\\reservalogo.png"
+    },
+    {
+      "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\sucursalIcon.png",
+      "SourceId": "TallerMotos.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TallerMotos\\TallerMotos\\wwwroot\\",
+      "BasePath": "_content/TallerMotos.Web",
+      "RelativePath": "imagenes/sucursalIcon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\sucursalIcon.png"
     },
     {
       "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\js\\site.js",

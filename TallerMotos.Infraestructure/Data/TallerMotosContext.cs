@@ -228,7 +228,7 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Sucursales>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -244,6 +244,9 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Telefono)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.HasMany(s => s.Reservas)
+                .WithOne(r => r.IdsucursalNavigation)
+                .HasForeignKey(r => r.IDSucursal);
         });
 
         modelBuilder.Entity<Usuarios>(entity =>

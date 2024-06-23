@@ -132,9 +132,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Impuesto)
             </th>
-            @* <th>
+            <th>
                 @Html.DisplayNameFor(model => model.Total)
-            </th> *@
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -157,11 +157,11 @@
                     ₡@Html.DisplayFor(modelItem => item.SubTotal)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Impuesto)%
+                    ₡@Html.DisplayFor(modelItem => item.Impuesto)
                 </td>
-               @*  <td>
-                    @Html.DisplayFor(modelItem => item.Total)
-                </td> *@
+                <td>
+                    ₡@Html.DisplayFor(modelItem => item.Total)
+                </td>
             </tr>
         }
     </tbody>

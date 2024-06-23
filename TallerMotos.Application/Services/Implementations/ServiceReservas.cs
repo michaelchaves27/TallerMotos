@@ -30,5 +30,13 @@ namespace TallerMotos.Application.Services.Implementations
             // Return lista
             return collection;
         }
+
+        public async Task<ICollection<ReservasDTO>> ListBySucursalAsync(int idSucursal)
+        {
+            var list = await _repository.ListBySucursalAsync(idSucursal);
+            var collection = _mapper.Map<ICollection<ReservasDTO>>(list);
+            return collection;
+        }
+
     }
 }

@@ -35,5 +35,14 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .ToListAsync();
             return collection;
         }
+
+        public async Task<ICollection<Reservas>> ListBySucursalAsync(int idSucursal)
+        {
+            var collection = await _context.Set<Reservas>()
+                .Where(r => r.IDSucursal == idSucursal)
+                .ToListAsync();
+            return collection;
+        }
+
     }
 }

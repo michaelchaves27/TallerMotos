@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TallerMotos.Application.DTO.SucursalesDTO>
+@{
+    ViewData["Title"] = "Sucursales";
+}
+
+<h1>Sucursales</h1>
+<section>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card shadow-sm" style="height:580px">
+                    <img class="card-img-top"
+                         style="max-height:290px;"
+                         role="img"
+                         src="~/imagenes/sucursalIcon.png" alt="Imagen" />
+                    
+                    <div class="card-body">
+                        <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Nombre)</h5>
+
+                        <p>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                        <p>Teléfono: @Html.DisplayFor(modelItem => item.Telefono)</p>
+                        <p>Corre: @Html.DisplayFor(modelItem => item.Correo)</p>
+                    </div>
+                    <div class="card-body">
+                        <a asp-action="Index"
+                           asp-route-id="@item.ID"
+                           asp-controller="Reservas"
+                           class="btn btn-info">Detalle</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</section>

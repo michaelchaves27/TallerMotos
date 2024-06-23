@@ -25,12 +25,12 @@
       "PackagePath": "staticwebassets\\imagenes\\logoMoto.jpeg"
     },
     {
-      "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservaIcon.png",
-      "PackagePath": "staticwebassets\\imagenes\\reservaIcon.png"
-    },
-    {
       "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\reservalogo.png",
       "PackagePath": "staticwebassets\\imagenes\\reservalogo.png"
+    },
+    {
+      "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\imagenes\\sucursalIcon.png",
+      "PackagePath": "staticwebassets\\imagenes\\sucursalIcon.png"
     },
     {
       "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\js\\site.js",
