@@ -1,0 +1,89 @@
+﻿@model IEnumerable<TallerMotos.Application.DTO.UsuariosDTO>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>Usuarios</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear</a>
+</p>
+@* <head>
+    <style>
+        .estado-pendiente {
+            color: orange !important;
+        }
+
+        .estado-confirmada {
+            color: dodgerblue !important;
+        }
+
+        .estado-completada {
+            color: green !important;
+        }
+
+        .estado-cancelada {
+            color: red !important;
+        }
+
+        .estado-reprogramada {
+            color: aquamarine !important;
+        }
+    </style>
+
+</head> *@
+
+<table class="table">
+    <thead>
+        <tr>            
+            @* <th>@Html.DisplayNameFor(model => model.ID)</th> *@
+            <th>@Html.DisplayNameFor(model => model.IdrolNavigation)</th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+            <th>@Html.DisplayNameFor(model => model.Correo)</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @* string estadoClase = "";
+
+            if (item.Estado == "Pendiente")
+            {
+                estadoClase = "estado-pendiente";
+            }
+            else if (item.Estado == "Confirmada")
+            {
+                estadoClase = "estado-confirmada";
+            }
+            else if (item.Estado == "Completada")
+            {
+                estadoClase = "estado-completada";
+            }
+            else if (item.Estado == "Cancelada")
+            {
+                estadoClase = "estado-cancelada";
+            }
+            else if (item.Estado == "Reprogramada")
+            {
+                estadoClase = "estado-reprogramada";
+            } *@
+
+            <tr>
+                @* <td>@Html.DisplayFor(modelItem => item.ID)</td> *@
+                <td>@Html.DisplayFor(modelItem => item.IdrolNavigation.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                <td>@Html.DisplayFor(modelItem => item.Correo)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

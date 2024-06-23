@@ -248,7 +248,7 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Usuarios>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Contrasenna).HasMaxLength(50);
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
@@ -256,7 +256,7 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Direccion)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Idrol).HasColumnName("IDRol");
+            entity.Property(e => e.IDRol).HasColumnName("IDRol");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -265,7 +265,7 @@ public partial class TallerMotosContext : DbContext
                 .IsUnicode(false);
 
             entity.HasOne(d => d.IdrolNavigation).WithMany(p => p.Usuarios)
-                .HasForeignKey(d => d.Idrol)
+                .HasForeignKey(d => d.IDRol)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Usuarios_Rol");
         });

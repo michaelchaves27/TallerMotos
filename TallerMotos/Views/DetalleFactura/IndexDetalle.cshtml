@@ -100,14 +100,14 @@
     @* factura encabezado *@
     <div class="company-details">
         <h4>Detalles de la Sucursal</h4>
-        <p>Sucursal:@ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Nombre</p>
+        <p>Sucursal: @ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Nombre</p>
         <p>Teléfono: @ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Telefono </p>
         <p>Email: @ultDetalle?.IdfacturaNavigation.IdsucursalNavigation.Correo </p>
     </div>
     <div class="customer-details">
         <h4>Detalles del Cliente</h4>
         <p>Nombre del Cliente: @ultDetalle?.IdfacturaNavigation.IdusuarioNavigation.Nombre </p>
-        <p>Identificación:  @ultDetalle?.IdfacturaNavigation.IdusuarioNavigation.Id </p>
+        <p>Identificación:  @ultDetalle?.IdfacturaNavigation.IdusuarioNavigation.ID </p>
     </div>
 </div>
 
@@ -151,13 +151,13 @@
                     @Html.DisplayFor(modelItem => item.Cantidad)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Precio)
+                    ₡@Html.DisplayFor(modelItem => item.Precio)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SubTotal)
+                    ₡@Html.DisplayFor(modelItem => item.SubTotal)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Impuesto)
+                    @Html.DisplayFor(modelItem => item.Impuesto)%
                 </td>
                @*  <td>
                     @Html.DisplayFor(modelItem => item.Total)
@@ -167,9 +167,9 @@
     </tbody>
 </table>
 <div class="total">
-    <h4>SubTotal: @ultDetalle?.IdfacturaNavigation.SubTotal</h4>
-    <h4>Impuesto: @ultDetalle?.IdfacturaNavigation.Impuesto</h4>
-    <h3>Total: @ultDetalle?.IdfacturaNavigation.Total</h3>
+    <h4>SubTotal: ₡@ultDetalle?.IdfacturaNavigation.SubTotal</h4>
+    <h4>Impuesto: ₡@ultDetalle?.IdfacturaNavigation.Impuesto</h4>
+    <h3>Total: ₡@ultDetalle?.IdfacturaNavigation.Total</h3>
 </div>
 <div class="footer">
     <p>Gracias por su compra</p>

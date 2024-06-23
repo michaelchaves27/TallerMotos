@@ -50,6 +50,18 @@ builder.Services.AddAutoMapper(config =>
 });
 //****************************************************************
 
+//***********************Usuarios
+//***Repository
+builder.Services.AddTransient<IRepositoryUsuarios, RepositoryUsuarios>();
+//**Services
+builder.Services.AddTransient<IServiceUsuarios, ServiceUsuarios>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<UsuariosProfile>();
+});
+//****************************************************************
+
 //************************ Productos
 //***Repository
 builder.Services.AddTransient<IRepositoryProductos, RepositoryProductos>();
