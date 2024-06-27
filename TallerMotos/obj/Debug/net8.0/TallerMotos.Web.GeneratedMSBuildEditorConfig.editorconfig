@@ -58,12 +58,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TallerMotos/TallerMotos/Views/Productos/TablaProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFRhYmxhUHJvZHVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TallerMotos/TallerMotos/Views/Reservas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Reservas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TallerMotos/TallerMotos/Views/Servicios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Shared/Error.cshtml]
@@ -80,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/TallerMotos/TallerMotos/Views/Sucursales/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TallerMotos/TallerMotos/Views/Sucursales/TablaSucursales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xUYWJsYVN1Y3Vyc2FsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Usuarios/Index.cshtml]

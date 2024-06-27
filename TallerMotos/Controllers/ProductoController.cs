@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
+using X.PagedList;
 
 //using X.PagedList;
 namespace TallerMotos.Web.Controllers
@@ -10,8 +11,7 @@ namespace TallerMotos.Web.Controllers
         private readonly IServiceProductos _serviceProductos;
         // private readonly IServiceAutor _serviceAutor;
         //private readonly IServiceCategoria _serviceCategoria;
-        public ProductosController(IServiceProductos serviceProductos)//, 
-                                                                      //IServiceCategoria serviceCategoria)
+        public ProductosController(IServiceProductos serviceProductos)
         {
             _serviceProductos = serviceProductos;
             //  _serviceAutor = serviceAutor;
@@ -25,12 +25,12 @@ namespace TallerMotos.Web.Controllers
 
             return View(collection);
         }
-        /*public async Task<ActionResult> IndexAdmin(int? page)
+        public async Task<ActionResult> TablaProductos(int? page)
         {
             var collection = await _serviceProductos.ListAsync();
             //Cantidad de elementos por página
             return View(collection.ToPagedList(page ?? 1, 5));
-        }*/
+        }
         // GET: ProductosController/Details/5
         public async Task<ActionResult> Details(int? id)
         {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VQt/eVRradJjxIOINy9jZ5OXIkNMXRQDgoK5VFfAzA7PYctZOn0ij1tySY11d9UtNWIP0t69QjT663gCuWLpQg==",
+  "dgSpecHash": "ACR1vEtA46kWNVvDwAEx81DRDcwf5RU7l8bVYVGeCfmYUHTqzLZ9urI5Iv6KlriZMi/fGzLpi18t82Oqof0iiQ==",
   "success": true,
   "projectFilePath": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
   "expectedPackageFiles": [
@@ -115,7 +115,9 @@
     "C:\\Users\\jbfon\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\jbfon\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\jbfon\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\jbfon\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
+    "C:\\Users\\jbfon\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
+    "C:\\Users\\jbfon\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\jbfon\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

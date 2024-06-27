@@ -1,6 +1,10 @@
-﻿namespace TallerMotos.Application.Services.Interfaces
+﻿using TallerMotos.Application.DTO;
+
+namespace TallerMotos.Application.Services.Interfaces
 {
-    internal interface IServiceServicios
+    public interface IServiceServicios
     {
+        Task<ICollection<ServiciosDTO>> ListAsync();
+        Task<ServiciosDTO> FindByIdAsync(int id);
     }
 }

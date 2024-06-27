@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
+using X.PagedList;
 
 namespace TallerMotos.Web.Controllers
 {
@@ -17,6 +19,13 @@ namespace TallerMotos.Web.Controllers
             var collection = await _serviceSucursales.ListAsync();
             ViewData["Title"] = "Index";
             return View(collection);
+        }
+
+        public async Task<ActionResult> TablaSucursales(int? page)
+        {
+            var collection = await _serviceSucursales.ListAsync();
+            //Cantidad de elementos por página
+            return View(collection.ToPagedList(page ?? 1, 5));
         }
 
         public async Task<ActionResult> Details(int? id)

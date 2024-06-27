@@ -2,7 +2,7 @@
 
 public partial class Servicios
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
     public string? Nombre { get; set; }
 

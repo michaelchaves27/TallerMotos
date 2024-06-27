@@ -3,9 +3,16 @@
     ViewData["Title"] = "Cátalogo de Productos";
 }
 
-<h1>Cátalogo de Productos</h1>
+<h1>Cátalogo de Productos</h1> 
+<p>
+	<a asp-action="TablaProductos" class="btn btn-primary">Inventario</a>
+</p>
+
 <section>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" >
+
+        
+        
         @foreach (var item in Model)
         {
             <div class="col">

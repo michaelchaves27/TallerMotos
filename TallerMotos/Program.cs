@@ -16,6 +16,8 @@ builder.Services.AddControllersWithViews();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 //********************************
+
+
 //Configurar D.I.
 //***Repository
 builder.Services.AddTransient<IRepositoryFacturas, RepositoryFacturas>();
@@ -36,6 +38,17 @@ builder.Services.AddTransient<IServiceDetalleFactura, ServiceDetalleFactura>();
 builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile<DetalleFacturaProfile>();
+});
+
+//Servicios
+//***Repository
+builder.Services.AddTransient<IRepositoryServicios, RepositoryServicios>();
+//**Services
+builder.Services.AddTransient<IServiceServicios, ServiceServicios>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<ServiciosProfile>();
 });
 
 //Sucursales

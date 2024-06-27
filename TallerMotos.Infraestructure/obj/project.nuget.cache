@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "i8bnAUhfSqBMsKtMpNukgEr3maYavvgBwZFpFcrZdbkVF+FJbXQhax4rOl+cWRu3bZWGWv15l9mZzDhGXaAeUA==",
+  "dgSpecHash": "6vd11tMx9bwPCKY8KYtbhdm2S1pUm9BSOWnxLxRre3XUtGY0qSB3hUlHdM8SF+9gaW47+7XXP0VC2ltloutunA==",
   "success": true,
   "projectFilePath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
   "expectedPackageFiles": [
@@ -79,7 +79,9 @@
     "C:\\Users\\jbfon\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
     "C:\\Users\\jbfon\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\jbfon\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\jbfon\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\jbfon\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\jbfon\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\jbfon\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

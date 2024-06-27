@@ -15,7 +15,7 @@ namespace TallerMotos.Application.DTO
         //[ValidateNever]
         //public virtual List<CategoriaDTO> IDCategoria { get; set; } = null!;
 
-        [Display(Name = "Nombre Producto")]
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; } = null!;
 
         [Display(Name = "Descripción")]

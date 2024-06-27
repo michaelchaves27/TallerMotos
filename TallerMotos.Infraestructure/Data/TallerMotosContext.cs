@@ -208,7 +208,7 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Servicios>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Cilindrada)
                 .HasMaxLength(50)
                 .IsUnicode(false);

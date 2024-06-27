@@ -11,7 +11,8 @@
           "AutoMapper": "13.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
           "TallerMotos.Application": "1.0.0",
-          "TallerMotos.Infraestructure": "1.0.0"
+          "TallerMotos.Infraestructure": "1.0.0",
+          "X.PagedList.Mvc.Core": "9.1.2"
         },
         "runtime": {
           "TallerMotos.Web.dll": {}
@@ -1996,11 +1997,31 @@
           }
         }
       },
+      "X.PagedList/9.1.2": {
+        "runtime": {
+          "lib/net8.0/X.PagedList.dll": {
+            "assemblyVersion": "9.1.2.0",
+            "fileVersion": "9.1.2.0"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/9.1.2": {
+        "dependencies": {
+          "X.PagedList": "9.1.2"
+        },
+        "runtime": {
+          "lib/net8.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "9.1.2.0",
+            "fileVersion": "9.1.2.0"
+          }
+        }
+      },
       "TallerMotos.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "TallerMotos.Infraestructure": "1.0.0"
+          "TallerMotos.Infraestructure": "1.0.0",
+          "X.PagedList.Mvc.Core": "9.1.2"
         },
         "runtime": {
           "TallerMotos.Application.dll": {}
@@ -2009,7 +2030,8 @@
       "TallerMotos.Infraestructure/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+          "X.PagedList.Mvc.Core": "9.1.2"
         },
         "runtime": {
           "TallerMotos.Infraestructure.dll": {}
@@ -3275,6 +3297,20 @@
       "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
+    },
+    "X.PagedList/9.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qePK/lt+Y8PeQM9E/DkWY/AIyxDVEMX0XFCU5CfLP1+Y9SUThFyaY8/QgldOg9uOJLvse1i3oAQDJOrhb3usdw==",
+      "path": "x.pagedlist/9.1.2",
+      "hashPath": "x.pagedlist.9.1.2.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/9.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+g8fJgXXVhl17BzVv8bGAkWooul23REeGNIJ4jUlA1Iqbw8Yq0OFMx/mGvjjEhIBNwDrjdhJKXGt7N7jejZWcQ==",
+      "path": "x.pagedlist.mvc.core/9.1.2",
+      "hashPath": "x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
     },
     "TallerMotos.Application/1.0.0": {
       "type": "project",

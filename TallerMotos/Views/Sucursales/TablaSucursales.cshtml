@@ -1,0 +1,90 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<TallerMotos.Application.DTO.SucursalesDTO>
+
+@{
+
+    Layout = "_Layout";
+}
+
+<h1>Sucursales</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    ₡@Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
+                    <a asp-controller="DetalleSucursales" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("TablaSucursales", new { page }), new
+                                 PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        }
+                                 )
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
