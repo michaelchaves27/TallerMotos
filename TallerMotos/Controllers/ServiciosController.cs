@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
+using X.PagedList;
 
 namespace TallerMotos.Web.Controllers
 {
@@ -12,11 +14,13 @@ namespace TallerMotos.Web.Controllers
         {
             _serviceServicios = serviceServicios;
         }
-        public async Task<IActionResult> Index()
+
+        [HttpGet]
+        public async Task<IActionResult> Index(int? page)
         {
             var collection = await _serviceServicios.ListAsync();
             ViewData["Title"] = "Index";
-            return View(collection);
+            return View(collection.ToPagedList(page ?? 1, 5));
         }
 
         public async Task<ActionResult> Details(int? id)
@@ -25,7 +29,7 @@ namespace TallerMotos.Web.Controllers
             {
                 if (id == null)
                 {
-                    return RedirectToAction("IndexAdmin");
+                    return RedirectToAction("Index");
                 }
                 var @object = await _serviceServicios.FindByIdAsync(id.Value);
                 if (@object == null)
@@ -46,6 +50,32 @@ namespace TallerMotos.Web.Controllers
                 DeserializeObject<ErrorMiddlewareViewModel>(messageJson);
             ViewBag.ErrorMessages = errorMessages;
             return View("ErrorHandler");
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(ServiciosDTO dto)
+        {
+            //Validación del formulario
+            if (!ModelState.IsValid)
+            {
+                // Lee del ModelState todos los errores que
+                // vienen para el lado del server
+                string errors = string.Join("; ", ModelState.Values
+                                   .SelectMany(x => x.Errors)
+                                   .Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+            //Crear
+            await _serviceServicios.AddAsync(dto);
+            return RedirectToAction("Index");
         }
     }
 }

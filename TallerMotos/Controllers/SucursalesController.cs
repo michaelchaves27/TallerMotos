@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using TallerMotos.Application.Services.Implementations;
+using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -55,6 +55,38 @@ namespace TallerMotos.Web.Controllers
                 DeserializeObject<ErrorMiddlewareViewModel>(messageJson);
             ViewBag.ErrorMessages = errorMessages;
             return View("ErrorHandler");
+        }
+
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+
+        // POST: SucursalesController/Create 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(SucursalesDTO dto)
+        {
+            
+
+            //Validación del formulario 
+            if (!ModelState.IsValid)
+            {
+                // Lee del ModelState todos los errores que 
+                // vienen para el lado del server 
+                string errors = string.Join("; ", ModelState.Values
+                                   .SelectMany(x => x.Errors)
+                                   .Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+            //Crear 
+            await _serviceSucursales.AddAsync(dto);
+            return RedirectToAction("TablaSucursales");
         }
     }
 }

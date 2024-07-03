@@ -29,5 +29,14 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
                .ToListAsync();
             return collection;
         }
+
+        public async Task<int> AddAsync(Sucursales entity)
+        {
+            //actualizarCategorias(selectedCategorias, entity);
+            await _context.Set<Sucursales>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity.ID;
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
+using X.PagedList;
 
 
 namespace TallerMotos.Web.Controllers
@@ -13,11 +14,11 @@ namespace TallerMotos.Web.Controllers
         {
             _serviceFactura = serviceFactura;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
             var collection = await _serviceFactura.ListAsync();
             ViewData["Title"] = "Index";
-            return View(collection);
+            return View(collection.ToPagedList(page ?? 1, 5));
         }
         public IActionResult ErrorHandler(string messageJson)
         {

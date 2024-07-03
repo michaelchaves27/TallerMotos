@@ -1,4 +1,6 @@
-﻿@model IEnumerable<TallerMotos.Application.DTO.FacturaDTO>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<TallerMotos.Application.DTO.FacturaDTO>
 
 @{
 
@@ -59,4 +61,24 @@
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("Index", new { page }), new
+                                 PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        }
+                                 )
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
 </table>

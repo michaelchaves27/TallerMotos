@@ -6,5 +6,6 @@ namespace TallerMotos.Infraestructure.Repository.Interfaces
     {
         Task<ICollection<Sucursales>> ListAsync();
         Task<Sucursales> FindByIdAsync(int id);
+        Task<int> AddAsync(Sucursales entity);
     }
 }

@@ -1,8 +1,10 @@
-﻿@model IEnumerable<TallerMotos.Application.DTO.ServiciosDTO>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<TallerMotos.Application.DTO.ServiciosDTO>
 
 @{
 
-    Layout = "_Layout";
+        ViewData["Title"] = "Servicios";
 }
 
 <h1>Servicios</h1>
@@ -58,11 +60,31 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
-                    <a asp-controller="DetalleServicios" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
+                    <a asp-controller="Servicios" asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
 
                 </td>
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("Index", new { page }), new
+                                 PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        }
+                                 )
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
 </table>

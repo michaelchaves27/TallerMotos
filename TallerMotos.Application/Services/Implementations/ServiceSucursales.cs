@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Infraestructure.Models;
 using TallerMotos.Infraestructure.Repository.Interfaces;
 
 namespace TallerMotos.Application.Services.Implementations
@@ -29,6 +30,12 @@ namespace TallerMotos.Application.Services.Implementations
             var collection = _mapper.Map<ICollection<SucursalesDTO>>(list);
             // Return lista
             return collection;
+        }
+
+        public async Task<int> AddAsync(SucursalesDTO dto)
+        {
+            var objectMapped = _mapper.Map<Sucursales>(dto);
+            return await _repository.AddAsync(objectMapped);
         }
     }
 }

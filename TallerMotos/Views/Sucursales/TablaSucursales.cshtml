@@ -10,7 +10,7 @@
 <h1>Sucursales</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Crear</a>
+    <a class="btn btn-primary" asp-controller="Sucursales" asp-action="Create">Crear</a>
 </p>
 <table class="table">
     <thead>
@@ -50,7 +50,7 @@
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
                 <td>
-                    ₡@Html.DisplayFor(modelItem => item.Telefono)
+                    @Html.DisplayFor(modelItem => item.Telefono)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Direccion)
@@ -60,7 +60,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
-                    <a asp-controller="DetalleSucursales" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
+                    <a asp-controller="Sucursales" asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
 
                 </td>
