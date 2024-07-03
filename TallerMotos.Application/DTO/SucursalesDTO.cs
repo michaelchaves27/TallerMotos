@@ -17,8 +17,9 @@ namespace TallerMotos.Application.DTO
         [Required(ErrorMessage = "{0} es un dato requerido")]
         public string Descripcion { get; set; } = null!;
 
-        [Display(Name = "Telefono")]
+        [Display(Name = "Teléfono")]
         [Required(ErrorMessage = "{0} es un dato requerido")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "El {0} solo puede contener números.")]
         public string Telefono { get; set; } = null!;
 
         [Display(Name = "Direccion")]
@@ -27,6 +28,7 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Correo")]
         [Required(ErrorMessage = "{0} es un dato requerido")]
+        [EmailAddress(ErrorMessage = "Debe tener un formato de correo @gmail.com/@hotmail.com")]
         public string Correo { get; set; } = null!;
 
         [Display(Name = "Reservas")]

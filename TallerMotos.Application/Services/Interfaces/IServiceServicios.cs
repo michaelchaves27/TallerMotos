@@ -8,5 +8,6 @@ namespace TallerMotos.Application.Services.Interfaces
         Task<ServiciosDTO> FindByIdAsync(int id);
         Task<int> AddAsync(ServiciosDTO dto);
         Task UpdateAsync(int id, ServiciosDTO dto);
+        Task<ServiciosDTO> GetByIdAsync(int id);
     }
 }

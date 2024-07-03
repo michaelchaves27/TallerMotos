@@ -36,19 +36,13 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             await _context.SaveChangesAsync();
             return entity.ID;
         }
-        //public async Task UpdateAsync(Servicios entity)
-        //{
-        //    entity.IdAutorNavigation = _context.Autor.Find(entity.IdAutor);
-        //    //_context.Attach(entity.IdAutorNavigation);
-        //    await _context.SaveChangesAsync();
-        //}
+        
 
         public async Task UpdateAsync(Servicios entity)
         {
             // Adjuntar la entidad al contexto de Entity Framework
             _context.Entry(entity).State = EntityState.Modified;
 
-            // Guardar los cambios realizados en el contexto de Entity Framework de forma asíncrona
             await _context.SaveChangesAsync();
         }
 

@@ -45,5 +45,11 @@ namespace TallerMotos.Application.Services.Implementations
 
             await _repository.UpdateAsync(entity);
         }
+
+        public async Task<ServiciosDTO> GetByIdAsync(int id)
+        {
+            var servicios = await _repository.FindByIdAsync(id);
+            return _mapper.Map<ServiciosDTO>(servicios);
+        }
     }
 }

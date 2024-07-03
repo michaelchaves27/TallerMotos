@@ -88,5 +88,40 @@ namespace TallerMotos.Web.Controllers
             await _serviceSucursales.AddAsync(dto);
             return RedirectToAction("TablaSucursales");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var sucursalesDTO = await _serviceSucursales.GetByIdAsync(id);
+            if (sucursalesDTO == null)
+            {
+                return NotFound();
+            }
+            return View(sucursalesDTO);
+        }
+
+        // POST: SucursalesController/Edit/5 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(int id, SucursalesDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Lee del ModelState todos los errores que 
+                // vienen para el lado del server 
+                string errors = string.Join("; ", ModelState.Values
+                                   .SelectMany(x => x.Errors)
+                                   .Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+            else
+            {
+                //Actualizar 
+                await _serviceSucursales.UpdateAsync(id, dto);
+                return RedirectToAction("TablaSucursales");
+            }
+        }
+
     }
 }

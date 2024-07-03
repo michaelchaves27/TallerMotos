@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -55,6 +57,16 @@ namespace TallerMotos.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            // Lista de cilindrajes disponibles
+            var cilindrajes = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "125cc", Text = "125cc" },
+                new SelectListItem { Value = "250cc", Text = "250cc" },
+                new SelectListItem { Value = "500cc", Text = "500cc" },
+                new SelectListItem { Value = "Todas", Text = "Todas" }
+            };
+
+            ViewBag.Cilindrajes = new SelectList(cilindrajes, "Value", "Text");
             return View();
         }
 
@@ -76,6 +88,54 @@ namespace TallerMotos.Web.Controllers
             //Crear
             await _serviceServicios.AddAsync(dto);
             return RedirectToAction("Index");
+        }
+
+
+        // Método GET para Editar
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var ServiciosDto = await _serviceServicios.GetByIdAsync(id);
+            if (ServiciosDto == null)
+            {
+                return NotFound();
+            }
+
+            // Lista de cilindrajes disponibles
+            var cilindrajes = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "125cc", Text = "125cc" },
+                new SelectListItem { Value = "250cc", Text = "250cc" },
+                new SelectListItem { Value = "500cc", Text = "500cc" },
+                new SelectListItem { Value = "Todas", Text = "Todas" }
+            };
+
+            ViewBag.Cilindrajes = new SelectList(cilindrajes, "Value", "Text");
+
+            return View(ServiciosDto);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(int id, ServiciosDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Lee del ModelState todos los errores que 
+                // vienen para el lado del server 
+                string errors = string.Join("; ", ModelState.Values
+                                   .SelectMany(x => x.Errors)
+                                   .Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+            else
+            {
+                //Actualizar 
+                await _serviceServicios.UpdateAsync(id, dto);
+                return RedirectToAction("Index");
+            }
         }
     }
 }

@@ -39,6 +39,9 @@
                                 <li>
                                     <a asp-controller="Sucursales" asp-action="TablaSucursales" class="nav-link px-0"><span class="d-none d-sm-inline"></span> Sucursales </a>
                                 </li>
+                                <li>
+                                    <a asp-controller="Horarios" asp-action="Index" class="nav-link px-0"><span class="d-none d-sm-inline"></span> Horarios </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -83,7 +86,10 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 
-                            <li><a class="dropdown-item">Salir</a></li>
+                            <li><a class="dropdown-item">Salir</a></li
+                            <li>
+                                <a asp-controller="Login" asp-action="Index" class="dropdown-item"><span class="d-none d-sm-inline"></span>Salir</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

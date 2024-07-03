@@ -19,10 +19,12 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Precio")]
         [Required(ErrorMessage = "{0} es un dato requerido")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "El {0} solo puede contener números.")]
         public string Precio { get; set; } = null!;
 
         [Display(Name = "Tiempo")]
         [Required(ErrorMessage = "{0} es un dato requerido")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "El {0} solo puede contener números.")]
         public string Tiempo { get; set; } = null!;
 
         [Display(Name = "Cilindrada")]
