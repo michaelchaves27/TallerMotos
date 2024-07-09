@@ -23,26 +23,34 @@ namespace TallerMotos.Web.Controllers
         //    return View(collection);
         //}
 
-        public async Task<IActionResult> Index(int? idSucursal)
+
+        public async Task<IActionResult> Index(int id)
         {
-            var sucursales = await _serviceSucursales.ListAsync();
-            ViewBag.Sucursales = sucursales;
-            ICollection<ReservasDTO> collection;
-
-            if (idSucursal.HasValue)
-            {
-                collection = await _serviceReservas.ListBySucursalAsync(idSucursal.Value);
-            }
-            else
-            {
-                collection = await _serviceReservas.ListAsync();
-            }
-
+            var collection = await _serviceReservas.ListBySucursalAsync(id);
             ViewData["Title"] = "Index";
-            ViewData["SucursalId"] = idSucursal;
-
             return View(collection);
         }
+
+        //public async Task<IActionResult> Index(int? idSucursal)
+        //{
+        //    var sucursales = await _serviceSucursales.ListAsync();
+        //    ViewBag.Sucursales = sucursales;
+        //    ICollection<ReservasDTO> collection;
+
+        //    if (idSucursal.HasValue)
+        //    {
+        //        collection = await _serviceReservas.ListBySucursalAsync(idSucursal.Value);
+        //    }
+        //    else
+        //    {
+        //        collection = await _serviceReservas.ListAsync();
+        //    }
+
+        //    ViewData["Title"] = "Index";
+        //    ViewData["SucursalId"] = idSucursal;
+
+        //    return View(collection);
+        //}
 
 
         public async Task<ActionResult> Details(int? id)
