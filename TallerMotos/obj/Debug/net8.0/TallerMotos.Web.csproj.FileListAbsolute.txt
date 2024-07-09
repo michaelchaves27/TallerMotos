@@ -1873,3 +1873,6 @@ C:\Users\jbfon\OneDrive\Escritorio\TallerMotos\TallerMotos\obj\Debug\net8.0\ref\
 C:\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.dll
 C:\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 C:\TallerMotos\TallerMotos\obj\Debug\net8.0\TallerMotos.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\obj\Debug\net8.0\TallerMotos.Web.MvcApplicationPartsAssemblyInfo.cs

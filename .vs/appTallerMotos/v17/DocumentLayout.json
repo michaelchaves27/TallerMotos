@@ -1,12 +1,117 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\TallerMotos\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\users\\mchaves\\music\\ambiente web ii\\proyecto\\tallermotos\\tallermotos\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\tallermotos\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\tallermotos\\views\\sucursales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\sucursales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\tallermotos.application\\services\\implementations\\servicereservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\servicereservas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\tallermotos.application\\perfiles\\reservasprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\perfiles\\reservasprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\tallermotos.application\\dto\\reservasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\dto\\reservasdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Index.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Sucursales\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Index.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Sucursales\\Index.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-04T02:37:54.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceReservas.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceReservas.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceReservas.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceReservas.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceReservas.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:35:15.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReservasProfile.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\ReservasProfile.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Perfiles\\ReservasProfile.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\Perfiles\\ReservasProfile.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Perfiles\\ReservasProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:34:56.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReservasDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\ReservasDTO.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\DTO\\ReservasDTO.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos.Application\\DTO\\ReservasDTO.cs",
+              "RelativeToolTip": "TallerMotos.Application\\DTO\\ReservasDTO.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:34:45.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReservasController.cs",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\ReservasController.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Controllers\\ReservasController.cs",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Controllers\\ReservasController.cs",
+              "RelativeToolTip": "TallerMotos\\Controllers\\ReservasController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBwAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T02:31:55.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mchaves\\Music\\Ambiente WEB II\\Proyecto\\TallerMotos\\TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Reservas\\Index.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-04T02:29:53.544Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
