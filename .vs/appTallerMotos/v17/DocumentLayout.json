@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\TallerMotos\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|C:\\TallerMotos\\tallermotos.infraestructure\\repository\\implementations\\repositoryhorarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\implementations\\repositoryhorarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\TallerMotos\\tallermotos\\views\\horarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\horarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\TallerMotos\\tallermotos\\controllers\\horarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\controllers\\horarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\TallerMotos\\tallermotos.application\\services\\implementations\\servicehorarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\servicehorarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceHorarios.cs",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceHorarios.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceHorarios.cs",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceHorarios.cs",
+              "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceHorarios.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAADwvyAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T16:35:36.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Horarios\\Create.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Create.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Horarios\\Create.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAowBgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-05T15:56:02.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HorariosController.cs",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Controllers\\HorariosController.cs",
+              "RelativeDocumentMoniker": "TallerMotos\\Controllers\\HorariosController.cs",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Controllers\\HorariosController.cs",
+              "RelativeToolTip": "TallerMotos\\Controllers\\HorariosController.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAUwFkAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T15:39:59.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RepositoryHorarios.cs",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryHorarios.cs",
+              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryHorarios.cs",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryHorarios.cs",
+              "RelativeToolTip": "TallerMotos.Infraestructure\\Repository\\Implementations\\RepositoryHorarios.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAkwCQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T15:36:14.93Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

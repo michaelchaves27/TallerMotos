@@ -25,7 +25,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         public async Task<ICollection<Sucursales>> ListAsync()
         {
             var collection = await _context.Set<Sucursales>()
-               .Include(s => s.Reservas)
+               //   .Include(s => s.Reservas)
                .ToListAsync();
             return collection;
         }

@@ -126,7 +126,7 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Horarios>(entity =>
         {
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Dia)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -136,10 +136,10 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Hora)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Idsucursal).HasColumnName("IDSucursal");
+            entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
 
-            entity.HasOne(d => d.IdsucursalNavigation).WithMany(p => p.Horarios)
-                .HasForeignKey(d => d.Idsucursal)
+            entity.HasOne(d => d.IdsucursalesNavigation).WithMany(p => p.Horarios)
+                .HasForeignKey(d => d.IDSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Horarios_Sucursales");
         });

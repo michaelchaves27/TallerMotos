@@ -34,7 +34,7 @@ namespace TallerMotos.Web.Controllers
             {
                 if (id == null)
                 {
-                    return RedirectToAction("IndexAdmin");
+                    return RedirectToAction("Index");
                 }
                 var @object = await _serviceSucursales.FindByIdAsync(id.Value);
                 if (@object == null)

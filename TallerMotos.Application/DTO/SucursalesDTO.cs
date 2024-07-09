@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Application.DTO
 {
@@ -34,6 +35,7 @@ namespace TallerMotos.Application.DTO
         [Display(Name = "Reservas")]
         [ValidateNever]
         public ICollection<ReservasDTO> Reservas { get; set; } = null!;
+        public virtual List<Horarios> Horarios { get; set; } = new List<Horarios>();
 
     }
 }

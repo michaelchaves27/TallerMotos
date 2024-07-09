@@ -2,9 +2,9 @@
 
 public partial class Horarios
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
-    public int Idsucursal { get; set; }
+    public int IDSucursal { get; set; }
 
     public string? Dia { get; set; }
 
@@ -12,5 +12,5 @@ public partial class Horarios
 
     public string? Estado { get; set; }
 
-    public virtual Sucursales IdsucursalNavigation { get; set; } = null!;
+    public virtual Sucursales IdsucursalesNavigation { get; set; } = null!;
 }

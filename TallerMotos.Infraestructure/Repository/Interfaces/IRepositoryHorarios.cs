@@ -1,6 +1,12 @@
-﻿namespace TallerMotos.Infraestructure.Repository.Interfaces
+﻿using TallerMotos.Infraestructure.Models;
+
+namespace TallerMotos.Infraestructure.Repository.Interfaces
 {
-    internal interface IRepositoryHorarios
+    public interface IRepositoryHorarios
     {
+        Task<ICollection<Horarios>> ListAsync();
+        Task<Horarios> FindByIdAsync(int id);
+        Task<int> AddAsync(Horarios entity);
+        Task UpdateAsync(Horarios entity);
     }
 }

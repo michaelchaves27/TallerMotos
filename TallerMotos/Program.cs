@@ -72,7 +72,6 @@ builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile<ReservasProfile>();
 });
-//****************************************************************
 
 //***********************Usuarios
 //***Repository
@@ -84,7 +83,6 @@ builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile<UsuariosProfile>();
 });
-//****************************************************************
 
 //************************ Productos
 //***Repository
@@ -97,8 +95,19 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile<ProductosProfile>();
 });
 
-//***********************
 
+//************************ Horarios
+//***Repository
+builder.Services.AddTransient<IRepositoryHorarios, RepositoryHorarios>();
+//**Services
+builder.Services.AddTransient<IServiceHorarios, ServiceHorarios>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<HorariosProfile>();
+});
+
+//***********************
 // Configuar Conexión a la Base de Datos SQL
 builder.Services.AddDbContext<TallerMotosContext>(options =>
 {
