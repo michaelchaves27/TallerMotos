@@ -17,36 +17,35 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TallerMotos.Web
 build_property.RootNamespace = TallerMotos.Web
-build_property.ProjectDir = C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\
+build_property.ProjectDir = C:\TallerMotos\TallerMotos\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos
+build_property.MSBuildProjectDirectory = C:\TallerMotos\TallerMotos
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/DetalleFactura/IndexDetalle.cshtml]
+[C:/TallerMotos/TallerMotos/Views/DetalleFactura/IndexDetalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZUZhY3R1cmFcSW5kZXhEZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Factura/Details.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Factura/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Factura/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Factura/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Home/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Home/Privacy.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
 [C:/TallerMotos/TallerMotos/Views/Horarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,92 +55,89 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Login/Index.cshtml]
-=======
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Login/Index.cshtml]
->>>>>>> main
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Productos/Details.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Productos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Productos/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Productos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Productos/TablaProductos.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Productos/TablaProductos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXFRhYmxhUHJvZHVjdG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Reservas/Details.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Reservas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Reservas/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Reservas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Servicios/Create.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Servicios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Servicios/Details.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Servicios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Servicios/Edit.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Servicios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Servicios/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Servicios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Shared/Error.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Shared/_Layoutlogin.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Shared/_Layoutlogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Sucursales/Create.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Sucursales/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Sucursales/Details.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Sucursales/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Sucursales/Edit.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Sucursales/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Sucursales/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Sucursales/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Sucursales/TablaSucursales.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Sucursales/TablaSucursales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxlc1xUYWJsYVN1Y3Vyc2FsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Usuarios/Index.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/_ViewImports.cshtml]
+[C:/TallerMotos/TallerMotos/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/_ViewStart.cshtml]
+[C:/TallerMotos/TallerMotos/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mchaves/Music/Ambiente WEB II/Proyecto/TallerMotos/TallerMotos/Views/Shared/_Layout.cshtml]
+[C:/TallerMotos/TallerMotos/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-df3j51305p

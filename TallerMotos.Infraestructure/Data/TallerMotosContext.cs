@@ -136,7 +136,7 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Hora)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
+            //entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
 
             entity.HasOne(d => d.IdsucursalesNavigation).WithMany(p => p.Horarios)
                 .HasForeignKey(d => d.IDSucursal)
