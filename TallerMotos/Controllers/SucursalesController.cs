@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -10,9 +12,12 @@ namespace TallerMotos.Web.Controllers
     public class SucursalesController : Controller
     {
         private readonly IServiceSucursales _serviceSucursales;
-        public SucursalesController(IServiceSucursales serviceSucursales)
+        private readonly IServiceUsuarios _serviceUsuarios;
+
+        public SucursalesController(IServiceSucursales serviceSucursales, IServiceUsuarios serviceUsuarios)
         {
             _serviceSucursales = serviceSucursales;
+            _serviceUsuarios = serviceUsuarios;
         }
         public async Task<IActionResult> Index()
         {
@@ -58,9 +63,15 @@ namespace TallerMotos.Web.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult Create()
+        //[HttpGet]
+        public async Task<IActionResult> Create()
         {
+            var usuarios = await _serviceUsuarios.ListAsync();
+            ViewBag.ListaUsuarios = new MultiSelectList(
+            items: usuarios,
+            dataValueField: nameof(UsuariosDTO.ID),
+            dataTextField: nameof(UsuariosDTO.Nombre)
+            );
             return View();
         }
 
@@ -69,7 +80,7 @@ namespace TallerMotos.Web.Controllers
         // POST: SucursalesController/Create 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(SucursalesDTO dto)
+        public async Task<ActionResult> Create(SucursalesDTO dto, string[] selectedUsuarios)
         {
             
 
@@ -85,7 +96,7 @@ namespace TallerMotos.Web.Controllers
                 return View();
             }
             //Crear 
-            await _serviceSucursales.AddAsync(dto);
+            await _serviceSucursales.AddAsync(dto, selectedUsuarios);
             return RedirectToAction("TablaSucursales");
         }
 
@@ -97,13 +108,24 @@ namespace TallerMotos.Web.Controllers
             {
                 return NotFound();
             }
+            //Lista de Categorias- relacion muchos a muchos
+            var usuarios = await _serviceUsuarios.ListAsync();
+            //Valores a seleccionar de las categorias
+            var usuSelected = sucursalesDTO.Usuarios.Select(x => x.ID.ToString()).ToList();
+            //DropdownList
+            ViewBag.ListaUsuarios = new MultiSelectList(
+            items: usuarios,
+           dataValueField: nameof(UsuariosDTO.ID),
+           dataTextField: nameof(UsuariosDTO.Nombre),
+           selectedValues: usuSelected
+            );
             return View(sucursalesDTO);
         }
 
         // POST: SucursalesController/Edit/5 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(int id, SucursalesDTO dto)
+        public async Task<ActionResult> Edit(int id, SucursalesDTO dto, string[] selectedUsuarios)
         {
             if (!ModelState.IsValid)
             {
@@ -118,7 +140,7 @@ namespace TallerMotos.Web.Controllers
             else
             {
                 //Actualizar 
-                await _serviceSucursales.UpdateAsync(id, dto);
+                await _serviceSucursales.UpdateAsync(id, dto, selectedUsuarios);
                 return RedirectToAction("TablaSucursales");
             }
         }

@@ -26,6 +26,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         {
             var collection = await _context.Set<Usuarios>()
            .Include(x => x.IdrolNavigation)
+           .AsNoTracking()
            .ToListAsync();
             return collection;
         }

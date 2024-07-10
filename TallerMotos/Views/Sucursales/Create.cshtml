@@ -41,6 +41,18 @@
                 <input asp-for="Correo" class="form-control" />
                 <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Usuarios" class="control-label"></label>
+                <select id="selectedUsuarios"
+                        name="selectedUsuarios"
+                        class="form-control"
+                        asp-items="ViewBag.ListaUsuarios"
+                        multiple="multiple">
+                </select>
+                <span asp-validation-for="Usuarios" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" /> |
                 <a class="btn btn-info" asp-action="TablaSucursales">Regresar</a>

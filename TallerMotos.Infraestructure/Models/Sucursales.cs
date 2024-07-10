@@ -19,4 +19,7 @@ public partial class Sucursales
     public virtual ICollection<Horarios> Horarios { get; set; } = new List<Horarios>();
 
     public virtual ICollection<Reservas> Reservas { get; set; } = new List<Reservas>();
+
+
+    public virtual ICollection<Usuarios> Usuarios { get; set; } = new List<Usuarios>();
 }

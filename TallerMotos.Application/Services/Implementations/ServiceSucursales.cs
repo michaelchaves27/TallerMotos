@@ -32,18 +32,18 @@ namespace TallerMotos.Application.Services.Implementations
             return collection;
         }
 
-        public async Task<int> AddAsync(SucursalesDTO dto)
+        public async Task<int> AddAsync(SucursalesDTO dto, string[] selectedUsuarios)
         {
             var objectMapped = _mapper.Map<Sucursales>(dto);
-            return await _repository.AddAsync(objectMapped);
+            return await _repository.AddAsync(objectMapped, selectedUsuarios);
         }
 
-        public async Task UpdateAsync(int id, SucursalesDTO dto)
+        public async Task UpdateAsync(int id, SucursalesDTO dto, string[] selectedUsuarios)
         {
             var @object = await _repository.FindByIdAsync(id);
             var entity = _mapper.Map(dto, @object!);
 
-            await _repository.UpdateAsync(entity);
+            await _repository.UpdateAsync(entity, selectedUsuarios);
         }
 
         public async Task<SucursalesDTO> GetByIdAsync(int id)

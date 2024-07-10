@@ -81,16 +81,16 @@ public partial class TallerMotosContext : DbContext
         {
             entity.HasNoKey();
 
-            entity.Property(e => e.Idsucursal).HasColumnName("IDSucursal");
-            entity.Property(e => e.Idusuario).HasColumnName("IDUsuario");
+            entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
+            entity.Property(e => e.IDUsuario).HasColumnName("IDUsuario");
 
             entity.HasOne(d => d.IdsucursalNavigation).WithMany()
-                .HasForeignKey(d => d.Idsucursal)
+                .HasForeignKey(d => d.IDSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_EncargadoSucursal_Servicios");
 
             entity.HasOne(d => d.IdusuarioNavigation).WithMany()
-                .HasForeignKey(d => d.Idusuario)
+                .HasForeignKey(d => d.IDUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_EncargadoSucursal_Usuarios");
         });

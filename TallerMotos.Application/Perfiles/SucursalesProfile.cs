@@ -17,6 +17,7 @@ namespace TallerMotos.Application.Perfiles
            .ForMember(dest => dest.Telefono, orig => orig.MapFrom(o => o.Telefono))
            .ForMember(dest => dest.Direccion, orig => orig.MapFrom(o => o.Direccion))
            .ForMember(dest => dest.Correo, orig => orig.MapFrom(o => o.Correo))
+           .ForMember(dest => dest.Usuarios, orig => orig.MapFrom(o => o.Usuarios))
            .ForMember(dest => dest.Reservas, opt => opt.MapFrom(src => src.Reservas));
         }
     }

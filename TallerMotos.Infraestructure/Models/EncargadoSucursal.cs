@@ -2,11 +2,11 @@
 
 public partial class EncargadoSucursal
 {
-    public int Idusuario { get; set; }
+    public int IDUsuario { get; set; }
 
-    public int Idsucursal { get; set; }
+    public int IDSucursal { get; set; }
 
-    public virtual Servicios IdsucursalNavigation { get; set; } = null!;
+    public virtual Sucursales IdsucursalNavigation { get; set; } = null!;
 
     public virtual Usuarios IdusuarioNavigation { get; set; } = null!;
 }

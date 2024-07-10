@@ -6,7 +6,7 @@ namespace TallerMotos.Infraestructure.Repository.Interfaces
     {
         Task<ICollection<Sucursales>> ListAsync();
         Task<Sucursales> FindByIdAsync(int id);
-        Task<int> AddAsync(Sucursales entity);
-        Task UpdateAsync(Sucursales entity);
+        Task<int> AddAsync(Sucursales entity, string[] selectedUsuarios);
+        Task UpdateAsync(Sucursales entity, string[] selectedUsuarios);
     }
 }
