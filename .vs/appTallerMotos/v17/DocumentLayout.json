@@ -3,51 +3,51 @@
   "WorkspaceRootPath": "C:\\TallerMotos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\horarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\horarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\sucursales\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\sucursales\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\horarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\horarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\horarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\horarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\TallerMotos\\tallermotos\\views\\sucursales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\sucursales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\sucursales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\sucursales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|C:\\TallerMotos\\tallermotos.infraestructure\\repository\\interfaces\\irepositorysucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\interfaces\\irepositorysucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|C:\\TallerMotos\\tallermotos\\controllers\\sucursalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\controllers\\sucursalescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|c:\\tallermotos\\tallermotos\\views\\sucursales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{23478752-619A-43BB-B049-AAC07DB904C2}|TallerMotos\\TallerMotos.Web.csproj|solutionrelative:tallermotos\\views\\sucursales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\tallermotos\\tallermotos.infraestructure\\repository\\interfaces\\irepositorysucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\repository\\interfaces\\irepositorysucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\tallermotos\\tallermotos.infraestructure\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|C:\\TallerMotos\\tallermotos.infraestructure\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\tallermotos\\tallermotos.infraestructure\\models\\encargadosucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|C:\\TallerMotos\\tallermotos.infraestructure\\models\\encargadosucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\encargadosucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\tallermotos\\tallermotos.infraestructure\\data\\tallermotoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|C:\\TallerMotos\\tallermotos.infraestructure\\data\\tallermotoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\data\\tallermotoscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\tallermotos\\tallermotos.application\\services\\implementations\\servicesucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\TallerMotos\\tallermotos.application\\services\\implementations\\servicesucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\services\\implementations\\servicesucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|c:\\tallermotos\\tallermotos.infraestructure\\models\\sucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8596FEC-03D8-488E-8104-74B4ECB84AE2}|TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj|solutionrelative:tallermotos.infraestructure\\models\\sucursales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|c:\\tallermotos\\tallermotos.application\\perfiles\\sucursalesprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|C:\\TallerMotos\\tallermotos.application\\perfiles\\sucursalesprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{292A8ADB-6594-44A1-9B80-8BB02005A24E}|TallerMotos.Application\\TallerMotos.Application.csproj|solutionrelative:tallermotos.application\\perfiles\\sucursalesprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -70,45 +70,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 167,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Productos\\Create.cshtml",
-              "RelativeDocumentMoniker": "TallerMotos\\Views\\Productos\\Create.cshtml",
-              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Productos\\Create.cshtml",
-              "RelativeToolTip": "TallerMotos\\Views\\Productos\\Create.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADMAAAASAAAA",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Details.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Horarios\\Details.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Details.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Horarios\\Details.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAB9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-11T22:16:08.488Z",
+              "WhenOpened": "2024-07-11T23:02:32.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Details.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Sucursales\\Details.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Details.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Sucursales\\Details.cshtml",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T23:01:54.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Create.cshtml",
               "RelativeDocumentMoniker": "TallerMotos\\Views\\Horarios\\Create.cshtml",
               "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Create.cshtml",
               "RelativeToolTip": "TallerMotos\\Views\\Horarios\\Create.cshtml",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAYwBgAAAA3AAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADYAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-11T22:08:22.073Z",
+              "WhenOpened": "2024-07-11T22:54:17.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Edit.cshtml",
-              "RelativeDocumentMoniker": "TallerMotos\\Views\\Sucursales\\Edit.cshtml",
-              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Edit.cshtml",
-              "RelativeToolTip": "TallerMotos\\Views\\Sucursales\\Edit.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAAD4AAAAAAAAA",
+              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Edit.cshtml",
+              "RelativeDocumentMoniker": "TallerMotos\\Views\\Horarios\\Edit.cshtml",
+              "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Horarios\\Edit.cshtml",
+              "RelativeToolTip": "TallerMotos\\Views\\Horarios\\Edit.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-11T22:06:32.977Z",
+              "WhenOpened": "2024-07-11T22:50:20.781Z",
               "EditorCaption": ""
             },
             {
@@ -126,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Usuarios.cs",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Usuarios.cs",
               "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\Usuarios.cs",
@@ -134,12 +147,11 @@
               "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\Usuarios.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:52:36.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:52:36.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "EncargadoSucursal.cs",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Models\\EncargadoSucursal.cs",
               "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\EncargadoSucursal.cs",
@@ -147,12 +159,11 @@
               "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\EncargadoSucursal.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:52:13.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:52:13.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TallerMotosContext.cs",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
               "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
@@ -160,18 +171,17 @@
               "RelativeToolTip": "TallerMotos.Infraestructure\\Data\\TallerMotosContext.cs",
               "ViewState": "AQIAANUAAAAAAAAAAAAuwBsBAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:51:27.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:51:27.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Create.cshtml",
               "RelativeDocumentMoniker": "TallerMotos\\Views\\Sucursales\\Create.cshtml",
               "ToolTip": "C:\\TallerMotos\\TallerMotos\\Views\\Sucursales\\Create.cshtml",
               "RelativeToolTip": "TallerMotos\\Views\\Sucursales\\Create.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAswDQAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-11T21:50:14.617Z",
               "EditorCaption": ""
@@ -179,19 +189,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Sucursales.cs",
-              "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Sucursales.cs",
-              "RelativeDocumentMoniker": "TallerMotos.Infraestructure\\Models\\Sucursales.cs",
-              "ToolTip": "C:\\TallerMotos\\TallerMotos.Infraestructure\\Models\\Sucursales.cs",
-              "RelativeToolTip": "TallerMotos.Infraestructure\\Models\\Sucursales.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAA7wBgAAACEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:37:10.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ServiceSucursales.cs",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos.Application\\Services\\Implementations\\ServiceSucursales.cs",
               "RelativeDocumentMoniker": "TallerMotos.Application\\Services\\Implementations\\ServiceSucursales.cs",
@@ -199,8 +196,7 @@
               "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceSucursales.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:36:59.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:36:59.789Z"
             },
             {
               "$type": "Document",
@@ -212,8 +208,7 @@
               "RelativeToolTip": "TallerMotos.Application\\Perfiles\\SucursalesProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:36:40.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:36:40.612Z"
             },
             {
               "$type": "Document",
@@ -225,8 +220,7 @@
               "RelativeToolTip": "TallerMotos.Application\\Services\\Implementations\\ServiceReservas.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T21:12:19.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T21:12:19.786Z"
             },
             {
               "$type": "Document",
@@ -254,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "SucursalesController.cs",
               "DocumentMoniker": "C:\\TallerMotos\\TallerMotos\\Controllers\\SucursalesController.cs",
               "RelativeDocumentMoniker": "TallerMotos\\Controllers\\SucursalesController.cs",
@@ -262,8 +256,7 @@
               "RelativeToolTip": "TallerMotos\\Controllers\\SucursalesController.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAkwC4AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T17:23:03.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-11T17:23:03.862Z"
             }
           ]
         }

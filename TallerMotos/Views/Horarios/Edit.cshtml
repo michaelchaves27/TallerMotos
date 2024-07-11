@@ -1,0 +1,63 @@
+﻿@model TallerMotos.Application.DTO.HorariosDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Horarios</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control" />
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDSucursal" class="control-label"></label>
+                @*<input asp-for="IdAutor" class="form-control" />*@
+                @Html.DropDownListFor(m => m.IDSucursal,
+                         new SelectList(ViewBag.ListaSucursales, "ID", "Nombre"),
+                         "Seleccione una Sucursal",
+                         new { @class = "form-select" }
+                         )
+
+                <span asp-validation-for="IDSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dia" class="control-label"></label>
+                <select asp-for="Dia" class="form-control" asp-items="ViewBag.DiasDeLaSemana">
+                    <option value="">Seleccione un día</option>
+                </select>
+                <span asp-validation-for="Dia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hora" class="control-label"></label>
+                <input asp-for="Hora" class="form-control" />
+                <span asp-validation-for="Hora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control">
+                    <option value="">Seleccione un estado</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Bloqueado">Bloqueado</option>
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a class="btn btn-info" asp-action="Index">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

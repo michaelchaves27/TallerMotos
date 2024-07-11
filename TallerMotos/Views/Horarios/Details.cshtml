@@ -1,0 +1,33 @@
+﻿@model TallerMotos.Application.DTO.HorariosDTO
+
+@{
+    ViewData["Title"] = "Detalle";
+
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <h4>Horarios</h4>
+    <hr />
+    <div class="card flex-row text-right" style="width:60%; margin:0 auto;">
+        <img style="max-height:273px;"
+             role="img"
+        <img src="~/imagenes/logoMoto.jpeg" alt="Logo de la empresa">
+
+        <div class="card-body">
+            <h5 class="card-title">ID: @Html.DisplayFor(model => model.ID)</h5>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdsucursalesNavigation):</b>  @Html.DisplayFor(model => model.IdsucursalesNavigation.Nombre)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Dia):</b>   @Html.DisplayFor(model => model.Dia)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Hora):</b>  @Html.DisplayFor(model => model.Hora)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Estado):</b>  @Html.DisplayFor(model => model.Estado)</p>
+
+        </div>
+        <div class="d-flex align-items-end">
+            <a class="btn btn-primary" asp-action="Index">Regresar</a>
+        </div>
+    </div>
+
+</div>
+<div>
+</div>

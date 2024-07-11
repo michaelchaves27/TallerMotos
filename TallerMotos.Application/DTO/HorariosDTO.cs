@@ -10,7 +10,7 @@ namespace TallerMotos.Application.DTO
         [ValidateNever]
         public int ID { get; set; }
 
-        [Display(Name = "IDSucursal")]
+        [Display(Name = "Sucursal")]
         [ValidateNever]
         public int IDSucursal { get; set; }
 

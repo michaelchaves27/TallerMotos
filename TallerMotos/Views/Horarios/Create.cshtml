@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Crear</h1>
 
-<h4>HorariosDTO</h4>
+<h4>Horarios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,6 +22,7 @@
                 @*<input asp-for="IdAutor" class="form-control" />*@
                 @Html.DropDownListFor(m => m.IDSucursal,
                          new SelectList(ViewBag.ListaSucursales, "ID", "Nombre"),
+                         "Seleccione una Sucursal",
                          new { @class = "form-select" }
                          )
                 
