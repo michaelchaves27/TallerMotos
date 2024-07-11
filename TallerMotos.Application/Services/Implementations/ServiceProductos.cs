@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Infraestructure.Models;
 using TallerMotos.Infraestructure.Repository.Interfaces;
 
 namespace TallerMotos.Application.Services.Implementations
@@ -28,18 +29,19 @@ namespace TallerMotos.Application.Services.Implementations
             var objectMapped = _mapper.Map<ProductosDTO>(@object);
             return objectMapped;
         }
-        /*public async Task<int> AddAsync(ProductosDTO dto, string[] selectedCategorias)
-		{
-			var objectMapped = _mapper.Map<Productos>(dto);
-			return await _repository.AddAsync(objectMapped, selectedCategorias);
-		}*/
-
-        public async Task UpdateAsync(int id, ProductosDTO dto, string[] selectedCategorias)
+        public async Task<int> AddAsync(ProductosDTO dto)
         {
-            var @object = await _repository.FindByIdAsync(id);
+            var objectMapped = _mapper.Map<Productos>(dto);
+            return await _repository.AddAsync(objectMapped);
+        }
+
+        public async Task UpdateAsync(ProductosDTO dto)
+        {
+            var @object = await _repository.FindByIdAsync(dto.ID);
             var entity = _mapper.Map(dto, @object!);
 
-            await _repository.UpdateAsync(entity, selectedCategorias);
+
+            await _repository.UpdateAsync(entity);
         }
         public async Task<ICollection<ProductosDTO>> FindByNameAsync(string nombre)
         {
@@ -61,9 +63,6 @@ namespace TallerMotos.Application.Services.Implementations
             await _repository.DeleteAsync(id);
         }
 
-        public Task<int> AddAsync(ProductosDTO dto, string[] selectedCategorias)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

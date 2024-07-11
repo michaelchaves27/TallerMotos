@@ -15,8 +15,6 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         public async Task<ICollection<Productos>> ListAsync()
         {
             var collection = await _context.Set<Productos>()
-            //.Include(x => x.IdcategoriaNavigation)
-            //.OrderBy(x => x.IDCategoria)
             .Include(x => x.IdcategoriaNavigation)
             .AsNoTracking()
             .ToListAsync();
@@ -33,14 +31,14 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .FirstOrDefaultAsync();
             return @object!;
         }
-        public async Task<int> AddAsync(Productos entity, string[] selectedCategorias)
+        public async Task<int> AddAsync(Productos entity)
         {
             //ActualizarCategorias(selectedCategorias, entity);
             await _context.Set<Productos>().AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity.ID;
         }
-        public async Task UpdateAsync(Productos entity, string[] selectedCategorias)
+        public async Task UpdateAsync(Productos entity)
         {
             //entity.IdAutorNavigation = _context.Autor.Find(entity.IdAutor);
             //_context.Attach(entity.IdAutorNavigation);

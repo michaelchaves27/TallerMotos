@@ -66,7 +66,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
-                    <a asp-controller="DetalleProductos" asp-action="IndexDetalle" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
+                    <a asp-controller="Productos" asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
 
                 </td>

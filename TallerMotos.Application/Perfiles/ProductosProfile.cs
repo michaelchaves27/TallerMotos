@@ -17,7 +17,8 @@ namespace TallerMotos.Application.Perfiles
            .ForMember(dest => dest.Descripcion, orig => orig.MapFrom(o => o.Descripcion))
            .ForMember(dest => dest.Precio, orig => orig.MapFrom(o => o.Precio))
            .ForMember(dest => dest.Marca, orig => orig.MapFrom(o => o.Marca))
-           .ForMember(dest => dest.Calificacion, orig => orig.MapFrom(o => o.Calificacion));
+           .ForMember(dest => dest.Calificacion, orig => orig.MapFrom(o => o.Calificacion))
+           .ForMember(dest => dest.IdcategoriaNavigation, orig => orig.MapFrom(o => o.IdcategoriaNavigation));
 
         }
     }

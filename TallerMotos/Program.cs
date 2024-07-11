@@ -107,6 +107,19 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile<HorariosProfile>();
 });
 
+
+
+//************************ categorias
+//***Repository
+builder.Services.AddTransient<IRepositoryCategoria, RepositoryCategoria>();
+//**Services
+builder.Services.AddTransient<IServiceCategoria, ServiceCategoria>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<CategoriaProfile>();
+});
+
 //***********************
 // Configuar Conexión a la Base de Datos SQL
 builder.Services.AddDbContext<TallerMotosContext>(options =>

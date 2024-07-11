@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
         "projectName": "TallerMotos.Application",
         "projectPath": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
         "outputPath": "C:\\TallerMotos\\TallerMotos.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,11 +88,11 @@
         "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
         "projectName": "TallerMotos.Infraestructure",
         "projectPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
         "outputPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,11 +168,11 @@
         "projectUniqueName": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
         "projectName": "TallerMotos.Web",
         "projectPath": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
         "outputPath": "C:\\TallerMotos\\TallerMotos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -216,7 +216,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.3, )"
             },
             "X.PagedList.Mvc.Core": {
               "target": "Package",

@@ -1,37 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Web.Models;
 using X.PagedList;
 
-//using X.PagedList;
 namespace TallerMotos.Web.Controllers
 {
     public class ProductosController : Controller
     {
         private readonly IServiceProductos _serviceProductos;
-        // private readonly IServiceAutor _serviceAutor;
-        //private readonly IServiceCategoria _serviceCategoria;
-        public ProductosController(IServiceProductos serviceProductos)
+        private readonly IServiceCategoria _serviceCategoria;
+
+        // Asegúrate de que solo tienes un constructor
+        public ProductosController(IServiceProductos serviceProductos, IServiceCategoria serviceCategoria)
         {
             _serviceProductos = serviceProductos;
-            //  _serviceAutor = serviceAutor;
-            //  _serviceCategoria = serviceCategoria;
+            _serviceCategoria = serviceCategoria;
         }
-        // GET: ProductosController
-        [HttpGet]
+
+        // Métodos del controlador
+       // [HttpGet]
         public async Task<ActionResult> Index()
         {
             var collection = await _serviceProductos.ListAsync();
-
             return View(collection);
         }
+
         public async Task<ActionResult> TablaProductos(int? page)
         {
             var collection = await _serviceProductos.ListAsync();
-            //Cantidad de elementos por página
             return View(collection.ToPagedList(page ?? 1, 5));
         }
-        // GET: ProductosController/Details/5
+
         public async Task<ActionResult> Details(int? id)
         {
             try
@@ -43,7 +46,7 @@ namespace TallerMotos.Web.Controllers
                 var @object = await _serviceProductos.FindByIdAsync(id.Value);
                 if (@object == null)
                 {
-                    throw new Exception("Productos no existente");
+                    throw new Exception("Producto no existente");
                 }
                 return View(@object);
             }
@@ -52,109 +55,88 @@ namespace TallerMotos.Web.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        // GET: ProductosController/Create
-        /* public async Task<ActionResult> Create()
-         {
-             //Lista de Autores
-            // ViewBag.ListAutor = await _serviceAutor.ListAsync();
-             //Lista de Categorias- relacion muchos a muchos
-             var categorias = await _serviceCategoria.ListAsync();
-          //   ViewBag.ListCategorias = new MultiSelectList(
-           //  items: categorias,
-           // dataValueField: nameof(CategoriaDTO.IdCategoria),
-            dataTextField: nameof(CategoriaDTO.Nombre)
-             );
-             //ViewBag.ListCategorias = new MultiSelectList(
-             // categorias,
-             // "IdCategoria",
-             // "Nombre"
-             // );
-             return View();
-         }*/
-        // POST: ProductosController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(ProductosDTO dto, IFormFile imageFile, string[]
-       selectedCategorias)
+        public IActionResult ErrorHandler(string messageJson)
         {
-            //Gestión de imagen
-            MemoryStream target = new MemoryStream();
+            var errorMessages = JsonConvert.
+                DeserializeObject<ErrorMiddlewareViewModel>(messageJson);
+            ViewBag.ErrorMessages = errorMessages;
+            return View("ErrorHandler");
+        }
 
-            // Cuando es Insert Image viene en null porque se pasa diferente
-            /* if (dto.Imagen == null)
-             {
-                 if (imageFile != null)
-                 {
-                     imageFile.OpenReadStream().CopyTo(target);
-                     dto.Imagen = target.ToArray();
-                     //Quitar la validación de la imagen
-                     ModelState.Remove("Imagen");
-                 }
-             }*/
-            //Validación del formulario
-            if (!ModelState.IsValid)
-            {
-                // Lee del ModelState todos los errores que
-                // vienen para el lado del server
-                string errors = string.Join("; ", ModelState.Values
-                .SelectMany(x => x.Errors)
-               .Select(x => x.ErrorMessage));
-                ViewBag.ErrorMessage = errors;
-                return View();
-            }
-            //Crear
-            await _serviceProductos.AddAsync(dto, selectedCategorias);
-            return RedirectToAction("IndexAdmin");
+       // [HttpGet]
+        public async Task<ActionResult> Create()
+        {
+            // var ListaCategorias = await _serviceCategoria.ListAsync();
+            // ViewBag.ListaCategorias = new MultiSelectList(ListaCategorias, "IdCategoria", "Nombre");
+            ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
+            return View();
         }
-        // GET: ProductosController/Edit/5
-        /*  public async Task<ActionResult> Edit(int id)
-          {
-            //  var @object = await _serviceProductos.FindByIdAsync(id);
-              //Lista de Autores
-           //   ViewBag.ListAutor = await _serviceAutor.ListAsync();
-              //Lista de Categorias- relacion muchos a muchos
-             // var categorias = await _serviceCategoria.ListAsync();
-              //Valores a seleccionar de las categorias
-             // var catSelected = @object.IdCategoria.Select(x => x.IdCategoria.ToString()).ToList();
-              //DropdownList
-            //  ViewBag.ListCategorias = new MultiSelectList(
-            //  items: categorias,
-           //  dataValueField: nameof(CategoriaDTO.IdCategoria),
-           //  dataTextField: nameof(CategoriaDTO.Nombre),
-          //   selectedValues: catSelected
-              );
-              return View(@object);
-          }*/
-        // POST: ProductosController/Edit/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(int id, ProductosDTO dto, string[]
-       selectedCategorias)
+        public async Task<ActionResult> Create(ProductosDTO dto)
         {
             if (!ModelState.IsValid)
             {
-                // Lee del ModelState todos los errores que
-                // vienen para el lado del server
                 string errors = string.Join("; ", ModelState.Values
-                .SelectMany(x => x.Errors)
-               .Select(x => x.ErrorMessage));
+                    .SelectMany(x => x.Errors)
+                    .Select(x => x.ErrorMessage));
                 ViewBag.ErrorMessage = errors;
                 return View();
             }
-            else
-            {
-                //Actualizar
-                await _serviceProductos.UpdateAsync(id, dto, selectedCategorias);
-                return RedirectToAction("IndexAdmin");
-            }
+
+            await _serviceProductos.AddAsync(dto);
+            return RedirectToAction("TablaProductos");
         }
-        // GET: ProductosController/Delete/5
+
+       // [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var productosDTO = await _serviceProductos.FindByIdAsync(id);
+            if (productosDTO == null)
+            {
+                return NotFound();
+            }
+            ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
+           // //Lista de Categorias- relacion muchos a muchos
+           // var categorias = await _serviceCategoria.ListAsync();
+           // //Valores a seleccionar de las categorias
+           // var catSelected = await _serviceCategoria.FindByIdAsync(productosDTO.IDCategoria);
+           // //DropdownList
+
+           // ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
+           // ViewBag.ListaCategorias = new MultiSelectList(
+           // items: categorias,
+           //dataValueField: nameof(CategoriaDTO.ID),
+           //dataTextField: nameof(CategoriaDTO.Nombre),
+           //selectedValues: catSelected.Nombre
+           // );
+            return View(productosDTO);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit( ProductosDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                string errors = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+
+            await _serviceProductos.UpdateAsync(dto);
+            return RedirectToAction("TablaProductos");
+        }
+
+
+
         public async Task<ActionResult> Delete(int id)
         {
             var @object = await _serviceProductos.FindByIdAsync(id);
             return View(@object);
         }
-        // POST: ProductosController/Delete/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id, IFormCollection collection)
