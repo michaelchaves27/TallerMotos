@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
-using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -22,7 +20,7 @@ namespace TallerMotos.Web.Controllers
         }
 
         // Métodos del controlador
-       // [HttpGet]
+        // [HttpGet]
         public async Task<ActionResult> Index()
         {
             var collection = await _serviceProductos.ListAsync();
@@ -63,7 +61,7 @@ namespace TallerMotos.Web.Controllers
             return View("ErrorHandler");
         }
 
-       // [HttpGet]
+        // [HttpGet]
         public async Task<ActionResult> Create()
         {
             // var ListaCategorias = await _serviceCategoria.ListAsync();
@@ -89,7 +87,7 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("TablaProductos");
         }
 
-       // [HttpGet]
+        // [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var productosDTO = await _serviceProductos.FindByIdAsync(id);
@@ -98,25 +96,25 @@ namespace TallerMotos.Web.Controllers
                 return NotFound();
             }
             ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
-           // //Lista de Categorias- relacion muchos a muchos
-           // var categorias = await _serviceCategoria.ListAsync();
-           // //Valores a seleccionar de las categorias
-           // var catSelected = await _serviceCategoria.FindByIdAsync(productosDTO.IDCategoria);
-           // //DropdownList
+            // //Lista de Categorias- relacion muchos a muchos
+            // var categorias = await _serviceCategoria.ListAsync();
+            // //Valores a seleccionar de las categorias
+            // var catSelected = await _serviceCategoria.FindByIdAsync(productosDTO.IDCategoria);
+            // //DropdownList
 
-           // ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
-           // ViewBag.ListaCategorias = new MultiSelectList(
-           // items: categorias,
-           //dataValueField: nameof(CategoriaDTO.ID),
-           //dataTextField: nameof(CategoriaDTO.Nombre),
-           //selectedValues: catSelected.Nombre
-           // );
+            // ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
+            // ViewBag.ListaCategorias = new MultiSelectList(
+            // items: categorias,
+            //dataValueField: nameof(CategoriaDTO.ID),
+            //dataTextField: nameof(CategoriaDTO.Nombre),
+            //selectedValues: catSelected.Nombre
+            // );
             return View(productosDTO);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit( ProductosDTO dto)
+        public async Task<ActionResult> Edit(ProductosDTO dto)
         {
             if (!ModelState.IsValid)
             {

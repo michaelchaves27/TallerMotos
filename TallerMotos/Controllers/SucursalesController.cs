@@ -62,42 +62,30 @@ namespace TallerMotos.Web.Controllers
         }
 
 
-        //[HttpGet]
+        [HttpGet]
         public async Task<IActionResult> Create()
         {
             var usuarios = await _serviceUsuarios.ListAsync();
-            ViewBag.ListaUsuarios = new MultiSelectList(
-            items: usuarios,
-            dataValueField: nameof(UsuariosDTO.ID),
-            dataTextField: nameof(UsuariosDTO.Nombre)
-            );
+            ViewBag.ListaUsuarios = new SelectList(usuarios, nameof(UsuariosDTO.ID), nameof(UsuariosDTO.Nombre));
             return View();
         }
 
-
-
-        // POST: SucursalesController/Create 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(SucursalesDTO dto, string[] selectedUsuarios)
         {
-
-
-            //Validación del formulario 
             if (!ModelState.IsValid)
             {
-                // Lee del ModelState todos los errores que 
-                // vienen para el lado del server 
-                string errors = string.Join("; ", ModelState.Values
-                                   .SelectMany(x => x.Errors)
-                                   .Select(x => x.ErrorMessage));
-                ViewBag.ErrorMessage = errors;
-                return View();
+                var usuarios = await _serviceUsuarios.ListAsync();
+                ViewBag.ListaUsuarios = new SelectList(usuarios, nameof(UsuariosDTO.ID), nameof(UsuariosDTO.Nombre));
+                return View(dto);
             }
-            //Crear 
+
             await _serviceSucursales.AddAsync(dto, selectedUsuarios);
             return RedirectToAction("TablaSucursales");
         }
+
+
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
