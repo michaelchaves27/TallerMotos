@@ -30,15 +30,15 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             return collection;
         }
 
-        public async Task<int> AddAsync(Sucursales entity, string[] selectedUsuarios)
+        public async Task<int> AddAsync(string[] selectedUsuarios, Sucursales entity)//se cambia de lugar
         {
-            actualizarEncargados(entity, selectedUsuarios);
+            actualizarEncargados(selectedUsuarios, entity);//se cambia de lugar
             await _context.Set<Sucursales>().AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity.ID;
         }
 
-        public async Task UpdateAsync(Sucursales entity, string[] selectedUsuarios)
+        public async Task UpdateAsync(string[] selectedUsuarios, Sucursales entity)//se cambia de lugar
         {
             // Adjuntar la entidad al contexto de Entity Framework
             _context.Entry(entity).State = EntityState.Modified;
@@ -47,7 +47,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             await _context.SaveChangesAsync();
         }
 
-        private void actualizarEncargados(Sucursales sucursalesUpdate, string[] selectedUsuarios)
+        private void actualizarEncargados(string[] selectedUsuarios, Sucursales sucursalesUpdate)
         {
             var listaEncargados = _context.Usuarios.ToList();
             var usuariosObject = new List<Usuarios>();

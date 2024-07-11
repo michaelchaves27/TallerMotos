@@ -96,8 +96,8 @@ namespace TallerMotos.Web.Controllers
                 ViewBag.DiasDeLaSemana = new SelectList(new List<string>
                 {
                     "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"
-                });                
-                
+                });
+
                 return View();
             }
             //Crear 

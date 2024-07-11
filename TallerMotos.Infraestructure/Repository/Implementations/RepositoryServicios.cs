@@ -36,7 +36,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             await _context.SaveChangesAsync();
             return entity.ID;
         }
-        
+
 
         public async Task UpdateAsync(Servicios entity)
         {

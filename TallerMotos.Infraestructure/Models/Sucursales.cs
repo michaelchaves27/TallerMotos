@@ -22,4 +22,5 @@ public partial class Sucursales
 
 
     public virtual ICollection<Usuarios> Usuarios { get; set; } = new List<Usuarios>();
+    public virtual ICollection<EncargadoSucursal> EncargadoSucursales { get; set; } = new List<EncargadoSucursal>();//se agrega esta
 }

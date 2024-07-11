@@ -35,11 +35,14 @@ namespace TallerMotos.Application.DTO
         [Display(Name = "Reservas")]
         [ValidateNever]
         public ICollection<ReservasDTO> Reservas { get; set; } = null!;
+        [ValidateNever]
         public virtual List<Horarios> Horarios { get; set; } = new List<Horarios>();
 
         [Display(Name = "Usuarios")]
         [ValidateNever]
         public virtual List<Usuarios> Usuarios { get; set; } = null!;
+
+
 
     }
 }

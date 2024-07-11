@@ -23,4 +23,8 @@ public partial class Usuarios
     public virtual Rol IdrolNavigation { get; set; } = null!;
 
     public virtual ICollection<Reservas> Reservas { get; set; } = new List<Reservas>();
+
+    public virtual ICollection<Sucursales> Sucursales { get; set; } = new List<Sucursales>();
+    public virtual ICollection<EncargadoSucursal> EncargadoSucursales { get; set; } = new List<EncargadoSucursal>();//agega
+
 }

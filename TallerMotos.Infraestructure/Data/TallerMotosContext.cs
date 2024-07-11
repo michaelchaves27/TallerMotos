@@ -79,20 +79,19 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<EncargadoSucursal>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(e => new { e.IDUsuario, e.IDSucursal }).HasName("PK_EncargadoSucursal");
 
-            entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
-            entity.Property(e => e.IDUsuario).HasColumnName("IDUsuario");
-
-            entity.HasOne(d => d.IdsucursalNavigation).WithMany()
-                .HasForeignKey(d => d.IDSucursal)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_EncargadoSucursal_Servicios");
-
-            entity.HasOne(d => d.IdusuarioNavigation).WithMany()
+            entity.HasOne(d => d.IdusuarioNavigation)
+                .WithMany(p => p.EncargadoSucursales)
                 .HasForeignKey(d => d.IDUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_EncargadoSucursal_Usuarios");
+
+            entity.HasOne(d => d.IdsucursalNavigation)
+                .WithMany(p => p.EncargadoSucursales)
+                .HasForeignKey(d => d.IDSucursal)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_EncargadoSucursal_Sucursales");
         });
 
         modelBuilder.Entity<Facturas>(entity =>
@@ -228,6 +227,8 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Sucursales>(entity =>
         {
+            entity.HasKey(e => e.ID).HasName("PK_Sucursales");
+
             entity.Property(e => e.ID).HasColumnName("ID");
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
@@ -247,6 +248,12 @@ public partial class TallerMotosContext : DbContext
             entity.HasMany(s => s.Reservas)
                 .WithOne(r => r.IdsucursalNavigation)
                 .HasForeignKey(r => r.IDSucursal);
+
+            entity.HasMany(d => d.EncargadoSucursales)
+            .WithOne(p => p.IdsucursalNavigation)
+            .HasForeignKey(p => p.IDSucursal)
+            .OnDelete(DeleteBehavior.ClientSetNull)
+            .HasConstraintName("FK_EncargadoSucursal_Sucursales");
         });
 
         modelBuilder.Entity<Usuarios>(entity =>
@@ -271,7 +278,16 @@ public partial class TallerMotosContext : DbContext
                 .HasForeignKey(d => d.IDRol)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Usuarios_Rol");
+
+            entity.HasKey(e => e.ID).HasName("PK_Usuarios");
+
+            entity.HasMany(d => d.EncargadoSucursales)
+                .WithOne(p => p.IdusuarioNavigation)
+                .HasForeignKey(p => p.IDUsuario)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_EncargadoSucursal_Usuarios");
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

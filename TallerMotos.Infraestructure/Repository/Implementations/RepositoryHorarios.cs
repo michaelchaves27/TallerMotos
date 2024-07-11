@@ -25,7 +25,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         {
             //var @object=await _context.Set<Horarios>().FindAsync(id);
             var @object = await _context.Set<Horarios>()
-               .Include(s => s.IdsucursalesNavigation)               
+               .Include(s => s.IdsucursalesNavigation)
                .Where(x => x.ID == id)
                .FirstOrDefaultAsync();
             return @object!;

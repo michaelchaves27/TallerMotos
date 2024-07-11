@@ -29,7 +29,7 @@ namespace TallerMotos.Application.DTO
         //[Display(Name = "Reservas")]
         //[ValidateNever]
         //public ICollection<ReservasDTO> Reservas { get; set; } = null!;
-        
+
         [Display(Name = "Sucursal")]
         [ValidateNever]
         public virtual Sucursales IdsucursalesNavigation { get; set; } = null!;

@@ -10,7 +10,7 @@ namespace TallerMotos.Application.Services.Implementations
     {
         private readonly IRepositoryHorarios _repository;
         private readonly IMapper _mapper;
-        
+
         public ServiceHorarios(IRepositoryHorarios repository, IMapper mapper)
         {
             _repository = repository;
