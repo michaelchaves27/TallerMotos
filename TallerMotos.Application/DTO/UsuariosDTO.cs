@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using TallerMotos.Infraestructure.Models;
 
 namespace TallerMotos.Application.DTO
@@ -29,8 +30,9 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Contrasenna")]
         public string Contrasenna { get; set; } = null!;
-
+        
         [Display(Name = "Rol")]
+        [ValidateNever]
         public virtual Rol IdrolNavigation { get; set; } = null!;
     }
 }

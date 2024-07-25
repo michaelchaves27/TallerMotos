@@ -30,5 +30,19 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .ToListAsync();
             return collection;
         }
+        public async Task<Usuarios> LoginAsync(string id, string password)
+        {
+            var @object = await _context.Set<Usuarios>()
+                                        .Include(b => b.IdrolNavigation)
+                                        .Where(p => p.Correo == id && p.Contrasenna.ToString() == password)
+                                        .FirstOrDefaultAsync();
+            return @object!;
+        }
+        public async Task<string> AddAsync(Usuarios entity)
+        {
+            await _context.Set<Usuarios>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity.Correo;
+        }
     }
 }

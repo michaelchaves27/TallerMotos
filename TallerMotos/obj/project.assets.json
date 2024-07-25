@@ -8557,7 +8557,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jbfon\\.nuget\\packages\\": {}
+    "C:\\Users\\mchaves\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -8565,11 +8565,11 @@
       "projectUniqueName": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
       "projectName": "TallerMotos.Web",
       "projectPath": "C:\\TallerMotos\\TallerMotos\\TallerMotos.Web.csproj",
-      "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
       "outputPath": "C:\\TallerMotos\\TallerMotos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 
@@ -38,6 +40,34 @@ namespace TallerMotos.Web.Controllers
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public async Task<ActionResult> Create()
+        {
+            // var ListaCategorias = await _serviceCategoria.ListAsync();
+            // ViewBag.ListaCategorias = new MultiSelectList(ListaCategorias, "IdCategoria", "Nombre");
+           
+            return View();
+        }
+
+        // POST: UsuarioController/Create
+          [HttpPost]
+         [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(UsuariosDTO dto)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                // Lee del ModelState todos los errores que
+                // vienen para el lado del server
+                string errors = string.Join("; ", ModelState.Values
+                                   .SelectMany(x => x.Errors)
+                                   .Select(x => x.ErrorMessage));
+                return BadRequest(errors);
+            }
+
+            await _serviceUsuarios.AddAsync(dto);
+            return RedirectToAction("Index");
+
         }
 
         public IActionResult ErrorHandler(string messageJson)

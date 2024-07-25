@@ -16,7 +16,7 @@ public partial class Usuarios
 
     public DateOnly? FechaNacimiento { get; set; }
 
-    public byte[]? Contrasenna { get; set; }
+    public string? Contrasenna { get; set; }
 
     public virtual ICollection<Facturas> Facturas { get; set; } = new List<Facturas>();
 

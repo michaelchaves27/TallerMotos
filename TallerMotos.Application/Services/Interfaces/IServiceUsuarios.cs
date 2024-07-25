@@ -6,5 +6,7 @@ namespace TallerMotos.Application.Services.Interfaces
     {
         Task<ICollection<UsuariosDTO>> ListAsync();
         Task<UsuariosDTO> FindByIdAsync(int id);
+        Task<UsuariosDTO> LoginAsync(string id, string password);
+        Task<string> AddAsync(UsuariosDTO dto);
     }
 }

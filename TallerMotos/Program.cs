@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TallerMotos.Application.Config;
 using TallerMotos.Application.Perfiles;
 using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
@@ -7,6 +10,8 @@ using TallerMotos.Infraestructure.Repository.Implementations;
 using TallerMotos.Infraestructure.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<AppConfig>(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -120,6 +125,23 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile<CategoriaProfile>();
 });
 
+
+//Seguridad
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => {
+        options.LoginPath = "/Login/Index";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        options.AccessDeniedPath = "/Login/Forbidden";
+    });
+builder.Services.AddControllersWithViews(options => {
+    options.Filters.Add(
+        new ResponseCacheAttribute
+        {
+            NoStore = true,
+            Location = ResponseCacheLocation.None,
+        });
+});
+
 //***********************
 // Configuar Conexión a la Base de Datos SQL
 builder.Services.AddDbContext<TallerMotosContext>(options =>
@@ -151,6 +173,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");
+//pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();
