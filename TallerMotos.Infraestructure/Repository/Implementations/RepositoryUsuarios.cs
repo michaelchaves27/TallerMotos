@@ -30,6 +30,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .ToListAsync();
             return collection;
         }
+
         public async Task<Usuarios> LoginAsync(string id, string password)
         {
             var @object = await _context.Set<Usuarios>()
@@ -44,5 +45,12 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             await _context.SaveChangesAsync();
             return entity.Correo;
         }
+
+        public async Task UpdateAsync(Usuarios entity)
+        {
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

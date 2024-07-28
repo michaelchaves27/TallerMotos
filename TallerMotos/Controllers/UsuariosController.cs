@@ -86,6 +86,34 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Edit(int id)
+        {
+            var usuariosDTO = await _serviceUsuarios.FindByIdAsync(id);
+            if (usuariosDTO == null)
+            {
+                return NotFound();
+            }
+            ViewBag.ListaRol = await _serviceRol.ListAsync();
+            
+            return View(usuariosDTO);
+        }
+
+        //[Authorize(Roles = "Administrador,Encargado")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(UsuariosDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                string errors = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage));
+                ViewBag.ErrorMessage = errors;
+                return View();
+            }
+
+            await _serviceUsuarios.UpdateAsync(dto);
+            return RedirectToAction("Index");
+        }
+
 
         public IActionResult ErrorHandler(string messageJson)
         {
