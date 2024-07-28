@@ -180,7 +180,7 @@ public partial class TallerMotosContext : DbContext
 
         modelBuilder.Entity<Rol>(entity =>
         {
-            entity.Property(e => e.Id)
+            entity.Property(e => e.ID)
                 .ValueGeneratedNever()
                 .HasColumnName("ID");
             entity.Property(e => e.Nombre)
@@ -245,6 +245,9 @@ public partial class TallerMotosContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.IDRol).HasColumnName("IDRol");
             entity.Property(e => e.Nombre)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.FechaNacimiento)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Telefono)

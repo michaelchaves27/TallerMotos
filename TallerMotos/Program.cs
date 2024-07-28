@@ -126,6 +126,19 @@ builder.Services.AddAutoMapper(config =>
 });
 
 
+//************************ Rol
+//***Repository
+builder.Services.AddTransient<IRepositoryRol, RepositoryRol>();
+//**Services
+builder.Services.AddTransient<IServiceRol, ServiceRol>();
+//***Configurar Automapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<RolProfile>();
+});
+
+
+
 //Seguridad
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => {

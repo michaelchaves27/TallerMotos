@@ -61,21 +61,22 @@
                             </ul>
                         </li>
 
-
+                        @if (User.IsInRole("Admnistrador") == true)
+                            {
                         <li>
                             <a href="#submenuSeguridad" data-bs-toggle="collapse" class="nav-link text-white px-0 align-middle">
                                 <i class="fs-4 fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Seguridad</span>
                             </a>
+                            
+                                <ul class="collapse show nav flex-column ms-1" id="submenuSeguridad" data-bs-parent="#menu">
+                                    <li class="w-100">
+                                        <a asp-controller="Usuarios" asp-action="Index" class="nav-link px-0"><span class="d-none d-sm-inline"></span> Usuarios </a>
 
-                            <ul class="collapse show nav flex-column ms-1" id="submenuSeguridad" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a asp-controller="Usuarios" asp-action="Index" class="nav-link px-0"><span class="d-none d-sm-inline"></span> Usuarios </a>
-
-                                </li>
-                            </ul>
-
+                                    </li>
+                                </ul>
+                            
                         </li>
-
+                        }
 
                     </ul>
                     <hr>
@@ -86,7 +87,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 
-                            <li><a class="dropdown-item">Salir</a></li
+                            @* <li><a class="dropdown-item">Salir</a></li> *@
                             <li>
                                 <a asp-controller="Login" asp-action="Index" class="dropdown-item"><span class="d-none d-sm-inline"></span>Salir</a>
                             </li>

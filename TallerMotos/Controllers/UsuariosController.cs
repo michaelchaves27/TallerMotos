@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Infraestructure.Models;
 using TallerMotos.Web.Models;
 
 namespace TallerMotos.Web.Controllers
@@ -10,9 +12,11 @@ namespace TallerMotos.Web.Controllers
     public class UsuariosController : Controller
     {
         private readonly IServiceUsuarios _serviceUsuarios;
-        public UsuariosController(IServiceUsuarios serviceUsuarios)
+        private readonly IServiceRol _serviceRol;
+        public UsuariosController(IServiceUsuarios serviceUsuarios, IServiceRol serviceRol)
         {
             _serviceUsuarios = serviceUsuarios;
+            _serviceRol = serviceRol;
         }
         public async Task<IActionResult> Index()
         {
@@ -27,7 +31,7 @@ namespace TallerMotos.Web.Controllers
             {
                 if (id == null)
                 {
-                    return RedirectToAction("IndexAdmin");
+                    return RedirectToAction("Index");
                 }
                 var @object = await _serviceUsuarios.FindByIdAsync(id.Value);
                 if (@object == null)
@@ -41,34 +45,47 @@ namespace TallerMotos.Web.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
         public async Task<ActionResult> Create()
         {
-            // var ListaCategorias = await _serviceCategoria.ListAsync();
-            // ViewBag.ListaCategorias = new MultiSelectList(ListaCategorias, "IdCategoria", "Nombre");
-           
+            var ListaRol = await _serviceRol.ListAsync();
+            if (ListaRol == null || !ListaRol.Any())
+            {
+                ModelState.AddModelError(string.Empty, "No hay roles disponibles.");
+                ViewBag.ListaRol = new SelectList(new List<Rol>(), "ID", "Nombre");
+            }
+            else
+            {
+                ViewBag.ListaRol = new SelectList(ListaRol, "ID", "Nombre");
+            }
             return View();
         }
 
-        // POST: UsuarioController/Create
-          [HttpPost]
-         [ValidateAntiForgeryToken]
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(UsuariosDTO dto)
         {
+            var ListaRol = await _serviceRol.ListAsync();
+            if (ListaRol == null || !ListaRol.Any())
+            {
+                ModelState.AddModelError(string.Empty, "No hay roles disponibles.");
+                ViewBag.ListaRol = new SelectList(new List<Rol>(), "ID", "Nombre");
+            }
+            else
+            {
+                ViewBag.ListaRol = new SelectList(ListaRol, "ID", "Nombre");
+            }
 
             if (!ModelState.IsValid)
             {
-                // Lee del ModelState todos los errores que
-                // vienen para el lado del server
-                string errors = string.Join("; ", ModelState.Values
-                                   .SelectMany(x => x.Errors)
-                                   .Select(x => x.ErrorMessage));
-                return BadRequest(errors);
+                return View(dto);
             }
 
             await _serviceUsuarios.AddAsync(dto);
             return RedirectToAction("Index");
-
         }
+
 
         public IActionResult ErrorHandler(string messageJson)
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
@@ -27,6 +28,7 @@ namespace TallerMotos.Web.Controllers
             return View(collection);
         }
 
+        [Authorize(Roles = "Administrador,Encargado")]
         public async Task<ActionResult> TablaProductos(int? page)
         {
             var collection = await _serviceProductos.ListAsync();
@@ -61,6 +63,7 @@ namespace TallerMotos.Web.Controllers
             return View("ErrorHandler");
         }
 
+        //[Authorize(Roles = "Administrador,Encargado")]
         // [HttpGet]
         public async Task<ActionResult> Create()
         {
@@ -70,6 +73,7 @@ namespace TallerMotos.Web.Controllers
             return View();
         }
 
+        //[Authorize(Roles = "Administrador,Encargado")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(ProductosDTO dto)
@@ -87,6 +91,7 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("TablaProductos");
         }
 
+        //[Authorize(Roles = "Administrador,Encargado")]
         // [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -112,6 +117,7 @@ namespace TallerMotos.Web.Controllers
             return View(productosDTO);
         }
 
+        //[Authorize(Roles = "Administrador,Encargado")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(ProductosDTO dto)
@@ -128,12 +134,14 @@ namespace TallerMotos.Web.Controllers
         }
 
 
-
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Delete(int id)
         {
             var @object = await _serviceProductos.FindByIdAsync(id);
             return View(@object);
         }
+
+        [Authorize(Roles = "Administrador")]
 
         [HttpPost]
         [ValidateAntiForgeryToken]
