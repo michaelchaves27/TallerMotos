@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using TallerMotos.Web.Util;
@@ -27,7 +26,7 @@ namespace TallerMotos.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[HttpPost("login")]
-        public async Task <IActionResult> Login(LoginViewModel viewModelLogin)
+        public async Task<IActionResult> Login(LoginViewModel viewModelLogin)
         {
             if (!ModelState.IsValid)
             {

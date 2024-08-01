@@ -19,7 +19,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .Include(x => x.IdservicioNavigation)
            .Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
-           .OrderByDescending(x => x.Fecha)
+           .OrderByDescending(x => x.Dia)
            .Where(x => x.ID == id)
            .FirstOrDefaultAsync();
             return @object!;
@@ -31,7 +31,7 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .Include(x => x.IdservicioNavigation)
            .Include(x => x.IdsucursalNavigation)
            .Include(x => x.IdusuarioNavigation)
-           .OrderByDescending(x => x.Fecha)
+           .OrderByDescending(x => x.Dia)
            .ToListAsync();
             return collection;
         }
@@ -39,9 +39,19 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
         public async Task<ICollection<Reservas>> ListBySucursalAsync(int idSucursal)
         {
             var collection = await _context.Set<Reservas>()
+                .Include(r => r.IdservicioNavigation)
+                .Include(r => r.IdusuarioNavigation)
                 .Where(r => r.IDSucursal == idSucursal)
                 .ToListAsync();
             return collection;
+        }
+
+        public async Task<int> AddAsync(Reservas entity)
+        {
+            //ActualizarCategorias(selectedCategorias, entity);
+            await _context.Set<Reservas>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity.ID;
         }
 
     }

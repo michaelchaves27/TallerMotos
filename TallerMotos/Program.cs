@@ -141,12 +141,14 @@ builder.Services.AddAutoMapper(config =>
 
 //Seguridad
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => {
+    .AddCookie(options =>
+    {
         options.LoginPath = "/Login/Index";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
         options.AccessDeniedPath = "/Login/Forbidden";
     });
-builder.Services.AddControllersWithViews(options => {
+builder.Services.AddControllersWithViews(options =>
+{
     options.Filters.Add(
         new ResponseCacheAttribute
         {

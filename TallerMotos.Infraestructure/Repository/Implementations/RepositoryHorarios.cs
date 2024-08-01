@@ -46,5 +46,30 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<string>> GetDiasDisponiblesAsync(int sucursalId)
+        {
+            // Implementa la lógica para obtener los días disponibles de la tabla Horarios
+            var diasDisponibles = await _context.Horarios
+                .Where(h => h.IDSucursal == sucursalId)
+                .Select(h => h.Dia)
+                .Distinct()
+                .ToListAsync();
+
+            return diasDisponibles;
+        }
+
+        public async Task<List<string>> GetHorasDisponiblesAsync(int sucursalId, string dia)
+        {
+            // Implementar lógica para obtener las horas disponibles para el sucursalId y dia
+            // Ejemplo:
+            var horarios = await _context.Horarios
+                .Where(h => h.IDSucursal == sucursalId && h.Dia == dia)
+                .Select(h => h.Hora)
+                .ToListAsync();
+
+            return horarios;
+        }
+
+
     }
 }

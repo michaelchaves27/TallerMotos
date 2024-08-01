@@ -1,0 +1,136 @@
+﻿@using Newtonsoft.Json
+@model TallerMotos.Application.DTO.ReservasDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ReservasDTO</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+
+            @* <div class="form-group">
+                ¿Qué 
+                <label asp-for="IdservicioNavigation" class="control-label"></label> desea elegir?
+                @*<input asp-for="IdAutor" class="form-control" />*@
+               @* @Html.DropDownListFor(m => m.IDServicio,
+                         new SelectList(ViewBag.ListaServicios, "ID", "Nombre"),
+                         "Seleccione un Servicio",
+                         new { @class = "form-select" }
+                         )
+
+                <span asp-validation-for="IDServicio" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group">
+                <label asp-for="IDServicio" class="control-label"></label>
+                @Html.DropDownListFor(model => model.IDServicio,
+                         new SelectList(ViewBag.ListaServicios, "ID", "Nombre"),
+                         "Seleccione un Servicio",
+                         new { @class = "form-select", id = "ServicioDropdown" })
+                <span asp-validation-for="IDServicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <h6 id="ServicioInfo"></h6>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IdsucursalNavigation" class="control-label"></label>
+                @Html.HiddenFor(model => model.IDSucursal)
+                <input class="form-control" value="@ViewBag.ListaSucursales.Nombre" disabled />
+                <span asp-validation-for="IDSucursal" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdusuarioNavigation, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(m => m.IDUsuario,
+                         new SelectList(ViewBag.ListaUsuarios, "ID", "Nombre"),
+                         "Seleccione un Usuario",
+                         new { @class = "form-select", id = "UsuarioDropdown" })
+                <span asp-validation-for="IDUsuario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <h6 id="UsuarioInfo"></h6>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dia" class="control-label"></label>
+                @Html.DropDownListFor(m => m.Dia, (SelectList)ViewBag.DiasDisponibles, "Seleccione un día", new { @class = "form-control" })
+                <span asp-validation-for="Dia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                ¿Qué
+                <label asp-for="Hora" class="control-label"></label> desea seleccionar?
+                <input asp-for="Hora" class="form-control" />
+                <span asp-validation-for="Hora" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                @Html.DropDownListFor(m => m.Estado, (IEnumerable<SelectListItem>)ViewBag.ListaEstados, "Seleccione un Estado", new { @class = "form-control" })
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div class="d-flex align-items-end">
+                <a class="btn btn-primary" asp-action="Index" asp-route-id="@ViewData["SucursalId"]">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var usuarios = @Html.Raw(ViewBag.UsuariosJson);
+            var servicios = @Html.Raw(ViewBag.ServiciosJson);
+
+            function updateUsuarioInfo() {
+                var selectedUserId = $('#UsuarioDropdown').val();
+                var selectedUser = usuarios.find(u => u.ID == selectedUserId);
+
+                if (selectedUser) {
+                    $('#UsuarioInfo').text(`Nombre: ${selectedUser.Nombre}, Correo: ${selectedUser.Correo}`);
+                } else {
+                    $('#UsuarioInfo').text('');
+                }
+            }
+
+            function updateServicioInfo() {
+                var selectedServicioId = $('#ServicioDropdown').val();
+                var selectedServicio = servicios.find(s => s.ID == selectedServicioId);
+
+                if (selectedServicio) {
+                    $('#ServicioInfo').text(`Nombre: ${selectedServicio.Nombre}, Tiempo: ${selectedServicio.Tiempo} horas`);
+                } else {
+                    $('#ServicioInfo').text('');
+                }
+            }
+
+            $('#UsuarioDropdown').change(updateUsuarioInfo);
+            $('#ServicioDropdown').change(updateServicioInfo);
+
+            updateUsuarioInfo();
+            updateServicioInfo();
+        });
+    </script>
+}
+

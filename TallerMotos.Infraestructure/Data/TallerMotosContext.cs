@@ -158,6 +158,12 @@ public partial class TallerMotosContext : DbContext
             entity.Property(e => e.Estado)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.Dia)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Hora)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.IDServicio).HasColumnName("IDServicio");
             entity.Property(e => e.IDSucursal).HasColumnName("IDSucursal");
             entity.Property(e => e.IDUsuario).HasColumnName("IDUsuario");

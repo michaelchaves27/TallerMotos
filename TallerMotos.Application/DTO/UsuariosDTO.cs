@@ -30,7 +30,7 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Contrasenna")]
         public string Contrasenna { get; set; } = null!;
-        
+
         [Display(Name = "Rol")]
         [ValidateNever]
         public virtual Rol IdrolNavigation { get; set; } = null!;

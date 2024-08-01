@@ -14,10 +14,14 @@ namespace TallerMotos.Application.Perfiles
            .ForMember(dest => dest.ID, orig => orig.MapFrom(o => o.ID))
            // .ForMember(dest => dest.IDCategoria, orig => orig.MapFrom(o => o.IDCategoria))
            .ForMember(dest => dest.IDServicio, orig => orig.MapFrom(o => o.IDServicio))
+           .ForMember(dest => dest.IDSucursal, orig => orig.MapFrom(o => o.IDSucursal))
+           .ForMember(dest => dest.IDUsuario, orig => orig.MapFrom(o => o.IDUsuario))
            .ForMember(dest => dest.IdservicioNavigation, orig => orig.MapFrom(o => o.IdservicioNavigation))
            .ForMember(dest => dest.IdsucursalNavigation, orig => orig.MapFrom(o => o.IdsucursalNavigation))
            .ForMember(dest => dest.IdusuarioNavigation, orig => orig.MapFrom(o => o.IdusuarioNavigation))
-           .ForMember(dest => dest.Fecha, orig => orig.MapFrom(o => o.Fecha))
+           //.ForMember(dest => dest.Fecha, orig => orig.MapFrom(o => o.Fecha))
+           .ForMember(dest => dest.Dia, orig => orig.MapFrom(o => o.Dia))
+           .ForMember(dest => dest.Hora, orig => orig.MapFrom(o => o.Hora))
            .ForMember(dest => dest.Estado, orig => orig.MapFrom(o => o.Estado));
         }
     }
