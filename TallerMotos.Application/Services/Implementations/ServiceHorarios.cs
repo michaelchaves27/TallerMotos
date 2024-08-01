@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Infraestructure.Models;
@@ -49,7 +50,15 @@ namespace TallerMotos.Application.Services.Implementations
             return _mapper.Map<HorariosDTO>(Horarios);
         }
 
+        public async Task<List<string>> GetDiasDisponiblesAsync(int sucursalId)
+        {
+            return await _repository.GetDiasDisponiblesAsync(sucursalId);
+        }
 
+        public async Task<List<string>> GetHorasDisponiblesAsync(int sucursalId, string dia)
+        {
+            return await _repository.GetHorasDisponiblesAsync(sucursalId, dia);
+        }
 
     }
 }

@@ -20,13 +20,15 @@
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdservicioNavigation):</b>  @Html.DisplayFor(model => model.IdservicioNavigation.Nombre)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdsucursalNavigation):</b>  @Html.DisplayFor(model => model.IdsucursalNavigation.Nombre)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.IdusuarioNavigation):</b>   @Html.DisplayFor(model => model.IdusuarioNavigation.Nombre)</p>
-            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Fecha):</b>  @Html.DisplayFor(model => model.Fecha)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Dia):</b>  @Html.DisplayFor(model => model.Dia)</p>
+            <p class="card-text"><b>@Html.DisplayNameFor(model => model.Hora):</b>  @Html.DisplayFor(model => model.Hora)</p>
             <p class="card-text"><b>@Html.DisplayNameFor(model => model.Estado):</b>  @Html.DisplayFor(model => model.Estado)</p>
             
 
         </div>
+
         <div class="d-flex align-items-end">
-            <a class="btn btn-primary" asp-action="Index">Regresar</a>
+            <a class="btn btn-primary" asp-action="Index" asp-route-id="@ViewData["SucursalId"]">Regresar</a>
         </div>
     </div>
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Infraestructure.Models;
@@ -51,5 +52,20 @@ namespace TallerMotos.Application.Services.Implementations
             var servicios = await _repository.FindByIdAsync(id);
             return _mapper.Map<ServiciosDTO>(servicios);
         }
+        //public async Task<ServiciosDTO> GetByIdAsync(int id)
+        //{
+        //    var servicio = await _repository.FindByIdAsync(id);
+        //    if (servicio == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    return new ServiciosDTO
+        //    {
+        //        ID = servicio.ID,
+        //        Nombre = servicio.Nombre,
+        //        Tiempo = servicio.Tiempo
+        //    };
+        //}
     }
 }

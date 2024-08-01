@@ -14,6 +14,6 @@
 
     public enum SweetAlertMessageType
     {
-        success,error, warning, info, question
+        success, error, warning, info, question
     }
 }

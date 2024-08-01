@@ -9,6 +9,10 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear</a>
 </p>
+<div class="d-flex align-items-end">
+    <a class="btn btn-primary" asp-action="Create" asp-route-idSucursal="@ViewData["SucursalId"]">Crear Reserva</a>
+</div>
+
 <head>
     <style>
         .estado-pendiente {
@@ -30,6 +34,10 @@
         .estado-reprogramada {
             color:aquamarine !important;
         }
+
+        .estado-proforma {
+            color: cadetblue !important;
+        }
     </style>
 
 </head>
@@ -37,7 +45,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+            <th>@Html.DisplayNameFor(model => model.Dia)</th>
             <th>@Html.DisplayNameFor(model => model.IdservicioNavigation)</th>
             <th>@Html.DisplayNameFor(model => model.IdusuarioNavigation)</th>
             <th>@Html.DisplayNameFor(model => model.Estado)</th>
@@ -69,9 +77,13 @@
             {
                 estadoClase = "estado-reprogramada";
             }
+            else if (item.Estado == "Proforma")
+            {
+                estadoClase = "estado-proforma";
+            }
 
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.Dia)</td>
                 <td>@Html.DisplayFor(modelItem => item.IdservicioNavigation.Nombre)</td>
                 <td>@Html.DisplayFor(modelItem => item.IdusuarioNavigation.Nombre)</td>
                 <td class="@estadoClase">@Html.DisplayFor(modelItem => item.Estado)</td>

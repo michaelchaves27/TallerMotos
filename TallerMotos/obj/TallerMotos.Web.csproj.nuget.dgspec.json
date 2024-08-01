@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[9.1.2, )"
@@ -136,6 +140,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
@@ -218,9 +226,15 @@
               "target": "Package",
               "version": "[8.0.3, )"
             },
+<<<<<<< HEAD
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[8.0.1, )"
+=======
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+>>>>>>> 6b2dcd394bd3ffc9957a4688697c49a0c1789dfd
             },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
