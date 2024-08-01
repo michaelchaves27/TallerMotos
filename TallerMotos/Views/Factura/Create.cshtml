@@ -1,0 +1,494 @@
+﻿@using System.Text.Json
+@using TallerMotos.Application.DTO
+@model TallerMotos.Application.DTO.FacturaDTO
+
+@{
+    ViewData["Title"] = "Create";
+    
+}
+<link rel="stylesheet" href="~/css/EstiloFact.css" asp-append-version="true" />
+<style>
+    ul.ui-autocomplete {
+        z-index: 1100;
+    }
+</style>
+
+<form asp-action="Create" id="myForm"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-begin="onBegin"
+      data-ajax-failure="onFailure"
+      data-ajax-success="onSuccess"
+      data-ajax-complete="onComplete">
+    <div class="card">
+        <div class="card-header">
+            <div class="col">
+                <button class="btn btn-info" style="margin-left: 1em" onclick="onClearForm()">Nueva Factura</button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="ID" class="control-label fw-normal"></label>
+                            <input asp-for="ID" class="form-control form-control-sm" value="@ViewBag.CurrentReceipt" readonly />
+                            <span asp-validation-for="ID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Fecha" class="control-label fw-normal"></label>
+                            <input asp-for="Fecha" type="text" class="form-control form-control-sm" value="@DateTime.Today.ToString("dd-MM-yyyy")" readonly />
+                            <span asp-validation-for="Fecha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IDUsuario" class="control-label"></label>
+                            <select id="IDUsuario" name="IDUsuario" class="form-select">
+                                <option value="">Seleccione un usuario</option>
+                                @foreach (var item in ViewBag.ListaUsuarios)
+                                {
+                                    <option value="@item.ID" data-email="@item.Correo">@item.Nombre</option>
+                                }
+                            </select>
+                            <span asp-validation-for="IDUsuario" class="text-danger"></span>
+
+                            <label id="Nombre" class="control-label fw-bold">Nombre: -</label> <br />
+                            <label id="Email" class="control-label fw-bold">Correo: -</label>
+                        </div>
+                      @*   //<span class="d-none d-sm-inline mx-1">@User.Identity!.Name</span> *@
+                        <div class="form-group">
+                            <label asp-for="IDSucursal" class="control-label"></label>
+
+                          @*  // <input asp-for="IDSucursal" type="text" class="form-control form-control-sm" value="@User.Identity!.Name" readonly /> *@
+                             @Html.DropDownListFor(m => m.IDSucursal,
+                                     new SelectList(ViewBag.ListaSucursales, "ID", "Nombre"),
+                                     new { @class = "form-select" }
+                                     ) 
+                            <span asp-validation-for="IDSucursal" class="text-danger"></span>
+
+                            @* <label id="Nombre" class="control-label fw-bold">-</label> *@
+                        </div>
+
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal" onclick="">Agregar Producto</button>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div id="detalleFacturaView">
+                            <!-- Solamente se muestra la primera vez como efecto visual-->
+                            @await Html.PartialAsync("_DetailFactura")
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+        </div>
+        <div class="card-footer ">
+            <div class="col float-end">
+                <input type="submit" value="Guardar Factura" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+    <br />
+
+</form>
+<div>
+    <a asp-action="Index">Regresar al listado</a>
+</div>
+
+      <!-------------------------------------- Modal ----------------------------->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Productos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Etiqueta mostrar donde se inyecta el partialview-->
+                <div id="mostrar" class=""></div>
+                @await Html.PartialAsync("AddProducto")
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!------------------------------------ Fin Modal ----------------------------->
+@section Scripts {
+
+    <script>
+        document.getElementById("Codigo").addEventListener("change", function () {
+            var selectedOption = this.options[this.selectedIndex];
+            var precio = selectedOption.getAttribute("data-precio");
+            var producto = selectedOption.text;
+            var cantidad = selectedOption.getAttribute("data-cantidad");
+            var imagen = selectedOption.getAttribute("data-imagen");
+
+           
+
+            document.getElementById("Precio").value = precio || '';
+            document.getElementById("ProductoSelect").innerText = "Producto: " + (producto || '-');
+            document.getElementById("PrecioSelect").innerText = "Precio: " + (precio || '-');
+            document.getElementById("CantidadSelect").innerText = "Cantidad Stock: " + (5 || '-');
+            document.getElementById("CantidadEnInventarioModal").value = cantidad || '';
+            document.getElementById("ImgProducto").src = imagen || '/Images/nophoto.jpg';
+        });
+
+       
+            document.getElementById("IDUsuario").addEventListener("change", function () {
+                var selectedOption = this.options[this.selectedIndex];
+                var nombreUsuario = selectedOption.text;
+            var correoUsuario = selectedOption.getAttribute("data-email");
+                document.getElementById("Nombre").innerText = "Nombre: " + nombreUsuario;
+                document.getElementById("Email").innerText = "Correo: " + correoUsuario;
+            });
+    
+        function addProducto() {
+            let CodigoModal = document.getElementById("Codigo").value;
+            let cantidadModal = document.getElementById("CantidadModal").value;
+            let precioModal = document.getElementById("Precio").value;
+            let divFactura = document.getElementById("detalleFacturaView");
+
+            if (!CodigoModal) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Seleccione el código del Producto!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            if (!cantidadModal || parseInt(cantidadModal) <= 0) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Ingrese una cantidad válida del Producto!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            const myRequest = '@Url.Action("AddProducto", "Factura")';
+
+            const options = {
+                method: 'GET'
+            };
+
+            fetch(myRequest + "?id=" + CodigoModal + "&cantidad=" + cantidadModal, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text;
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    });
+                });
+
+            document.getElementById("Codigo").value = "";
+            document.getElementById("CantidadModal").value = "";
+            document.getElementById("ProductoSelect").innerText = "Producto: -";
+            document.getElementById("PrecioSelect").innerText = "Precio: -";
+            document.getElementById("CantidadSelect").innerText = "Cantidad Stock: -";
+            document.getElementById("Precio").value = "";
+            document.getElementById("CantidadEnInventarioModal").value = "";
+            document.getElementById("ImgProducto").src = "/Images/nophoto.jpg";
+        }
+
+        function deleteProducto(id) {
+            console.log("Borrar " + id)
+            const divFactura = document.getElementById("detalleFacturaView");
+            //const divProducto = document.getElementById("detalleProductoView")
+            const myRequest = '@Url.Action("DeleteProducto", "Factura")'
+            const options = {
+                method: 'GET'
+            }
+            fetch(myRequest + "?codigo=" + id, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) })
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text
+
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    })
+
+                })
+        }
+    </script>
+    <script>
+        /**************************/
+        // Autocomplete Modal Buscar Producto
+        /**************************/
+        $("#CodigoModal").autocomplete({
+            source: function (request, response) {
+                var id = $("#CodigoModal").val();
+                $("#ImgLibro").attr("src", "/Images/nophoto.jpg");
+                $("#ProductoSelect").html("")
+                $("#PrecioSelect").html("");
+                $("#CantidadSelect").html("");
+                $("#Precio").val("");
+                $("#Cantidad").val("");
+                $("#CantidadEnInventarioModal").val("");
+                $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("GetProductoByID", "Productos")',
+                    dataType: "json",
+                    data: { filtro: id },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+
+                            //debugger;
+                            return { label: item.nombre, value: item.codigo, data: item };
+                        }));
+                    },
+                    error: function (xhr, status, error) {
+                        // xhr.requestText
+                        // debugger;
+                        console.log(error)
+                        alert("Error: " + error + ", No Error: " + xhr.status);
+                    },
+                });
+            },
+            select: function (event, ui) {
+
+                // Show data
+                console.log(ui.item)
+                $("#CodigoModal").val(ui.item.data.idLibro)
+                $("#ProductoSelect").html("Producto: " + ui.item.data.nombre)
+                $("#PrecioSelect").html("Precio: " + ui.item.data.precio)
+                $("#CantidadSelect").html("Cantidad stock: " + ui.item.data.cantidad)
+                $("#Precio").val(ui.item.data.precio)
+                $("#CodigoModal").focus();
+
+                $("#ImgProducto").attr("src", "data:image/jpeg;charset=utf-8;base64," + ui.item.data.imagen);
+                $("#CantidadEnInventarioModal").val(ui.item.data.cantidad);
+
+                return false;
+            }
+        });
+
+
+        /**************************/
+        // Busca el cliente por nombre+apellido1+apellido2 //
+        /**************************/
+
+        $("#IDUsuario").autocomplete({
+            source: function (request, response) {
+                var idCliente = $("#IDUsuario").val();
+                console.log(idCliente);
+                $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("GetUsuarioByID", "Usuarios")',
+                    dataType: "json",
+                    data: { filtro: idCliente },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            console.log(item);
+                            return { label: item.Nombre, value: item.ID };
+                        }));
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error)
+                        alert("Error: " + error + ", No Error: " + xhr.status);
+                    },
+                });
+            },
+            select: function (event, ui) {
+
+                $("#IDUsuario").val(ui.item.value);
+                $("#Nombre").html(ui.item.label)
+
+                return false;
+            }
+        });
+
+
+        /**************************/
+        // Limpiar cajas de texto cuando tenga el foco
+        /**************************/
+        $("#IDUsuario").focus(function () {
+            // Limpia la caja de texto
+            $("#IDUsuario").val("");
+            $("#Nombre").html("*")
+        });
+        /**************************/
+        // Agregar a la compra
+        /**************************/
+        function addProducto2() {
+            let CodigoModal = document.getElementById("CodigoModal").value;
+            let cantidadModal = document.getElementById("CantidadModal").value;
+            let precioModal = document.getElementById("Precio").value;
+            let detalleFacturaBorrar = document.getElementById("detalleFactura");
+            let divFactura = document.getElementById("detalleFacturaView");
+
+            let cantidadEnInventarioModal = document.getElementById("CantidadEnInventarioModal").value;
+
+            if ($.isNumeric(CodigoModal) == false) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Ingrese el código del Producto!",
+                    icon: "error"
+                });
+
+                return;
+            }
+            if ($.isNumeric(cantidadModal) == false) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Ingrese la cantidad del Producto!",
+                    icon: "error"
+                });
+
+                return;
+            }
+
+            if (parseInt(cantidadModal) <= 0) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "La cantidad debe ser mayor a CERO!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            if (parseInt(cantidadModal) > parseInt(cantidadEnInventarioModal)) {
+
+                Swal.fire({
+                    title: "Error!",
+                    text: "La cantidad de inventario insuficiente! ",
+                    icon: "error"
+                });
+                return;
+            }
+
+            const myRequest = '@Url.Action("AddProducto", "Factura")'
+
+            const options = {
+                method: 'GET'
+            }
+
+            fetch(myRequest + "?id=" + CodigoModal + "&cantidad=" + cantidadModal, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) })
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    })
+
+                })
+
+            $("#CodigoModal").val("")
+            $("#CantidadModal").val("")
+            $("#ProductoSelect").html("")
+            $("#PrecioSelect").html("");
+            $("#CantidadSelect").html("");
+            $("#Precio").val("");
+            $("#Cantidad").val("");
+            $("#CantidadEnInventarioModal").val("");
+            $("#ImgProducto").attr("src", "/Images/nophoto.jpg");
+
+        }
+
+        /**************************/
+        // Eliminar de la compra
+        /**************************/
+        function deleteProducto2(id) {
+            console.log("Borrar " + id)
+            const divProducto = document.getElementById("detalleProductoView")
+            const myRequest = '@Url.Action("DeleteProducto", "Factura")'
+            const options = {
+                method: 'GET'
+            }
+            fetch(myRequest + "?codigo=" + id, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) })
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text
+
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    })
+
+                })
+        }
+        //Controles de AJAX
+        function onBegin() {
+            console.log("onBegin")
+        }
+
+        function onFailure(response) {
+            console.log("onFailure")
+            Swal.fire({
+                title: "Error!",
+                text: response.responseText,
+                icon: "error"
+            });
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess")
+            document.getElementById("myForm").reset();
+            document.getElementById("NombreCliente").innerHTML = ""
+            document.getElementById("detalleFacturaView").innerHTML = ""
+
+            Swal.fire({
+                icon: "success",
+                title: "Factura guardada ...",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            location.reload();
+
+        }
+
+        function onComplete() {
+            console.log("Fin del proceso")
+        }
+        function onClearForm() {
+            document.getElementById("myForm").reset();
+            document.getElementById("NombreCliente").innerHTML = ""
+            document.getElementById("detalleFacturaView").innerHTML = ""
+
+        }
+
+
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+                

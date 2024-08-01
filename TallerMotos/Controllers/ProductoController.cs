@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -54,6 +55,13 @@ namespace TallerMotos.Web.Controllers
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public IActionResult GetProductoByID(int filtro)
+        {
+
+            var collections = _serviceProductos.FindByIdAsync(filtro).GetAwaiter().GetResult();
+
+            return Json(collections);
         }
         public IActionResult ErrorHandler(string messageJson)
         {

@@ -1876,3 +1876,12 @@ C:\TallerMotos\TallerMotos\obj\Debug\net8.0\TallerMotos.Web.MvcApplicationPartsA
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.dll
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 C:\Users\mchaves\Music\Ambiente WEB II\Proyecto\TallerMotos\TallerMotos\obj\Debug\net8.0\TallerMotos.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\TallerMotos\TallerMotos\bin\Debug\net8.0\Serilog.Sinks.File.dll

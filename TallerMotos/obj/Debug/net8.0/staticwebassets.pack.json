@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\TallerMotos.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\css\\EstiloFact.css",
+      "PackagePath": "staticwebassets\\css\\EstiloFact.css"
+    },
+    {
       "Id": "C:\\TallerMotos\\TallerMotos\\wwwroot\\css\\bootstrap-superhero.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-superhero.css"
     },

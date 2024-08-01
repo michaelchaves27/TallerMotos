@@ -30,12 +30,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZUZhY3R1cmFcSW5kZXhEZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TallerMotos/TallerMotos/Views/Factura/AddProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxBZGRQcm9kdWN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TallerMotos/TallerMotos/Views/Factura/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TallerMotos/TallerMotos/Views/Factura/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Factura/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TallerMotos/TallerMotos/Views/Factura/_DetailFactura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxfRGV0YWlsRmFjdHVyYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TallerMotos/TallerMotos/Views/Home/Index.cshtml]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4rOc7WhkzN61yBc8lAsIAjrRk15BwUGi3ag73twY0Rw=",
+  "Hash": "9ejGIBpVUX1ZFTQhvFO4vHobl3WF0+FlU3Mv98k13Oc=",
   "Source": "TallerMotos.Web",
   "BasePath": "_content/TallerMotos.Web",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap-superhero.css"
+    },
+    {
+      "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\css\\EstiloFact.css",
+      "SourceId": "TallerMotos.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TallerMotos\\TallerMotos\\wwwroot\\",
+      "BasePath": "_content/TallerMotos.Web",
+      "RelativePath": "css/EstiloFact.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\EstiloFact.css"
     },
     {
       "Identity": "C:\\TallerMotos\\TallerMotos\\wwwroot\\css\\site.css",
