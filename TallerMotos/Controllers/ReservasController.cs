@@ -1,10 +1,7 @@
-﻿using Humanizer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
-using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 
@@ -56,7 +53,7 @@ namespace TallerMotos.Web.Controllers
                 {
                     throw new Exception("Reservas no existente");
                 }
-                ViewData["SucursalId"] = reserva.IDSucursal; 
+                ViewData["SucursalId"] = reserva.IDSucursal;
                 return View(reserva);
             }
             catch (Exception ex)

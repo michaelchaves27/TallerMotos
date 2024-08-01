@@ -5566,7 +5566,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mchaves\\.nuget\\packages\\": {}
+    "C:\\Users\\jbfon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5574,11 +5574,11 @@
       "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
       "projectName": "TallerMotos.Application",
       "projectPath": "C:\\TallerMotos\\TallerMotos.Application\\TallerMotos.Application.csproj",
-      "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
       "outputPath": "C:\\TallerMotos\\TallerMotos.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5649,5 +5649,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\TallerMotos\\TallerMotos.Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
-using Microsoft.AspNetCore.Authorization;
-using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
-using System.Text.Json;
 using X.PagedList;
-using Newtonsoft.Json.Linq;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 
@@ -65,7 +62,7 @@ namespace TallerMotos.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(FacturaDTO dto)
         {
-            
+
             string json;
 
             var cliente = await _serviceUsuarios.FindByIdAsync(dto.IDUsuario);
@@ -98,7 +95,7 @@ namespace TallerMotos.Web.Controllers
             dto.Estado = "Proforma";
             dto.Fecha = DateOnly.Parse(DateTime.Today.ToString("dd-MM-yyyy"));
             dto.DetalleFactura = lista;
-            dto.Total = ""+ dto.DetalleFactura.Sum(p => Convert.ToDecimal( p.Total));
+            dto.Total = "" + dto.DetalleFactura.Sum(p => Convert.ToDecimal(p.Total));
             dto.Impuesto = "" + dto.DetalleFactura.Sum(p => Convert.ToDecimal(p.Impuesto));
             dto.SubTotal = "" + dto.DetalleFactura.Sum(p => Convert.ToDecimal(p.SubTotal));
 
@@ -116,7 +113,7 @@ namespace TallerMotos.Web.Controllers
             var Producto = await _serviceProductos.FindByIdAsync(id);
             DetalleFacturaDTO item = new DetalleFacturaDTO();
             //Cantidad de item a guardar
-             detalle.Cantidad = ""+cantidad;
+            detalle.Cantidad = "" + cantidad;
             if (TempData["CartShopping"] != null)
             {
                 json = (string)TempData["CartShopping"]!;
@@ -125,7 +122,7 @@ namespace TallerMotos.Web.Controllers
                 item = lista.FirstOrDefault(o => int.Parse(o.Codigo) == id);
                 if (item != null)
                 {
-                    detalle.Cantidad = ""+(int.Parse(detalle.Cantidad)+ cantidad);
+                    detalle.Cantidad = "" + (int.Parse(detalle.Cantidad) + cantidad);
 
                 }
             }
@@ -134,35 +131,35 @@ namespace TallerMotos.Web.Controllers
             //{
             //    return BadRequest("No hay inventario suficiente!");
             //}
-            
-                if (item != null && item.Cantidad != null)
-                {
-                    //Actualizar cantidad de libro existente
-                    item.Cantidad = "" + (int.Parse(item.Cantidad) + cantidad);
-                item.SubTotal =""+ int.Parse(item.Cantidad) * Convert.ToDecimal(Producto.Precio);
-                }
-                else
-                {
-                    detalle.IDFactura = 0;
-                    detalle.Total = "0";
-                    detalle.Impuesto = "0";
-                    detalle.Codigo = ""+Producto.ID;
-                    detalle.Nombre = Producto.Nombre;
-                    detalle.Cantidad = "" + cantidad;
-                    detalle.Precio = Producto.Precio;
-                    var precio= Convert.ToDecimal(Producto.Precio);
-                    var cant = cantidad;
-                    var sub = (precio * cant);
-                    //Falta impuesto
-                    detalle.SubTotal = ""+sub; //""+(int.Parse(detalle.Precio) * int.Parse(detalle.Cantidad));
-                detalle.Impuesto = ""+(Convert.ToDecimal(detalle.SubTotal)* Convert.ToDecimal(0.13));
-                detalle.Total= ""+(Convert.ToDecimal(detalle.Impuesto)+ Convert.ToDecimal(detalle.SubTotal));
+
+            if (item != null && item.Cantidad != null)
+            {
+                //Actualizar cantidad de libro existente
+                item.Cantidad = "" + (int.Parse(item.Cantidad) + cantidad);
+                item.SubTotal = "" + int.Parse(item.Cantidad) * Convert.ToDecimal(Producto.Precio);
+            }
+            else
+            {
+                detalle.IDFactura = 0;
+                detalle.Total = "0";
+                detalle.Impuesto = "0";
+                detalle.Codigo = "" + Producto.ID;
+                detalle.Nombre = Producto.Nombre;
+                detalle.Cantidad = "" + cantidad;
+                detalle.Precio = Producto.Precio;
+                var precio = Convert.ToDecimal(Producto.Precio);
+                var cant = cantidad;
+                var sub = (precio * cant);
+                //Falta impuesto
+                detalle.SubTotal = "" + sub; //""+(int.Parse(detalle.Precio) * int.Parse(detalle.Cantidad));
+                detalle.Impuesto = "" + (Convert.ToDecimal(detalle.SubTotal) * Convert.ToDecimal(0.13));
+                detalle.Total = "" + (Convert.ToDecimal(detalle.Impuesto) + Convert.ToDecimal(detalle.SubTotal));
                 //Agregar al carrito de compras
-                    lista.Add(detalle);
-                }
-                json = JsonSerializer.Serialize(lista);
-                TempData["CartShopping"] = json;
-            
+                lista.Add(detalle);
+            }
+            json = JsonSerializer.Serialize(lista);
+            TempData["CartShopping"] = json;
+
 
 
 
