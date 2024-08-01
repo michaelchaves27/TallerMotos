@@ -27,9 +27,11 @@ namespace TallerMotos.Web.Controllers
             _serviceServicios = serviceServicios;
             _serviceUsuarios = serviceUsuarios;
         }
-        public async Task<IActionResult> Index(int? page)
+        public async Task<IActionResult> Index(int? page, string fecha)
         {
             var collection = await _serviceFactura.ListAsync();
+            DateTime? filterDate = string.IsNullOrEmpty(fecha) ? (DateTime?)null : DateTime.Parse(fecha);
+            var facturas = await _serviceFactura.GetFacturasAsync(filterDate);
             ViewData["Title"] = "Index";
             return View(collection.ToPagedList(page ?? 1, 5));
         }
@@ -48,6 +50,7 @@ namespace TallerMotos.Web.Controllers
             ViewBag.ListaSucursales = await _serviceSucursales.ListAsync();
             ViewBag.ListaServicios = await _serviceServicios.ListAsync();
             ViewBag.ListaUsuarios = await _serviceUsuarios.ListAsync();
+            ViewBag.ListaEstados = new List<string> { "Proforma", "Cancelada", "Pendiente", "Anulada" };
             //Número de factura siguiente posible
             var nextReceiptNumber = await _serviceFactura.GetNextNumberOrden();
             ViewBag.CurrentReceipt = nextReceiptNumber;
@@ -92,7 +95,7 @@ namespace TallerMotos.Web.Controllers
             dto.ID = 0;
             //dto.IDUsuario = 2;
             //dto.IDSucursal = 3;
-            dto.Estado = "Proforma";
+            //dto.Estado = "Proforma";
             dto.Fecha = DateOnly.Parse(DateTime.Today.ToString("dd-MM-yyyy"));
             dto.DetalleFactura = lista;
             dto.Total = "" + dto.DetalleFactura.Sum(p => Convert.ToDecimal(p.Total));

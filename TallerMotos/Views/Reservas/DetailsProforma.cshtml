@@ -1,0 +1,169 @@
+﻿@model TallerMotos.Application.DTO.ReservasDTO
+
+@{
+    ViewData["Title"] = "Detalle Proforma";
+    <link rel="stylesheet" href="~/css/EstiloFact.css" asp-append-version="true" />
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom 20px;
+        }
+
+            .header h2 {
+                margin-top: 20px;
+                text-align: right;
+                display: flex;
+                width: 60%;
+            }
+
+            .header img {
+                text-align: center;
+                max-width: 250px;
+                display: flex;
+                width: 48%;
+            }
+
+        .Enc {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .company-details, .customer-details {
+            margin-bottom: 20px;
+            width: 48%;
+        }
+
+            .company-details h2, .customer-details h2 {
+                margin: 0 0 10px;
+                width: 48%;
+            }
+
+        .details {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+            .details th, .details td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .details th {
+                background-color: black;
+                color: white;
+            }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+            .total h3 {
+                margin: 0;
+            }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="~/imagenes/logo2SF.png" alt="Logo de la empresa">
+            <h2>Reserva #: @Html.DisplayFor(model => model.ID)<br />Fecha: @DateTime.Now.ToString("dd/MM/yyyy")</h2>
+        </div>
+
+        <div class="Enc">
+            <div class="company-details">
+                <h2>Detalles de la Sucursal</h2>
+                <p>Sucursal: @Html.DisplayFor(model => model.IdsucursalNavigation.Nombre)</p>
+                <p>Teléfono: @Html.DisplayFor(model => model.IdsucursalNavigation.Telefono)</p>
+                <p>Email: @Html.DisplayFor(model => model.IdsucursalNavigation.Correo)</p>
+            </div>
+            <div class="customer-details">
+                <h2>Detalles del Cliente</h2>
+                <p>Nombre del Cliente: @Html.DisplayFor(model => model.IdusuarioNavigation.Nombre)</p>
+                <p>Identificación: @Html.DisplayFor(model => model.IdusuarioNavigation.ID)</p>
+            </div>
+        </div>
+
+        <table class="details">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Tiempo de Servicio</th>
+                    <th>Cilindraje para el Servicio</th>
+                    <th>Día</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.IdservicioNavigation.Nombre)</td>
+                    <td>@Html.DisplayFor(model => model.IdservicioNavigation.Tiempo) horas</td>
+                    <td>@Html.DisplayFor(model => model.IdservicioNavigation.Cilindrada)</td>
+                    <td>@Html.DisplayFor(model => model.Dia)</td>
+                    <td>@Html.DisplayFor(model => model.Hora)</td>
+                    <td>@Html.DisplayFor(model => model.Estado)</td>
+                    <td>₡@Html.DisplayFor(model => model.IdservicioNavigation.Precio)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total">
+            <h4>Precio: ₡@Html.DisplayFor(model => model.IdservicioNavigation.Precio)</h4>
+        </div>
+
+        <div class="footer">
+            <p>Gracias por su compra</p>
+            <a class="btn btn-primary" asp-action="Index" asp-route-id="@ViewData["SucursalId"]">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>

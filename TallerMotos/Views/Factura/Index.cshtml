@@ -12,6 +12,15 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear</a>
 </p>
+
+<form method="get" asp-action="Index" class="form-inline mb-3">
+    <div class="form-group">
+        <label for="fecha" class="mr-2">Filtrar por fecha:</label>
+        <input type="date" name="fecha" id="fecha" class="form-control mr-2" value="@ViewData["fecha"]" />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>

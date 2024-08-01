@@ -96,7 +96,7 @@
 
 <div class="header">
     <img src="~/imagenes/logo2SF.png" alt="Logo de la empresa">
-    <h4 class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">Moto Servicio BEICHA <br />N° Factura: @ultDetalle?.IdfacturaNavigation.ID <br />Fecha: @ultDetalle?.IdfacturaNavigation.Fecha </h4>
+    <h5 class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">N° Factura: @ultDetalle?.IdfacturaNavigation.ID <br />Fecha: @ultDetalle?.IdfacturaNavigation.Fecha<br /> Estado Factura: @ultDetalle?.IdfacturaNavigation.Estado </h5>
 </div>
 <div class="Enc">
     @* factura encabezado *@
@@ -169,9 +169,9 @@
     </tbody>
 </table>
 <div class="total">
-    <h4>SubTotal: ₡@ultDetalle?.IdfacturaNavigation.SubTotal</h4>
-    <h4>Impuesto: ₡@ultDetalle?.IdfacturaNavigation.Impuesto</h4>
-    <h3>Total: ₡@ultDetalle?.IdfacturaNavigation.Total</h3>
+    <h5>SubTotal: ₡@ultDetalle?.IdfacturaNavigation.SubTotal</h5>
+    <h5>Impuesto: ₡@ultDetalle?.IdfacturaNavigation.Impuesto</h5>
+    <h5>Total: ₡@ultDetalle?.IdfacturaNavigation.Total</h5>
 </div>
 <div class="footer">
     <p>Gracias por su compra</p>

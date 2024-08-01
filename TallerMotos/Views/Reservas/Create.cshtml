@@ -33,7 +33,8 @@
             </div> *@
 
             <div class="form-group">
-                <label asp-for="IDServicio" class="control-label"></label>
+                ¿Qué 
+                <label asp-for="IdservicioNavigation" class="control-label"></label> desea recibir?
                 @Html.DropDownListFor(model => model.IDServicio,
                          new SelectList(ViewBag.ListaServicios, "ID", "Nombre"),
                          "Seleccione un Servicio",
@@ -65,16 +66,25 @@
                 <h6 id="UsuarioInfo"></h6>
             </div>
 
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="Dia" class="control-label"></label>
                 @Html.DropDownListFor(m => m.Dia, (SelectList)ViewBag.DiasDisponibles, "Seleccione un día", new { @class = "form-control" })
+                <span asp-validation-for="Dia" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group">
+                ¿Qué 
+                <label asp-for="Dia" class="control-label"></label> desea reservar la cita?
+                @Html.DropDownListFor(m => m.Dia, (SelectList)ViewBag.DiasDisponibles, "Seleccione un día", new { @class = "form-control", id = "diaCombo" })
                 <span asp-validation-for="Dia" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                ¿Qué
-                <label asp-for="Hora" class="control-label"></label> desea seleccionarRR?
-                <input asp-for="Hora" class="form-control" />
+                ¿Qué 
+                <label asp-for="Hora" class="control-label"></label> desea seleccionar?
+                <select asp-for="Hora" class="form-control" id="horaCombo">
+                    <option value="">Seleccione una hora</option>
+                </select>
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
 
@@ -84,22 +94,93 @@
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+            @* <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-            <div class="d-flex align-items-end">
-                <a class="btn btn-primary" asp-action="Index" asp-route-id="@ViewData["SucursalId"]">Regresar</a>
+            </div> *@
+
+            
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a class="btn btn-info" asp-action="Index" asp-route-id="@ViewData["SucursalId"]">Regresar</a>
             </div>
         </form>
     </div>
 </div>
 
 
-
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
         $(document).ready(function () {
+            // Definir funciones para mostrar mensajes
+            function showSuccessMessage(title, text) {
+                Swal.fire({
+                    icon: 'success',
+                    title: title,
+                    text: text,
+                    showConfirmButton: false,
+                    timer: 5000 // Tiempo en milisegundos que el mensaje estará visible
+                });
+            }
+
+            function showErrorMessage(title, text) {
+                Swal.fire({
+                    icon: 'error',
+                    title: title,
+                    text: text,
+                    showConfirmButton: true
+                });
+            }
+
+            // Manejador para el envío del formulario
+            $('form').on('submit', function (e) {
+                e.preventDefault(); // Prevenir el envío del formulario para manejarlo con AJAX
+
+                var $form = $(this);
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (response) {
+                        showSuccessMessage('Reserva creada', 'La reserva se ha creado exitosamente.');
+                        setTimeout(function () {
+                            window.location.href = '@Url.Action("Index", "Reservas")'; // Redirigir a otra página
+                        }, 2000); // Espera de 2 segundos para permitir que el mensaje se muestre antes de redirigir
+                    },
+                    error: function (xhr, status, error) {
+                        showErrorMessage('Error', 'No se pudo crear la reserva.');
+                    }
+                });
+            });
+
+            // Código existente para dropdowns y AJAX
+            $('#diaCombo').change(function () {
+                var selectedDia = $(this).val();
+
+                $.ajax({
+                    url: '@Url.Action("GetHorasDisponibles", "Reservas")',
+                    type: 'GET',
+                    data: { dia: selectedDia },
+                    success: function (data) {
+                        var $horaCombo = $('#horaCombo');
+                        $horaCombo.empty(); // Clear previous options
+                        $horaCombo.append('<option value="">Seleccione una hora</option>'); // Add default option
+
+                        $.each(data.horas, function (index, hora) {
+                            $horaCombo.append($('<option>').text(hora).attr('value', hora));
+                        });
+
+                        // Puedes agregar aquí otro tipo de mensajes si es necesario, pero no de éxito
+                        // showSuccessMessage('Horas actualizadas', 'Las horas disponibles se han actualizado.');
+                    },
+                    error: function (xhr, status, error) {
+                        showErrorMessage('Error', 'No se pudieron obtener las horas disponibles.');
+                    }
+                });
+            });
+
+            // Código para actualizar la información del usuario y servicio
             var usuarios = @Html.Raw(ViewBag.UsuariosJson);
             var servicios = @Html.Raw(ViewBag.ServiciosJson);
 
@@ -133,4 +214,5 @@
         });
     </script>
 }
+
 

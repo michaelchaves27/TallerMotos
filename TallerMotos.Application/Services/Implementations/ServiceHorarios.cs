@@ -54,9 +54,14 @@ namespace TallerMotos.Application.Services.Implementations
             return await _repository.GetDiasDisponiblesAsync(sucursalId);
         }
 
-        public async Task<List<string>> GetHorasDisponiblesAsync(int sucursalId, string dia)
+        //public async Task<List<string>> GetHorasDisponiblesAsync(int sucursalId, string dia)
+        //{
+        //    return await _repository.GetHorasDisponiblesAsync(sucursalId, dia);
+        //}
+
+        public List<string> GetHorasDisponibles(string dia)
         {
-            return await _repository.GetHorasDisponiblesAsync(sucursalId, dia);
+            return _repository.GetHorasDisponibles(dia);
         }
 
     }

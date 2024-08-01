@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
+using X.PagedList;
 
 namespace TallerMotos.Web.Controllers
 {
@@ -31,16 +32,51 @@ namespace TallerMotos.Web.Controllers
         //}
 
 
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int id, string diaSeleccionado, int? page)
         {
+            // Obtén las reservas por sucursal
             var collection = await _serviceReservas.ListBySucursalAsync(id);
-            ViewData["SucursalId"] = id; // Guarda el id en ViewData
+
+            // Filtra por día si se ha seleccionado uno
+            if (!string.IsNullOrEmpty(diaSeleccionado))
+            {
+                collection = collection.Where(r => r.Dia == diaSeleccionado).ToList();
+            }
+
+            // Guarda el id de la sucursal en ViewData
+            ViewData["SucursalId"] = id;
+            // Guarda los días de la semana en ViewBag para el combo box
+            ViewBag.DiasDeLaSemana = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+
             ViewData["Title"] = "Index";
-            return View(collection);
+            return View(collection.ToPagedList(page ?? 1, 5));
         }
 
 
+
         public async Task<ActionResult> Details(int? id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return RedirectToAction("Index");
+                }
+                var reserva = await _serviceReservas.FindByIdAsync(id.Value);
+                if (reserva == null)
+                {
+                    throw new Exception("Reservas no existente");
+                }
+                ViewData["SucursalId"] = reserva.IDSucursal;
+                return View(reserva);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<ActionResult> DetailsProforma(int? id)
         {
             try
             {
@@ -139,19 +175,17 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("Index", new { idSucursal = dto.IDSucursal });
         }
 
-        [HttpPost]
-        public async Task<IActionResult> GetHorasDisponibles(int sucursalId, string dia)
+        [HttpGet]
+        public IActionResult GetHorasDisponibles(string dia)
         {
-            try
+            if (string.IsNullOrEmpty(dia))
             {
-                var horasDisponibles = await _serviceHorarios.GetHorasDisponiblesAsync(sucursalId, dia);
-                return Json(horasDisponibles);
+                return Json(new { horas = new List<string>() });
             }
-            catch (Exception ex)
-            {
-                // Manejo de errores
-                return StatusCode(500, ex.Message);
-            }
+
+            var horas = _serviceHorarios.GetHorasDisponibles(dia);
+
+            return Json(new { horas });
         }
 
 
