@@ -6,6 +6,8 @@ namespace TallerMotos.Application.Services.Interfaces
     {
         Task<ICollection<FacturaDTO>> ListAsync();
         Task<FacturaDTO> FindByIdAsync(int id);
+        Task<int> AddAsync(FacturaDTO dto);
+        Task<int> GetNextNumberOrden();
     }
 
 }

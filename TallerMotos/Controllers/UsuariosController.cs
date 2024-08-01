@@ -113,7 +113,13 @@ namespace TallerMotos.Web.Controllers
             await _serviceUsuarios.UpdateAsync(dto);
             return RedirectToAction("Index");
         }
+        public IActionResult GetUsuarioByID(int filtro)
+        {
 
+            var collections = _serviceUsuarios.FindByIdAsync(filtro).GetAwaiter().GetResult();
+
+            return Json(collections);
+        }
 
         public IActionResult ErrorHandler(string messageJson)
         {

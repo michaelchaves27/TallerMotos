@@ -6,5 +6,7 @@ namespace TallerMotos.Infraestructure.Repository.Interfaces
     {
         Task<ICollection<Facturas>> ListAsync();
         Task<Facturas> FindByIdAsync(int id);
+        Task<int> AddAsync(Facturas entity);
+        Task<int> GetNextNumberOrden();
     }
 }
