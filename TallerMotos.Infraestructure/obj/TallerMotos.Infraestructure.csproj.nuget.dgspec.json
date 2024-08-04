@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
         "projectName": "TallerMotos.Infraestructure",
         "projectPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\TallerMotos.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\jbfon\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mchaves\\.nuget\\packages\\",
         "outputPath": "C:\\TallerMotos\\TallerMotos.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jbfon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mchaves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -17,6 +17,8 @@ namespace TallerMotos.Application.DTO
         public string Nombre { get; set; } = null!;
 
         [Display(Name = "Cantidad")]
+        //[Required(ErrorMessage = "{0} es un dato requerido")]
+        //[RegularExpression(@"^[0-9]*$", ErrorMessage = "El {0} solo puede contener números.")]
         public string Cantidad { get; set; } = null!;
 
         [Display(Name = "Precio")]

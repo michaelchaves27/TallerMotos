@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using TallerMotos.Application.DTO;
+using TallerMotos.Application.Services.Implementations;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Web.Models;
 using X.PagedList;
@@ -15,14 +17,16 @@ namespace TallerMotos.Web.Controllers
         private readonly IServiceServicios _serviceServicios;
         private readonly IServiceUsuarios _serviceUsuarios;
         private readonly IServiceHorarios _serviceHorarios;
+        private readonly IServiceFacturas _serviceFacturas;
 
-        public ReservasController(IServiceReservas serviceReservas, IServiceSucursales serviceSucursales, IServiceServicios serviceServicios, IServiceUsuarios serviceUsuarios, IServiceHorarios serviceHorarios)
+        public ReservasController(IServiceReservas serviceReservas, IServiceSucursales serviceSucursales, IServiceServicios serviceServicios, IServiceUsuarios serviceUsuarios, IServiceHorarios serviceHorarios, IServiceFacturas serviceFacturas)
         {
             _serviceReservas = serviceReservas;
             _serviceSucursales = serviceSucursales;
             _serviceServicios = serviceServicios;
             _serviceUsuarios = serviceUsuarios;
             _serviceHorarios = serviceHorarios;
+            _serviceFacturas = serviceFacturas;
         }
         //public async Task<IActionResult> Index()
         //{
@@ -147,6 +151,8 @@ namespace TallerMotos.Web.Controllers
                 new SelectListItem { Value = "Proforma", Text = "Proforma" }
             };
 
+            
+
             return View();
         }
 
@@ -155,6 +161,7 @@ namespace TallerMotos.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(ReservasDTO dto)
         {
+            FacturaDTO factura = new FacturaDTO();
             //Validación del formulario 
             if (!ModelState.IsValid)
             {
@@ -168,10 +175,48 @@ namespace TallerMotos.Web.Controllers
                 ViewBag.ErrorMessage = errors;
                 ViewBag.ListaSucursales = await _serviceSucursales.FindByIdAsync(dto.IDSucursal);
 
+                //FacturaDTO factura = new FacturaDTO();
+                
+
                 return View();
             }
+
+            //Proforma
+            DetalleFacturaDTO detFactura = new DetalleFacturaDTO();
+            ServiciosDTO servi=new ServiciosDTO();
+            //  var  servicio= _serviceServicios.GetByIdAsync(dto.IDServicio);
+            var servicio = await _serviceServicios.GetByIdAsync(dto.IDServicio);
+
+
+
+            factura.Fecha = DateOnly.Parse(DateTime.Today.ToString("dd-MM-yyyy"));
+            factura.IDSucursal = dto.IDSucursal;
+            factura.IDUsuario = dto.IDUsuario;
+            factura.Estado = "Proforma";
+            factura.SubTotal = servicio.Precio;
+            factura.Impuesto = "" + (Convert.ToDouble(factura.SubTotal) * 0.13);
+            factura.Total = "" + (Convert.ToDouble(factura.SubTotal) + Convert.ToDouble(factura.Impuesto));
+
+            var nextReceiptNumber = await _serviceFacturas.GetNextNumberOrden();
+          //  var serv = dto.IdservicioNavigation.Nombre;
+            detFactura.IDFactura = nextReceiptNumber;
+            detFactura.Codigo = "" + dto.IDServicio;
+            detFactura.Nombre = servicio.Nombre;//"servicio";
+            detFactura.Cantidad = "" + 1;
+            detFactura.Precio = servicio.Precio;
+            detFactura.Impuesto = "" + (Convert.ToDouble(detFactura.Precio) * 0.13);
+            detFactura.SubTotal = "" + (Convert.ToDouble(detFactura.Cantidad) * Convert.ToDouble(detFactura.Precio));
+            detFactura.Total = "" + (Convert.ToDouble(detFactura.SubTotal) + Convert.ToDouble(detFactura.Impuesto));
+
+            List<DetalleFacturaDTO> lista = new List<DetalleFacturaDTO>();
+
+            lista.Add(detFactura);
+
+            factura.DetalleFactura = lista;
+
             //Crear 
             await _serviceReservas.AddAsync(dto);
+            await _serviceFacturas.AddAsync(factura);
             return RedirectToAction("Index", new { idSucursal = dto.IDSucursal });
         }
 

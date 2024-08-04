@@ -27,11 +27,11 @@ namespace TallerMotos.Web.Controllers
             _serviceServicios = serviceServicios;
             _serviceUsuarios = serviceUsuarios;
         }
-        public async Task<IActionResult> Index(int? page, string fecha)
+        public async Task<IActionResult> Index(int? page)
         {
             var collection = await _serviceFactura.ListAsync();
-            DateTime? filterDate = string.IsNullOrEmpty(fecha) ? (DateTime?)null : DateTime.Parse(fecha);
-            var facturas = await _serviceFactura.GetFacturasAsync(filterDate);
+           // DateTime? filterDate = string.IsNullOrEmpty(fecha) ? (DateTime?)null : DateTime.Parse(fecha);
+            //var facturas = await _serviceFactura.GetFacturasAsync(filterDate);
             ViewData["Title"] = "Index";
             return View(collection.ToPagedList(page ?? 1, 5));
         }
