@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
+using TallerMotos.Infraestructure.Models;
 using TallerMotos.Web.Models;
 using X.PagedList;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -27,11 +28,16 @@ namespace TallerMotos.Web.Controllers
             _serviceServicios = serviceServicios;
             _serviceUsuarios = serviceUsuarios;
         }
-        public async Task<IActionResult> Index(int? page, string fecha)
+        public async Task<IActionResult> Index(int? page, DateOnly? fecha)
         {
             var collection = await _serviceFactura.ListAsync();
-            DateTime? filterDate = string.IsNullOrEmpty(fecha) ? (DateTime?)null : DateTime.Parse(fecha);
-            var facturas = await _serviceFactura.GetFacturasAsync(filterDate);
+
+            if (fecha.HasValue)
+            {
+                collection = collection.Where(f => f.Fecha == fecha.Value).ToList();
+                ViewData["fecha"] = fecha.Value.ToString("yyyy-MM-dd");
+            }
+
             ViewData["Title"] = "Index";
             return View(collection.ToPagedList(page ?? 1, 5));
         }
