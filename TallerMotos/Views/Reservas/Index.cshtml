@@ -29,6 +29,36 @@
         </select>
     </div>
 
+    <head>
+        <style>
+            .estado-pendiente {
+                color: orange !important;
+            }
+
+            .estado-confirmada {
+                color: dodgerblue !important;
+            }
+
+            .estado-completada {
+                color: green !important;
+            }
+
+            .estado-cancelada {
+                color: red !important;
+            }
+
+            .estado-reprogramada {
+                color: aquamarine !important;
+            }
+
+            .estado-proforma {
+                color: cadetblue !important;
+            }
+        </style>
+
+    </head>
+
+
     <a class="btn btn-primary" asp-action="Create" asp-route-idSucursal="@ViewData["SucursalId"]">Crear Cita Reserva</a>
 
 </div>
