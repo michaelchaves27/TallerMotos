@@ -85,6 +85,8 @@
                         </br>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal" onclick="">Agregar Producto</button>
                         </br></br>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModalServicio" onclick="">Agregar Servicio</button>
+                        </br></br>
                     </div>
 
                     <div class="col-md-12">
@@ -131,6 +133,25 @@
 </div>
 
                 <!------------------------------------ Fin Modal ----------------------------->
+<!-------------------------------------- Modal Servicios ----------------------------->
+<div class="modal fade" id="myModalServicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Servicios</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="mostrarServicio" class=""></div>
+                @await Html.PartialAsync("AddServicio")
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------------ Fin Modal Servicios ----------------------------->
 @section Scripts {
 
     <script>
@@ -245,11 +266,7 @@
                 })
         }
     
-        
 
-        
-
-       
         
 
        
@@ -295,6 +312,59 @@
 
 
     </script>
+
+    <script>
+        function addServicio() {
+            let codigoServicio = document.getElementById("CodigoServicio").value;
+            let divFactura = document.getElementById("detalleFacturaView");
+
+            if (!codigoServicio) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Seleccione el código del Servicio!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            const myRequest = '@Url.Action("AddServicio", "Factura")';
+            const options = {
+                method: 'GET'
+            };
+
+            fetch(myRequest + "?id=" + codigoServicio, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text;
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    });
+                });
+
+            document.getElementById("CodigoServicio").value = "";
+            document.getElementById("ServicioSelect").innerText = "Servicio: -";
+            document.getElementById("PrecioServicio").value = "";
+        }
+
+        document.getElementById("CodigoServicio").addEventListener("change", function () {
+            var selectedOption = this.options[this.selectedIndex];
+            var precio = selectedOption.getAttribute("data-precio");
+            var servicio = selectedOption.text;
+
+            document.getElementById("PrecioServicio").value = precio || '';
+            document.getElementById("ServicioSelect").innerText = "Servicio: " + (servicio || '-');
+        });
+    </script>
+
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

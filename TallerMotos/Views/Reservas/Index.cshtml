@@ -29,6 +29,17 @@
         </select>
     </div>
 
+    <div class="d-flex align-items-center me-3">
+        <label for="usuarioSeleccionado" class="form-label mb-0 me-2">Seleccionar Usuario:</label>
+        <select id="usuarioSeleccionado" name="usuarioSeleccionado" class="form-select form-select-sm">
+            <option value="">Todos</option>
+            @foreach (var usuario in ViewBag.ListaUsuarios)
+            {
+                <option value="@usuario.Nombre">@usuario.Nombre</option>
+            }
+        </select>
+    </div>
+
     <head>
         <style>
             .estado-pendiente {
@@ -139,7 +150,7 @@
     </tfoot>
 </table>
 
-@section Scripts {
+@* @section Scripts {
     <script>
         document.getElementById('diaSeleccionado').addEventListener('change', function () {
             var selectedDia = this.value;
@@ -156,5 +167,31 @@
                 }
             });
         });
+    </script>
+} *@
+@section Scripts {
+    <script>
+        function filterReservations() {
+            var selectedDia = document.getElementById('diaSeleccionado').value;
+            var selectedUsuario = document.getElementById('usuarioSeleccionado').value;
+            var rows = document.querySelectorAll('#reservasTabla tr');
+
+            rows.forEach(function (row) {
+                var diaCell = row.cells[0];
+                var usuarioCell = row.cells[2];
+
+                var matchesDia = selectedDia === "" || diaCell.innerText === selectedDia;
+                var matchesUsuario = selectedUsuario === "" || usuarioCell.innerText === selectedUsuario;
+
+                if (matchesDia && matchesUsuario) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('diaSeleccionado').addEventListener('change', filterReservations);
+        document.getElementById('usuarioSeleccionado').addEventListener('change', filterReservations);
     </script>
 }

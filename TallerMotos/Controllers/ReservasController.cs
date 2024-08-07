@@ -40,6 +40,7 @@ namespace TallerMotos.Web.Controllers
         {
             // Obtén las reservas por sucursal
             var collection = await _serviceReservas.ListBySucursalAsync(id);
+            ViewBag.ListaUsuarios = await _serviceUsuarios.ListAsync();
 
             // Filtra por día si se ha seleccionado uno
             if (!string.IsNullOrEmpty(diaSeleccionado))

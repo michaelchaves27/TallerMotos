@@ -1,0 +1,57 @@
+﻿@model TallerMotos.Web.ViewModels.ViewModelInput
+<div class="row" id="MyAddServicio">
+    <div class="col-md-4">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+
+            <label asp-for="Codigo" name="Codigo" class="control-label"></label>
+            <select id="CodigoServicio" name="Codigo" class="form-select">
+                <option value="">Seleccione un Servicio</option>
+                @foreach (var item in ViewBag.ListaServicios)
+                {
+                    <option value="@item.ID" data-precio="@item.Precio">@item.Nombre</option>
+                }
+            </select>
+            @* <span asp-validation-for="Codigo" class="text-danger"></span>
+            <!--Cantidad en Inventario del Libro-->
+            <input type="hidden" id="CantidadEnInventarioModal" /> *@
+        </div>
+        @* <div class="form-group">
+            <label asp-for="Cantidad" class="control-label"></label>
+            <input asp-for="Cantidad" id="CantidadModal" type="number" class="form-control form-control-sm" />
+            <span asp-validation-for="Cantidad" class="text-danger"></span>
+        </div> *@
+        <div class="form-group">
+            <label asp-for="Precio" class="control-label"></label>
+            <input asp-for="Precio" id="PrecioServicio" readonly type="number" class="form-control  form-control-sm" />
+            <span asp-validation-for="Precio" class="text-danger"></span>
+        </div>
+        <br />
+        <!--Call JavaScript addProducto -->
+        <button type="button" class="btn btn-success" onclick="addServicio()">Agregar Servicio</button>
+    </div>
+    <div class="col-md-4 text-center">
+        <img src="/imagenes/logoMoto.jpeg" class="img-responsive" style="height:80%;width:80%" id="ImgProducto">
+    </div>
+    <div class="col-md-4 text-left">
+        <p id="ServicioSelect" name="ServicioSelect" class="form-label fw-bold">Servicio: -</p>
+        <p id="PrecioSelect" name="PrecioSelect" class="form-label fw-bold">Precio: -</p>
+        <p id="CantidadSelect" name="CantidadSelect" class="form-label fw-bold">Cantidad Stodk: -</p>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Create">Regresar a la Factura</a>
+</div>
+
+
+
+@section Scripts {
+
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

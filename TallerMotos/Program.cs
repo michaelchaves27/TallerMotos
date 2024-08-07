@@ -8,6 +8,7 @@ using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Infraestructure.Data;
 using TallerMotos.Infraestructure.Repository.Implementations;
 using TallerMotos.Infraestructure.Repository.Interfaces;
+using TallerMotos.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//********************************
+
+
+
+//***************Tarea Programada*****************
+
+builder.Services.AddHostedService<TareaHostedService>();
+//*******************************************
+
+
 
 
 //Configurar D.I.

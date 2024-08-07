@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxBZGRQcm9kdWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TallerMotos/TallerMotos/Views/Factura/AddServicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxBZGRTZXJ2aWNpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TallerMotos/TallerMotos/Views/Factura/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
