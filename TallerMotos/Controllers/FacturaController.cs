@@ -178,66 +178,79 @@ namespace TallerMotos.Web.Controllers
 
         public async Task<IActionResult> AddServicio(int id)
         {
-
+            // Inicializar el objeto y lista
             DetalleFacturaDTO detalle = new DetalleFacturaDTO();
             List<DetalleFacturaDTO> lista = new List<DetalleFacturaDTO>();
             string json = "";
 
+            // Obtener el servicio basado en el ID
             var Servicios = await _serviceServicios.FindByIdAsync(id);
-            DetalleFacturaDTO item = new DetalleFacturaDTO();
-            //Cantidad de item a guardar
-            //detalle.Cantidad = "" + cantidad;
 
+            // Verificar si hay un carrito de compras en TempData
             if (TempData["CartShopping"] != null)
             {
-                json = (string)TempData["CartShopping"]!;
-                lista = JsonSerializer.Deserialize<List<DetalleFacturaDTO>>(json!)!;
-                //Buscar si existe el Libro en la compra
-                item = lista.FirstOrDefault(o => int.Parse(o.Codigo) == id);
-                //if (item != null)
-                //{
-                //    detalle.Cantidad = "" + (int.Parse(detalle.Cantidad) + cantidad);
+                json = (string)TempData["CartShopping"];
+                lista = JsonSerializer.Deserialize<List<DetalleFacturaDTO>>(json) ?? new List<DetalleFacturaDTO>();
 
-                //}
-            }
-            // Validar que la cantidad en stock sea suficiente a la solicitada
-            //if (detalle.Cantidad > Producto.Cantidad)
-            //{
-            //    return BadRequest("No hay inventario suficiente!");
-            //}
+                // Buscar el item en la lista
+                var item = lista.FirstOrDefault(o => int.Parse(o.Codigo) == id);
 
-            if (item != null )
-            {
-                //Actualizar cantidad de libro existente
-                item.Cantidad = "" + (int.Parse(item.Cantidad) );
-                item.SubTotal = "" + 1 * Convert.ToDecimal(Servicios.Precio);
+                if (item != null)
+                {
+                    // Actualizar cantidad y subtotal si el servicio ya está en la lista
+                    item.Cantidad = "" + (Convert.ToInt32(item.Cantidad) + 1); // Suponiendo cantidad 1
+                    item.SubTotal = "" + (Convert.ToDecimal(item.Cantidad) * Convert.ToDecimal(Servicios.Precio));
+                }
+                else
+                {
+                    // Agregar nuevo servicio a la lista
+                    detalle.IDFactura = 0;
+                    detalle.Total = "0";
+                    detalle.Impuesto = "0";
+                    detalle.Codigo = "" + Servicios.ID;
+                    detalle.Nombre = Servicios.Nombre;
+                    detalle.Precio = Servicios.Precio;
+
+                    // Suponiendo cantidad 1
+                    var precio = Convert.ToDecimal(Servicios.Precio);
+                    var cant = 1;
+                    var sub = precio * cant;
+
+                    detalle.SubTotal = "" + sub;
+                    detalle.Impuesto = "" + (sub * 0.13m); // Asumiendo impuesto del 13%
+                    detalle.Total = "" + (Convert.ToDecimal(detalle.Impuesto) + sub);
+
+                    // Agregar al carrito de compras
+                    lista.Add(detalle);
+                }
             }
             else
             {
+                // Si no hay carrito de compras, inicializar con un nuevo carrito
                 detalle.IDFactura = 0;
                 detalle.Total = "0";
                 detalle.Impuesto = "0";
                 detalle.Codigo = "" + Servicios.ID;
                 detalle.Nombre = Servicios.Nombre;
-                //.Cantidad = "" + cantidad;
                 detalle.Precio = Servicios.Precio;
+
                 var precio = Convert.ToDecimal(Servicios.Precio);
                 var cant = 1;
-                var sub = (precio * cant);
-                //Falta impuesto
-                detalle.SubTotal = "" + sub; //""+(int.Parse(detalle.Precio) * int.Parse(detalle.Cantidad));
-                detalle.Impuesto = "" + (Convert.ToDecimal(detalle.SubTotal) * Convert.ToDecimal(0.13));
-                detalle.Total = "" + (Convert.ToDecimal(detalle.Impuesto) + Convert.ToDecimal(detalle.SubTotal));
-                //Agregar al carrito de compras
+                var sub = precio * cant;
+
+                detalle.SubTotal = "" + sub;
+                detalle.Impuesto = "" + (sub * 0.13m); // Asumiendo impuesto del 13%
+                detalle.Total = "" + (Convert.ToDecimal(detalle.Impuesto) + sub);
+
                 lista.Add(detalle);
             }
+
+            // Serializar y almacenar el carrito en TempData
             json = JsonSerializer.Serialize(lista);
             TempData["CartShopping"] = json;
-
-
-
-
             TempData.Keep();
+
+            // Retornar la vista parcial actualizada
             return PartialView("_DetailFactura", lista);
         }
 

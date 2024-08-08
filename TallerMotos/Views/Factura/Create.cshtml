@@ -313,7 +313,152 @@
 
     </script>
 
+    @* /////////////////////////////// *@
     <script>
+        document.getElementById("CodigoServicio").addEventListener("change", function () {
+            var selectedOption = this.options[this.selectedIndex];
+            var precio = selectedOption.getAttribute("data-precio");
+            var servicio = selectedOption.text;
+            var cantidad = selectedOption.getAttribute("data-cantidad") || 1;
+            var imagen = selectedOption.getAttribute("data-imagen") || '/imagenes/logoMoto.jpeg';
+
+            document.getElementById("PrecioServicio").value = precio || '';
+            document.getElementById("ServicioSelect").innerText = "Servicio: " + (servicio || '-');
+            document.getElementById("PrecioSelect").innerText = "Precio: " + (precio || '-');
+            document.getElementById("CantidadModal").value = 1;
+            document.getElementById("CantidadEnInventarioModal").value = cantidad || '';
+            document.getElementById("ImgProducto").src = imagen;
+        });
+
+        document.getElementById("IDUsuario").addEventListener("change", function () {
+            var selectedOption = this.options[this.selectedIndex];
+            var nombreUsuario = selectedOption.text;
+            var correoUsuario = selectedOption.getAttribute("data-email");
+            document.getElementById("Nombre").innerText = "Nombre: " + nombreUsuario;
+            document.getElementById("Email").innerText = "Correo: " + correoUsuario;
+        });
+
+        function addServicio() {
+            let cantidadModal = document.getElementById("CantidadModal").value;
+            let precioModal = document.getElementById("PrecioServicio").value;
+            let codigoServicio = document.getElementById("CodigoServicio").value;
+            let divFactura = document.getElementById("detalleFacturaView");
+
+            if (!codigoServicio) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Seleccione el código del Servicio!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            if (!cantidadModal || parseInt(cantidadModal) <= 0) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Ingrese una cantidad válida del Servicio!",
+                    icon: "error"
+                });
+                return;
+            }
+
+            const myRequest = '@Url.Action("AddServicio", "Factura")';
+            console.log("Request URL:", myRequest + "?id=" + codigoServicio + "&cantidad=" + cantidadModal);
+
+            const options = {
+                method: 'GET'
+            };
+
+            fetch(myRequest + "?id=" + codigoServicio + "&cantidad=" + cantidadModal, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    console.log("Response Text:", text);
+                    divFactura.innerHTML = text;
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    });
+                });
+
+            document.getElementById("CodigoServicio").value = "";
+            document.getElementById("CantidadModal").value = "";
+            document.getElementById("ServicioSelect").innerText = "Servicio: -";
+            document.getElementById("PrecioSelect").innerText = "Precio: -";
+            document.getElementById("CantidadSelect").innerText = "Cantidad Stock: -";
+            document.getElementById("PrecioServicio").value = "";
+            document.getElementById("CantidadEnInventarioModal").value = "";
+            document.getElementById("ImgProducto").src = "/Images/nophoto.jpg";
+        }
+
+        function deleteServicio(id) {
+            console.log("Borrar " + id);
+            const divFactura = document.getElementById("detalleFacturaView");
+            const myRequest = '@Url.Action("DeleteServicio", "Factura")';
+            const options = {
+                method: 'GET'
+            };
+            fetch(myRequest + "?codigo=" + id, options)
+                .then(function (response) {
+                    if (!response.ok) {
+                        return response.text().then(text => { throw new Error(text) });
+                    }
+                    return response.text();
+                })
+                .then((text) => {
+                    divFactura.innerHTML = text;
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Error",
+                        text: error,
+                        icon: "error"
+                    });
+                });
+        }
+
+        //Controles de AJAX
+        function onBegin() {
+            console.log("onBegin");
+        }
+
+        function onFailure(response) {
+            console.log("onFailure");
+            Swal.fire({
+                title: "Error!",
+                text: response.responseText,
+                icon: "error"
+            });
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess");
+            document.getElementById("myForm").reset();
+            document.getElementById("IDUsuario").innerHTML = "";
+            document.getElementById("detalleFacturaView").innerHTML = "";
+
+            Swal.fire({
+                icon: "success",
+                title: "Factura guardada ...",
+                showConfirmButton: false,
+                timer: 4000,
+            });
+        }
+
+        function onComplete() {
+            console.log("Fin del proceso");
+        }
+    </script>
+
+
+
+
+    @* <script>
         function addServicio() {
             let codigoServicio = document.getElementById("CodigoServicio").value;
             let divFactura = document.getElementById("detalleFacturaView");
@@ -362,7 +507,7 @@
             document.getElementById("PrecioServicio").value = precio || '';
             document.getElementById("ServicioSelect").innerText = "Servicio: " + (servicio || '-');
         });
-    </script>
+    </script> *@
 
 
     @{
