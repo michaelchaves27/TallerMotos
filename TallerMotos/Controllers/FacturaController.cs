@@ -31,6 +31,7 @@ namespace TallerMotos.Web.Controllers
         public async Task<IActionResult> Index(int? page, DateOnly? fecha)
         {
             var collection = await _serviceFactura.ListAsync();
+            ViewBag.ListaUsuarios = await _serviceUsuarios.ListAsync();
 
             if (fecha.HasValue)
             {

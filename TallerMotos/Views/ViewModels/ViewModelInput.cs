@@ -11,7 +11,8 @@ namespace TallerMotos.Web.ViewModels
         [Display(Name = "Cantidad")]
         [Range(0, 999999999, ErrorMessage = "Cantidad mínimo es {0}")]
         public int Cantidad { get; set; }
-        [Range(0, 999999999, ErrorMessage = "Precio mínimo es {0}")]
+        //[Range(0, 999999999, ErrorMessage = "Precio mínimo es {0}")]
+        [Range(0, int.MaxValue, ErrorMessage = "La cantidad debe ser un número positivo.")]
         [Display(Name = "Precio")]
         public decimal Precio { get; set; }
         [Display(Name = "Tiempo")]

@@ -20,7 +20,7 @@ namespace TallerMotos.Web
         public Task StartAsync(CancellationToken cancellationToken)
         {
             // Configuración del timer para ejecutar el método IncrementarPrecioServicios
-            _timer = new Timer(IncrementarPrecioServicios, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+            _timer = new Timer(IncrementarPrecioServicios, null, TimeSpan.Zero, TimeSpan.FromHours(10));
             return Task.CompletedTask;
         }
 
