@@ -5,6 +5,7 @@ using TallerMotos.Application.DTO;
 using TallerMotos.Application.Services.Interfaces;
 using TallerMotos.Infraestructure.Models;
 using TallerMotos.Web.Models;
+using X.PagedList;
 
 namespace TallerMotos.Web.Controllers
 {
@@ -17,11 +18,11 @@ namespace TallerMotos.Web.Controllers
             _serviceUsuarios = serviceUsuarios;
             _serviceRol = serviceRol;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
             var collection = await _serviceUsuarios.ListAsync();
             ViewData["Title"] = "Index";
-            return View(collection);
+            return View(collection.ToPagedList(page ?? 1, 5));
         }
 
         public async Task<ActionResult> Details(int? id)
@@ -92,26 +93,45 @@ namespace TallerMotos.Web.Controllers
             {
                 return NotFound();
             }
-            ViewBag.ListaRol = await _serviceRol.ListAsync();
+
+            // Convertir la lista de roles a SelectList
+            var roles = await _serviceRol.ListAsync();
+            ViewBag.ListaRol = new SelectList(roles, "ID", "Nombre");
 
             return View(usuariosDTO);
         }
 
-        //[Authorize(Roles = "Administrador,Encargado")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(UsuariosDTO dto)
         {
             if (!ModelState.IsValid)
             {
+                //// En caso de error, volver a cargar la lista de roles
+                //var roles = await _serviceRol.ListAsync();
+                //ViewBag.ListaRol = new SelectList(roles, "ID", "Nombre");
+
                 string errors = string.Join("; ", ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage));
                 ViewBag.ErrorMessage = errors;
-                return View();
+                return View(dto);
+            }
+
+            // Verificar si se seleccionó un rol válido
+            if (dto.IDRol == 0) // O verifica si es null
+            {
+                ModelState.AddModelError(string.Empty, "Debe seleccionar un rol.");
+
+                // Volver a cargar la lista de roles
+                var roles = await _serviceRol.ListAsync();
+                ViewBag.ListaRol = new SelectList(roles, "ID", "Nombre");
+
+                return View(dto);
             }
 
             await _serviceUsuarios.UpdateAsync(dto);
             return RedirectToAction("Index");
         }
+
         public IActionResult GetUsuarioByID(int filtro)
         {
 

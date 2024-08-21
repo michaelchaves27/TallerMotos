@@ -69,11 +69,26 @@ namespace TallerMotos.Application.Services.Implementations
 
         public async Task UpdateAsync(UsuariosDTO dto)
         {
-            var @object = await _repository.FindByIdAsync(dto.ID);
-            var entity = _mapper.Map(dto, @object!);
+            // Llave secreta
+            string secret = _options.Value.Crypto.Secret;
 
+            // Encriptar la contraseña si se ha proporcionado una nueva
+            if (!string.IsNullOrEmpty(dto.Contrasenna))
+            {
+                string passwordEncrypted = Cryptography.Encrypt(dto.Contrasenna, secret);
+                dto.Contrasenna = passwordEncrypted;
+            }
+
+            var @object = await _repository.FindByIdAsync(dto.ID);
+            if (@object == null)
+            {
+                throw new ArgumentException("El usuario no existe.");
+            }
+
+            var entity = _mapper.Map(dto, @object);
 
             await _repository.UpdateAsync(entity);
         }
+
     }
 }
