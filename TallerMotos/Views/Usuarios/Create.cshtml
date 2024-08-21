@@ -4,6 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 <h1>Crear</h1>
 
 <h4>Usuarios</h4>
@@ -18,17 +21,11 @@
                 <span asp-validation-for="ID" class="text-danger"></span>
             </div> *@
             <div class="form-group">
-                <label asp-for="IDRol" class="control-label"></label>
-                @if (ViewBag.ListaRol != null)
-                {
-                    @Html.DropDownListFor(m => m.IDRol, (SelectList)ViewBag.ListaRol, "Seleccione un Rol", new { @class = "form-control" })
-                }
-                else
-                {
-                    <span class="text-danger">No hay roles disponibles</span>
-                }
-                <span asp-validation-for="IDRol" class="text-danger"></span>
+                <label asp-for="IdrolNavigation" class="control-label"></label>
+                <input type="hidden" asp-for="IDRol" value="1" />
+                <input type="text" class="form-control" value="Cliente" disabled />
             </div>
+
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -56,9 +53,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Contrasenna" class="control-label"></label>
-                <input asp-for="Contrasenna" class="form-control" />
+                <div class="input-group">
+                    <input asp-for="Contrasenna" class="form-control" type="password" id="Contrasenna" />
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary" onclick="togglePasswordVisibility()">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
                 <span asp-validation-for="Contrasenna" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -72,4 +77,22 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("Contrasenna");
+            var icon = event.currentTarget.querySelector("i");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+
 }

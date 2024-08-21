@@ -242,7 +242,7 @@ public partial class TallerMotosContext : DbContext
             entity.HasKey(e => e.ID).HasName("PK_Usuarios");
 
             entity.Property(e => e.ID).HasColumnName("ID");
-            entity.Property(e => e.Contrasenna).HasMaxLength(50);
+            entity.Property(e => e.Contrasenna).HasMaxLength(255);
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
                 .IsUnicode(false);

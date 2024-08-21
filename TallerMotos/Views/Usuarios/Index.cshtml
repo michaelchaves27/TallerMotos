@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<TallerMotos.Application.DTO.UsuariosDTO>
+@using X.PagedList
+@using X.PagedList.Mvc.Core
 
 @{
     Layout = "_Layout";
@@ -9,30 +11,6 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear</a>
 </p>
-@* <head>
-    <style>
-        .estado-pendiente {
-            color: orange !important;
-        }
-
-        .estado-confirmada {
-            color: dodgerblue !important;
-        }
-
-        .estado-completada {
-            color: green !important;
-        }
-
-        .estado-cancelada {
-            color: red !important;
-        }
-
-        .estado-reprogramada {
-            color: aquamarine !important;
-        }
-    </style>
-
-</head> *@
 
 <table class="table">
     <thead>
@@ -49,29 +27,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            @* string estadoClase = "";
-
-            if (item.Estado == "Pendiente")
-            {
-                estadoClase = "estado-pendiente";
-            }
-            else if (item.Estado == "Confirmada")
-            {
-                estadoClase = "estado-confirmada";
-            }
-            else if (item.Estado == "Completada")
-            {
-                estadoClase = "estado-completada";
-            }
-            else if (item.Estado == "Cancelada")
-            {
-                estadoClase = "estado-cancelada";
-            }
-            else if (item.Estado == "Reprogramada")
-            {
-                estadoClase = "estado-reprogramada";
-            } *@
-
+            
             <tr>
                 @* <td>@Html.DisplayFor(modelItem => item.ID)</td> *@
                 <td>@Html.DisplayFor(modelItem => item.IdrolNavigation.Nombre)</td>
@@ -86,4 +42,24 @@
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="btn-toolbar d-flex justify-content-end" role="toolbar">
+                    <div class="btn-group" role="group">
+                        @Html.PagedListPager((IPagedList)Model, page =>
+                                 Url.Action("Index", new { page }), new
+                                 PagedListRenderOptions
+                        {
+                            Display = PagedListDisplayMode.Always,
+                            MaximumPageNumbersToDisplay = 5,
+                            LiElementClasses = new String[] { "page-item" },
+                            PageClasses = new String[] { "page-link" }
+                        }
+                                 )
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
 </table>
