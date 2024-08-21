@@ -29,5 +29,18 @@ namespace TallerMotos.Application.Services.Implementations
             // Return lista
             return collection;
         }
+
+        public async Task<ICollection<DetalleFacturaDTO>> ListaDetalle()
+        {
+            //Obtener datos del repositorio
+            var list = await _repository.ListaDetalle();
+            // Map List<Autor> a ICollection<BodegaDTO>
+            var collection = _mapper.Map<ICollection<DetalleFacturaDTO>>(list);
+            // Return lista
+            return collection;
+        }
+
+
+       
     }
 }

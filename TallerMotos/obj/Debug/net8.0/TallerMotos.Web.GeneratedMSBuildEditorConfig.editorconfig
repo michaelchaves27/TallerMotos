@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\TallerMotos\TallerMotos
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/TallerMotos/TallerMotos/Views/Agenda/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TallerMotos/TallerMotos/Views/DetalleFactura/IndexDetalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWxsZUZhY3R1cmFcSW5kZXhEZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

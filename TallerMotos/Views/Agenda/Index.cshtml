@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Calendario";
+}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <style>
+        /* Estilos personalizados para quitar la cuadrícula */
+        .fc .fc-timegrid-slot-lane-frame,
+        .fc .fc-timegrid-col-frame,
+        .fc .fc-timegrid-slots td,
+        .fc .fc-timegrid-event {
+            border: none; /* Quita las líneas de borde */
+        }
+
+        .fc .fc-daygrid-day-frame {
+            border: none; /* Quita las líneas de borde en la vista dayGrid */
+        }
+
+        .fc .fc-timegrid-slot-label-frame,
+        .fc .fc-timegrid-slot-frame {
+            border: none; /* Quita las líneas de borde en las horas */
+            height: 40px;
+        }
+
+    </style>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var eventos = @Html.Raw(ViewBag.Eventos); // Deserializar el JSON en la vista
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek', // Vista semanal
+                events: eventos, // Pasar los eventos deserializados a FullCalendar
+                headerToolbar: {
+                    left: 'prev,next today', // Botones de navegación
+                    center: 'title', // Título del calendario
+                    right: '' // Deshabilitar otras vistas
+                },
+                locale: 'es', // Configuración en español
+                buttonText: {
+                    today: 'Hoy',
+                    week: 'Semana',
+                },
+                titleFormat: function () {
+                    return 'Agenda'; // Cambiar el título a "Agenda"
+                },
+                dayHeaderFormat: { weekday: 'long' }, // Mostrar solo el día de la semana (sin la fecha)
+            });
+            calendar.render();
+        });
+    </script>
+</head>
+<body>
+    <div id='calendar'></div>
+</body>
+</html>

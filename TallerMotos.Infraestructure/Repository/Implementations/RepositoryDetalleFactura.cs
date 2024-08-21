@@ -38,5 +38,12 @@ namespace TallerMotos.Infraestructure.Repository.Implementations
            .ToListAsync();
             return collection;
         }
+
+        public async Task<ICollection<DetalleFactura>> ListaDetalle()
+        {
+            var collection = await _context.Set<DetalleFactura>().ToListAsync();
+           
+            return collection;
+        }
     }
 }

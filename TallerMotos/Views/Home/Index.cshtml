@@ -1,9 +1,211 @@
-﻿@{
+﻿@using TallerMotos.Controllers
+@using System.Web
+@{
     ViewData["Title"] = "Home Page";
+    var topProductos = ViewBag.TopProductos as List<ProductoVendido>;
 }
+
+<div class="container">
+
+
 
 <div class="text-center">
     <h1 class="display-4">Bienvenidos</h1>
     <h4>Moto Servicio BEICHA le saluda</h4>
     @* <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
 </div>
+<br /><br />
+
+    <h2>Sucursales</h2>
+    @if (ViewBag.listaSucursales != null && ViewBag.TopProductos.Count > 0)
+    {
+        <ul>
+            @foreach (var sucursal in ViewBag.listaSucursales)
+            {
+                <li>@sucursal.Nombre </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No se encontraron productos vendidos.</p>
+    }
+
+   <div class="container p-10">
+    <div class="row">
+        <div class="col-6">
+            <div class="chart-container" style="position: relative; height:40vh;">
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="chart-container" style="position: relative; height:40vh;">
+                <canvas id="productosChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+
+   
+
+
+    <script>
+        $(document).ready(function () {
+            Bar();
+        });
+
+        function Bar() {
+            if ("@ViewBag.Valores" == "")
+                return;
+
+            // find myChart Div
+            const ctx = document.getElementById('myChart1');
+            // Get Values
+            let yValues = [@ViewBag.Valores];
+            // Get Etiquetas
+            let etiquetas = "@HttpUtility.JavaScriptStringEncode(ViewBag.Etiquetas)";
+            console.log(etiquetas)
+
+
+            // Convert to Array
+            let etiquetasArray = etiquetas.split(",");
+          
+            // options
+            var options = {
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        stacked: true,
+                        grid: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false, 
+                    },
+                    title: {
+                        display: true,
+                        text: 'Reservas por Sucursal',
+                        font: {
+                            size: 24 
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                options: options,
+                data: {
+                    labels: etiquetasArray,
+                    datasets: [{
+                        label: '@ViewBag.GraphTitle',
+                        data: yValues,
+                        borderWidth: 1,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+        }
+
+    </script>
+
+    <script>
+        var ctx = document.getElementById('productosChart').getContext('2d');
+        var productosChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topProductos.Select(p => p.Nombre))),
+                datasets: [{
+                    label: 'Cantidad Vendida',
+                    data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topProductos.Select(p => p.TotalVendido))),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Productos más vendidos',
+                        font:{
+                            size:24
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
