@@ -11,6 +11,7 @@ namespace TallerMotos.Application.DTO
 
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "{0} es un dato requerido")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "El campo Nombre solo puede contener letras.")]
         public string Nombre { get; set; } = null!;
 
         [Display(Name = "Descripcion")]

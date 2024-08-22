@@ -108,8 +108,22 @@ namespace TallerMotos.Controllers
                 .Take(3) // Tomar los 3 primeros
                 .ToList();
 
+
+            //top servicios
+            // Agrupar por nombre de servicio y sumar las cantidades
+            var topServicios = detalleFacturas
+                .GroupBy(df => df.Nombre)
+                .Select(g => new ServicioVendido
+                {
+                    Nombre = g.Key,
+                    TotalVendido = g.Sum(df => Convert.ToInt16(df.Cantidad))
+                })
+                .OrderByDescending(p => p.TotalVendido) // Ordenar por la cantidad total vendida
+                .Take(3) // Tomar los 3 primeros
+                .ToList();
             // Pasar la información a la vista
             ViewBag.TopProductos = topProductos;
+            ViewBag.TopServicios = topServicios;
 
             ViewBag.listaSucursales = sucursales;
 

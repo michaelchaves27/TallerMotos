@@ -70,12 +70,10 @@ namespace TallerMotos.Web.Controllers
             return View("ErrorHandler");
         }
 
-        //[Authorize(Roles = "Administrador,Encargado")]
+        [Authorize(Roles = "Administrador")]
         // [HttpGet]
         public async Task<ActionResult> Create()
         {
-            // var ListaCategorias = await _serviceCategoria.ListAsync();
-            // ViewBag.ListaCategorias = new MultiSelectList(ListaCategorias, "IdCategoria", "Nombre");
             ViewBag.ListaCategorias = await _serviceCategoria.ListAsync();
             return View();
         }
@@ -98,7 +96,7 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("TablaProductos");
         }
 
-        //[Authorize(Roles = "Administrador,Encargado")]
+        [Authorize(Roles = "Administrador")]
         // [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {

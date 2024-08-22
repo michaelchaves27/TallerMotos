@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
@@ -61,7 +62,7 @@ namespace TallerMotos.Web.Controllers
             return View("ErrorHandler");
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -86,7 +87,7 @@ namespace TallerMotos.Web.Controllers
         }
 
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {

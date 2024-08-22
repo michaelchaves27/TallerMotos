@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
@@ -18,6 +19,8 @@ namespace TallerMotos.Web.Controllers
             _serviceUsuarios = serviceUsuarios;
             _serviceRol = serviceRol;
         }
+
+        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> Index(int? page)
         {
             var collection = await _serviceUsuarios.ListAsync();

@@ -27,7 +27,10 @@
                             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", @class = "form-control" } })
                         </div>
                         <div class="col-md-10 mt-4">
-                            <button type="submit" id="btnGuardar" class="btn btn-lg btn-primary">Ingresar</button>´
+                            <button type="submit" id="btnGuardar" class="btn btn-lg btn-primary">Ingresar</button>
+                        </div>
+                        <div class="col-md-10 mt-3">
+                            <a asp-controller="Usuarios" asp-action="Create" class="btn btn-link">¿No tienes cuenta? Regístrate aquí</a>
                         </div>
                     </div>
                 </div>

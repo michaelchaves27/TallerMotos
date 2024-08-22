@@ -1,10 +1,9 @@
 ﻿@using X.PagedList
 @using X.PagedList.Mvc.Core
-@model IEnumerable<TallerMotos.Application.DTO.ServiciosDTO>
+@model IPagedList<TallerMotos.Application.DTO.ServiciosDTO>
 
 @{
-
-        ViewData["Title"] = "Servicios";
+    ViewData["Title"] = "Servicios";
 }
 
 <h1>Servicios</h1>
@@ -12,31 +11,38 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear</a>
 </p>
+
+<form method="get" action="@Url.Action("Index")" class="mb-3 d-flex">
+    <input type="text" name="searchString" placeholder="Buscar por Nombre" class="form-control form-control-sm me-2" style="max-width: 200px;" />
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ID)
+                @Html.DisplayNameFor(model => model.First().ID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.First().Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                @Html.DisplayNameFor(model => model.First().Descripcion)
             </th>
             <th>
-            @Html.DisplayNameFor(model => model.Precio)
+                @Html.DisplayNameFor(model => model.First().Precio)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tiempo)
+                @Html.DisplayNameFor(model => model.First().Tiempo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cilindrada)
+                @Html.DisplayNameFor(model => model.First().Cilindrada)
             </th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="serviciosTableBody">
         @foreach (var item in Model)
         {
             <tr>
@@ -62,7 +68,6 @@
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-success" }) |
                     <a asp-controller="Servicios" asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">Detalle</a> |
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
-
                 </td>
             </tr>
         }
@@ -88,3 +93,16 @@
         </tr>
     </tfoot>
 </table>
+
+<!-- Script jQuery para búsqueda -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#searchInput').on('keyup', function () {
+            var value = $(this).val().toLowerCase();
+            $('#serviciosTableBody tr').filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

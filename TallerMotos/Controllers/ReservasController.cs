@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -103,7 +104,7 @@ namespace TallerMotos.Web.Controllers
             }
         }
 
-        //[HttpGet]
+        [Authorize(Roles = "Cliente,Encargado")]
         public async Task<IActionResult> Create(int idsucursal)
         {
             var usuarios = await _serviceUsuarios.ListAsync();

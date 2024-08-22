@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using TallerMotos.Application.DTO;
@@ -17,12 +18,19 @@ namespace TallerMotos.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(int? page)
+        public async Task<IActionResult> Index(string searchString, int? page)
         {
             var collection = await _serviceServicios.ListAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                collection = collection.Where(s => s.Nombre.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+
             ViewData["Title"] = "Index";
             return View(collection.ToPagedList(page ?? 1, 5));
         }
+
 
         public async Task<ActionResult> Details(int? id)
         {
@@ -53,6 +61,7 @@ namespace TallerMotos.Web.Controllers
             return View("ErrorHandler");
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -89,7 +98,7 @@ namespace TallerMotos.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "Administrador")]
         // Método GET para Editar
         [HttpGet]
         public async Task<IActionResult> Edit(int id)

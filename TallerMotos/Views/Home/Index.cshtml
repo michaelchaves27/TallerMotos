@@ -3,21 +3,70 @@
 @{
     ViewData["Title"] = "Home Page";
     var topProductos = ViewBag.TopProductos as List<ProductoVendido>;
+    var topServicios = ViewBag.TopServicios as List<ServicioVendido>;
 }
 
 <div class="container">
 
+    <style>
+        /* Estilo para las imágenes del carrusel */
+        .carousel-img {
+            max-height: 400px; /* Cambia esta altura según tus necesidades */
+            object-fit: cover;
+        }
+    </style>
 
+    <div class="text-center">
+        <h1 class="display-4">Bienvenidos</h1>
+        <h4>
+            <br /> Moto Servicio BEICHA, tu aliado en el mantenimiento y reparación de motocicletas le saluda. <br /><br />
+        </h4>
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenidos</h1>
-    <h4>Moto Servicio BEICHA le saluda</h4>
-    @* <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
-</div>
+        <!-- Carrusel de imágenes -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/imagenes/moto1.jpg" class="d-block w-100 carousel-img" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/imagenes/moto2.jpg" class="d-block w-100 carousel-img" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/imagenes/moto3.jpg" class="d-block w-100 carousel-img" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Fin del carrusel -->
+        <br />
+        <p class="lead text-center mx-auto" style="max-width: 600px;">
+            En nuestro taller, nos especializamos en ofrecer un servicio de calidad con una atención personalizada
+            para garantizar que tu motocicleta esté siempre en las mejores condiciones. Contamos con técnicos expertos
+            y equipos de última generación para realizar desde mantenimientos preventivos hasta reparaciones complejas.
+            Además, te ofrecemos una amplia gama de repuestos originales y accesorios para que disfrutes al máximo de cada kilómetro.
+            <br> Confía en nosotros para cuidar de tu moto como si fuera nuestra.
+        </p>
+    </div>
+
+    
+
 <br /><br />
-
+@if (User.IsInRole("Administrador"))
+    {
     <h2>Sucursales</h2>
-    @if (ViewBag.listaSucursales != null && ViewBag.TopProductos.Count > 0)
+        @if (ViewBag.listaSucursales != null && ViewBag.TopProductos.Count > 0)
     {
         <ul>
             @foreach (var sucursal in ViewBag.listaSucursales)
@@ -30,6 +79,8 @@
     {
         <p>No se encontraron productos vendidos.</p>
     }
+   
+        
 
    <div class="container p-10">
     <div class="row">
@@ -43,9 +94,14 @@
                 <canvas id="productosChart"></canvas>
             </div>
         </div>
+        <div class="col-6">
+            <div class="chart-container" style="position: relative; height:40vh;">
+                <canvas id="serviciosChart"></canvas>
+            </div>
+        </div>
+     </div>
     </div>
-</div>
-
+    }
 </div>
 
 
@@ -198,6 +254,51 @@
                         text: 'Productos más vendidos',
                         font:{
                             size:24
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var ctx = document.getElementById('serviciosChart').getContext('2d');
+
+        // Definir los servicios más vendidos manualmente
+        var serviciosNombres = ['Cambio de Aceite', 'Ajuste de Frenos', 'Revision General']; 
+        var serviciosTotales = [14, 9, 7]; 
+
+        var serviciosChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: serviciosNombres, /* @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topServicios.Select(p => p.Nombre))), */
+                datasets: [{
+                    label: 'Cantidad Vendida',
+                    data: serviciosTotales, /* @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(topServicios.Select(p => p.TotalVendido))), */
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Servicios más vendidos',
+                        font: {
+                            size: 24
                         }
                     }
                 }
